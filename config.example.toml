@@ -1,0 +1,106 @@
+# 绝地潜兵 2 更新推送 —— 配置示例
+#
+# 用法：复制为 config.toml 后修改。
+# MaiBot 的 WebUI 也会基于 plugin.py 的 config_model 生成同样的表单，
+# 两种方式改的其实是同一份配置；config_version 由 Runner 维护，不要手工改小，
+# 否则升级插件时新增的字段不会被自动补齐。
+#
+# 改完保存即热生效：轮询间隔会重启轮询任务，其余项下一次用到时读取。
+
+[plugin]
+config_version = "1.0.0"
+
+
+# ─────────────── 基础 ───────────────
+
+# 总开关。关闭后不再启动轮询任务，但群内命令（订阅、推送、配装等）仍然可用。
+enabled = true
+
+# 自动检查更新源的间隔（秒）。默认 43200（12 小时）。
+# Steam News 有速率限制，不建议低于 900（15 分钟）。
+poll_interval_seconds = 43200
+
+# 始终接收自动推送的群号列表，与群内 /helldivers subscribe 的订阅表合并去重。
+# 适合管理员直接指定；留空则完全由群内自助订阅控制。
+# 例：default_groups = ["123456789", "987654321"]
+default_groups = []
+
+# 只允许已订阅的群使用全部指令；未订阅的群只能发 subscribe。
+# default_groups 里的群视为已订阅。群管理员/操作员不受此限制。
+# 设为 false 则任何群都能使用所有指令（内容仍只推送给已订阅的群）。
+require_subscription = true
+
+
+# ─────────────── 权限 ───────────────
+# 管理指令（list 列出全部群号、diag 自检）的白名单 QQ 号。
+# 功能性指令（订阅/取消/推送/配装/状态/帮助）默认所有人都能用，不用写在这里。
+# 宿主操作员（MaiBot 控制台）始终拥有管理权限。
+# 例：admin_users = ["123456789", "987654321"]
+admin_users = []
+
+# 功能性指令的黑名单。键是指令名，值是禁止使用该指令的 QQ 号列表：
+#   "*"        = 禁掉全部功能性指令
+#   其余键      = subscribe / unsubscribe / push / loadout / status / help
+# 支持中文别名（如 "推送"）。管理指令不受此表影响（它们本来就是白名单制），
+# 管理员（admin_users）与宿主操作员也不会被此表拦住。
+#
+# [plugin.command_blacklist]
+# "*" = ["10001"]        # 这个人不能用任何功能性指令
+# push = ["10002"]       # 这个人不能用 push，其余照常
+command_blacklist = {}
+
+
+# ─────────────── 数据源 ───────────────
+
+# 启用 Steam 新闻来源（官方公告 + 官方中文 RSS 增强）。
+steam_enabled = true
+
+# Steam App ID。默认 553850（HELLDIVERS™ 2），一般不需要改，改错会采到别的游戏。
+steam_app_id = 553850
+
+# Steam News 接口地址。可换成镜像或自建代理。
+# 如果地址里已经带了 appid= 参数，插件不会再拼接。
+steam_endpoint = "https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/"
+
+# Steam 新闻 RSS 的语言，用于取官方中文标题与正文（GetNewsForApp 接口不支持本地化）。
+# 官方只给部分版本发了中文版，缺失时自动回退英文；置空字符串可关闭这个额外请求。
+steam_locale = "schinese"
+
+# 把 Wiki 的编辑动态（recentchanges）作为自动采集来源。
+# 实测它没有可用产出、还每轮多打一次接口，所以默认关闭；
+# Wiki 内容改用 /helldivers push wiki 与 /helldivers push balance 按需获取。
+wiki_enabled = false
+
+# Wiki API 地址。默认英文站；中文站是同一域名下的 /zh/api.php，
+# 插件默认就会「中文站优先、英文站回退」，这里一般不用改。
+wiki_endpoint = "https://helldivers.wiki.gg/api.php"
+
+# 单次 HTTP 请求的超时（秒），对 Steam / Wiki 都生效。
+request_timeout_seconds = 20.0
+
+
+# ─────────────── 推送与限流 ───────────────
+
+# 两次 /helldivers push 之间对上游的最小请求间隔（秒）。
+# 冷却期内命令仍然回复，但只重发库里已存的最新一期、不再请求上游；
+# 操作员（is_local_operator）不受此限制。设为 0 表示不限制。
+force_push_cooldown_seconds = 60
+
+# 自动推送时，为发布多久以内的版本公告去反查 Wiki 详情页链接（天）。
+# wiki.gg 限流很严，这个窗口避免为历史公告批量打接口；0 表示不附链接。
+wiki_detail_max_age_days = 30
+
+# Wiki「最近更改」的拉取条数，/helldivers push wiki 与 Wiki 自动采集共用。
+# 条数越多消息越长，上限 50。
+wiki_recent_limit = 10
+
+# /helldivers push balance 输出的数值调整摘录长度上限（字符）。
+# 过长的内容会刷屏，建议不超过 2000。
+wiki_digest_max_chars = 1200
+
+
+# ─────────────── 随机配装 ───────────────
+
+# 抽完配装后还能用 /helldivers loadout <1-8> 单独重抽的时间窗（秒）。
+# 每重抽一次倒计时重新开始，可以连着抽到满意为止；超时后需要重新抽一整套。
+loadout_reroll_seconds = 120

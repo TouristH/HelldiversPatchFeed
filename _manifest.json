@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "id": "github.touristh.helldivers2-patch-feed",
+  "version": "0.1.0",
+  "name": "Helldivers 2 更新推送",
+  "description": "自治检查 Helldivers 2 官方更新并向订阅 QQ 群推送，同时提供 Wiki 查询与随机配装。",
+  "author": {
+    "name": "TouristH",
+    "url": "https://github.com/TouristH"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/TouristH/HelldiversPatchFeed",
+    "homepage": "https://github.com/TouristH/HelldiversPatchFeed",
+    "documentation": "https://github.com/TouristH/HelldiversPatchFeed/blob/main/README.md",
+    "issues": "https://github.com/TouristH/HelldiversPatchFeed/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "999.999.999"
+  },
+  "sdk": {
+    "min_version": "2.0.0",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [
+    {
+      "type": "python_package",
+      "name": "playwright",
+      "version_spec": ">=1.54.0"
+    }
+  ],
+  "plugin_type": "integration",
+  "capabilities": ["chat.open_session", "send.text", "send.image", "render.html2png"],
+  "display": {
+    "icon": {
+      "type": "lucide",
+      "value": "satellite"
+    }
+  },
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  }
+}

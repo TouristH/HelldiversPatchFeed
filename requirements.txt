@@ -1,0 +1,20 @@
+# 手动安装（推荐给「运行 MaiBot 宿主的那个 Python 环境」执行）：
+#   pip install -r requirements.txt
+#   playwright install chromium
+# 国内网络慢可以加镜像源：
+#   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# --- 宿主侧依赖（出图渲染用）---
+# MaiBot 的渲染服务在宿主进程里 import playwright，所以必须装进宿主环境。
+# 约束与 MaiBot 主程序保持一致（它的 requirements.txt 也是 playwright>=1.54.0），
+# 同时也声明在 _manifest.json 的 dependencies 里——手动装好后，
+# Host 的自动安装检测到已满足就不会再尝试，失败日志随之消失。
+playwright>=1.54.0
+
+# --- 插件自身进程依赖 ---
+maibot-plugin-sdk>=2.0,<3.0
+
+# 说明：
+# - Chromium 浏览器二进制不在 pip 范围内，用 playwright install chromium 安装；
+#   宿主渲染服务另有 plugin_runtime.render.auto_download_chromium 兜底，但手动装更可控。
+# - httpx 若存在会被插件优先使用，但不是必需，故不声明。

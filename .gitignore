@@ -1,0 +1,28 @@
+# Local runtime configuration and handoff notes
+/config.toml
+HANDOFF.md
+
+# Runtime data and local environments
+data/
+*.db
+*.sqlite
+*.sqlite3
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+*.py[cod]
+
+# Local development/browser artifacts (never publish)
+.workbuddy/
+.DS_Store
+
+# Planning/source snapshots kept outside the plugin repository
+_pluginrepo_tmp/
+_watcher_tmp/

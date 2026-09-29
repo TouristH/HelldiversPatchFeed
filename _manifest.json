@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "id": "github.touristh.helldivers2-patch-feed",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "name": "Helldivers 2 更新推送",
   "description": "自治检查 Helldivers 2 官方更新并向订阅 QQ 群推送，同时提供 Wiki 查询与随机配装。",
   "author": {

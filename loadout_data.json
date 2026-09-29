@@ -1,38 +1,46 @@
 {
-  "catalog_updated_at": "2026-09-29",
-  "source": "https://helldivers.wiki.gg/zh/wiki/武器",
+  "schema_version": 2,
+  "catalog_updated_at": "2026-09-30",
+  "language": "zh-CN",
+  "source": "https://helldivers.wiki.gg/zh/wiki/%E6%AD%A6%E5%99%A8",
   "source_revision": "6540",
   "sources": [
     {
-      "url": "https://helldivers.wiki.gg/zh/wiki/武器",
+      "url": "https://helldivers.wiki.gg/zh/wiki/%E6%AD%A6%E5%99%A8",
       "revision": "6540",
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans",
       "scope": [
-        "primary",
-        "secondary",
-        "grenade",
-        "Chinese names",
-        "support-weapon name fallback"
+        "Chinese weapon names",
+        "weapon icon filenames",
+        "support-weapon names"
       ]
     },
     {
-      "url": "https://helldivers.wiki.gg/zh/wiki/战略配备",
+      "url": "https://helldivers.wiki.gg/zh/wiki/%E6%88%98%E7%95%A5%E9%85%8D%E5%A4%87",
       "revision": "6647",
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans",
       "scope": [
-        "stratagem",
-        "Chinese names"
+        "Chinese stratagem names",
+        "stratagem icon filenames"
+      ]
+    },
+    {
+      "url": "https://helldivers.wiki.gg/zh/api.php",
+      "revision": "per-file SHA-1 recorded on every item",
+      "scope": [
+        "all embedded icon files resolved through the Chinese Wiki API"
       ]
     },
     {
       "url": "https://helldivers.wiki.gg/wiki/Weapons",
-      "revision": "136693",
+      "revision": "137028",
       "license": "CC BY-NC-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
       "scope": [
-        "new equipment not yet localized on the Chinese page"
+        "latest weapon catalog discovery",
+        "canonical English names"
       ]
     },
     {
@@ -41,7 +49,8 @@
       "license": "CC BY-NC-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
       "scope": [
-        "booster catalog"
+        "latest booster catalog discovery",
+        "canonical English names"
       ]
     },
     {
@@ -50,19 +59,33 @@
       "license": "CC BY-NC-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
       "scope": [
-        "new stratagems not yet present in the Chinese catalog"
-      ]
-    },
-    {
-      "url": "https://github.com/Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN",
-      "revision": "141ba007b52940903b22067571d87ec0263902d6",
-      "scope": [
-        "initial slot structure",
-        "legacy embedded icons"
+        "latest stratagem catalog discovery",
+        "canonical English names"
       ]
     }
   ],
-  "notice": "装备目录按 Helldivers Wiki 中文页面校准；中文页尚未本地化的新装备保留 Wiki 英文规范名。中文与英文 Wiki 衍生数据分别遵循其 CC BY-SA 4.0 与 CC BY-NC-SA 4.0 许可。随机配装初始结构与现有内嵌图标参考 Xenfo-LC 项目。完整署名和许可边界见 THIRD_PARTY_NOTICES.md。",
+  "translation_policy": {
+    "display_language": "zh-CN",
+    "priority": [
+      "Chinese Wiki page infobox",
+      "Chinese Wiki catalog",
+      "curated/community Chinese translation"
+    ],
+    "community_translation_count": 10,
+    "community_translations": [
+      "AR-11 仲裁者",
+      "GL-15 驱逐者",
+      "LAS-12 铁尺",
+      "P-34 破门者",
+      "G-8 焚祭",
+      "G-60 反坦克寻踪者",
+      "额外消耗性反坦克武器配额",
+      "集成灭火器",
+      "TD-110 大漩涡",
+      "A/GM-17 毒气迫击哨戒炮"
+    ]
+  },
+  "notice": "216 项配装目录已按当前 Helldivers Wiki 校准，显示名全部为中文；图标均通过中文 Wiki API 解析并内嵌。中文 Wiki 尚无可用中文标题的条目使用明确标记的社区译名。完整署名、许可与游戏素材权利边界见 THIRD_PARTY_NOTICES.md。",
   "slots": [
     "primary",
     "secondary",
@@ -72,868 +95,3028 @@
   ],
   "items": [
     {
+      "id": "primary.ar-23-liberator",
+      "slot": "primary",
       "name": "AR-23 解放者",
-      "slot": "primary"
+      "name_zh": "AR-23 解放者",
+      "name_en": "AR-23 Liberator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-23_Liberator",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-23_Liberator",
+      "icon_file": "AR-23 Liberator Primary Render.png",
+      "icon_sha1": "97e7bbd5d702c066f12e309593f04885556e56e6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-23_Liberator_Primary_Render.png"
     },
     {
+      "id": "primary.ar-23p-liberator-penetrator",
+      "slot": "primary",
       "name": "AR-23P 穿甲“解放者”",
-      "slot": "primary"
+      "name_zh": "AR-23P 穿甲“解放者”",
+      "name_en": "AR-23P Liberator Penetrator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-23P_Liberator_Penetrator",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-23P_Liberator_Penetrator",
+      "icon_file": "AR-23P Liberator Penetrator Primary Render.png",
+      "icon_sha1": "082edd5aecf8d58399d6528200ab41ff26a9e311",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-23P_Liberator_Penetrator_Primary_Render.png"
     },
     {
+      "id": "primary.ar-23c-liberator-concussive",
+      "slot": "primary",
       "name": "AR-23C 震荡“解放者”",
-      "slot": "primary"
+      "name_zh": "AR-23C 震荡“解放者”",
+      "name_en": "AR-23C Liberator Concussive",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-23C_Liberator_Concussive",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-23C_Liberator_Concussive",
+      "icon_file": "AR-23C Liberator Concussive Primary Render.png",
+      "icon_sha1": "071f5733d63097ace120d6eaace981f2ceac3006",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-23C_Liberator_Concussive_Primary_Render.png"
     },
     {
-      "name": "StA-52 突击步枪",
-      "slot": "primary"
-    },
-    {
-      "name": "AR-32 安抚者",
-      "slot": "primary"
-    },
-    {
-      "name": "AR-2 野狼",
-      "slot": "primary"
-    },
-    {
-      "name": "MA5C 突击步枪",
-      "slot": "primary"
-    },
-    {
-      "name": "AR-23A “解放者”卡宾枪",
-      "slot": "primary"
-    },
-    {
-      "name": "AR-61 肉锤",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.br-14-adjudicator",
+      "slot": "primary",
       "name": "BR-14 审判者",
-      "slot": "primary"
+      "name_zh": "BR-14 审判者",
+      "name_en": "BR-14 Adjudicator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/BR-14_Adjudicator",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/BR-14_Adjudicator",
+      "icon_file": "BR-14 Adjudicator Primary Render.png",
+      "icon_sha1": "e74a3d14d4d2809ab68c975f0b21dead98e82c12",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:BR-14_Adjudicator_Primary_Render.png"
     },
     {
+      "id": "primary.ar-61-tenderizer",
+      "slot": "primary",
+      "name": "AR-61 肉锤",
+      "name_zh": "AR-61 肉锤",
+      "name_en": "AR-61 Tenderizer",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-61_Tenderizer",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-61_Tenderizer",
+      "icon_file": "AR-61 Tenderizer Primary Render.png",
+      "icon_sha1": "7278b46c031c0bef5c08aa88454d857a9ea62047",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-61_Tenderizer_Primary_Render.png"
+    },
+    {
+      "id": "primary.ar-23a-liberator-carbine",
+      "slot": "primary",
+      "name": "AR-23A “解放者”卡宾枪",
+      "name_zh": "AR-23A “解放者”卡宾枪",
+      "name_en": "AR-23A Liberator Carbine",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-23A_Liberator_Carbine",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-23A_Liberator_Carbine",
+      "icon_file": "AR-23A Liberator Carbine Primary Render.png",
+      "icon_sha1": "4b36e2daa23b055c389f6efdfae0365032042b00",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-23A_Liberator_Carbine_Primary_Render.png"
+    },
+    {
+      "id": "primary.sta-52-assault-rifle",
+      "slot": "primary",
+      "name": "StA-52 突击步枪",
+      "name_zh": "StA-52 突击步枪",
+      "name_en": "StA-52 Assault Rifle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/StA-52_Assault_Rifle",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/StA-52_Assault_Rifle",
+      "icon_file": "StA-52 Assault Rifle Primary Render.png",
+      "icon_sha1": "94bd97571fdf5e78ef2b13334987bdf62b2cd812",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:StA-52_Assault_Rifle_Primary_Render.png"
+    },
+    {
+      "id": "primary.ar-32-pacifier",
+      "slot": "primary",
+      "name": "AR-32 安抚者",
+      "name_zh": "AR-32 安抚者",
+      "name_en": "AR-32 Pacifier",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-32_Pacifier",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-32_Pacifier",
+      "icon_file": "AR-32 Pacifier Primary Render.png",
+      "icon_sha1": "94e4a0f9e471084ac4525c3f974cab8694c92d9d",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-32_Pacifier_Primary_Render.png"
+    },
+    {
+      "id": "primary.ma5c-assault-rifle",
+      "slot": "primary",
+      "name": "MA5C 突击步枪",
+      "name_zh": "MA5C 突击步枪",
+      "name_en": "MA5C Assault Rifle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MA5C_Assault_Rifle",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MA5C_Assault_Rifle",
+      "icon_file": "MA5C Assault Rifle Primary Render.png",
+      "icon_sha1": "ed9b791e28b0d94dc22753236e828ce1b22bf926",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:MA5C_Assault_Rifle_Primary_Render.png"
+    },
+    {
+      "id": "primary.ar-2-coyote",
+      "slot": "primary",
+      "name": "AR-2 野狼",
+      "name_zh": "AR-2 野狼",
+      "name_en": "AR-2 Coyote",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-2_Coyote",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-2_Coyote",
+      "icon_file": "AR-2 Coyote Primary Render.png",
+      "icon_sha1": "5fee452b59aa806bd4c0eb3d13e4d25a419786ec",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-2_Coyote_Primary_Render.png"
+    },
+    {
+      "id": "primary.ar-gl-21-one-two",
+      "slot": "primary",
       "name": "AR/GL-21 幺二",
-      "slot": "primary"
+      "name_zh": "AR/GL-21 幺二",
+      "name_en": "AR/GL-21 One-Two",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR/GL-21_One-Two",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR/GL-21_One-Two",
+      "icon_file": "AR-GL-21 One Two Primary Render.png",
+      "icon_sha1": "4bfb7d8559342891508423891f0570a90f7732dc",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-GL-21_One_Two_Primary_Render.png"
     },
     {
+      "id": "primary.ar-59-suppressor",
+      "slot": "primary",
       "name": "AR-59 消音器",
-      "slot": "primary"
+      "name_zh": "AR-59 消音器",
+      "name_en": "AR-59 Suppressor",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AR-59_Suppressor",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-59_Suppressor",
+      "icon_file": "AR-59 Suppressor Primary Render.png",
+      "icon_sha1": "1fe2a4410ae9e6cff57630b25f870a361108bac3",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-59_Suppressor_Primary_Render.png"
     },
     {
-      "name": "R-2 修正",
-      "slot": "primary"
+      "id": "primary.ar-11-arbitrator",
+      "slot": "primary",
+      "name": "AR-11 仲裁者",
+      "name_zh": "AR-11 仲裁者",
+      "name_en": "AR-11 Arbitrator",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AR-11_Arbitrator",
+      "icon_file": "AR-11 Arbitrator Primary Render.png",
+      "icon_sha1": "283658a302e50c64c4a38bede4e04d10234da85e",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:AR-11_Arbitrator_Primary_Render.png"
     },
     {
-      "name": "R-2124 宪法",
-      "slot": "primary"
-    },
-    {
-      "name": "R-6 鹰眼",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.r-63-diligence",
+      "slot": "primary",
       "name": "R-63 勤勉",
-      "slot": "primary"
+      "name_zh": "R-63 勤勉",
+      "name_en": "R-63 Diligence",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-63_Diligence",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-63_Diligence",
+      "icon_file": "R-63 Diligence Primary Render.png",
+      "icon_sha1": "69ed5cfa5b5381a9a02eeed072724cdc8e08652c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-63_Diligence_Primary_Render.png"
     },
     {
+      "id": "primary.r-63cs-diligence-counter-sniper",
+      "slot": "primary",
       "name": "R-63CS 反狙击“勤勉”",
-      "slot": "primary"
+      "name_zh": "R-63CS 反狙击“勤勉”",
+      "name_en": "R-63CS Diligence Counter Sniper",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-63CS_Diligence_Counter_Sniper",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-63CS_Diligence_Counter_Sniper",
+      "icon_file": "R-63CS Diligence Counter Sniper Primary Render.png",
+      "icon_sha1": "3ff844e8659a7740faa65701ac079345c65ae018",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-63CS_Diligence_Counter_Sniper_Primary_Render.png"
     },
     {
+      "id": "primary.r-2124-constitution",
+      "slot": "primary",
+      "name": "R-2124 宪法",
+      "name_zh": "R-2124 宪法",
+      "name_en": "R-2124 Constitution",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-2124_Constitution",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-2124_Constitution",
+      "icon_file": "R-2124 Constitution Primary Render.png",
+      "icon_sha1": "5afe2d62266dfff4fff390844b3c37801c1b8c4e",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-2124_Constitution_Primary_Render.png"
+    },
+    {
+      "id": "primary.r-6-deadeye",
+      "slot": "primary",
+      "name": "R-6 鹰眼",
+      "name_zh": "R-6 鹰眼",
+      "name_en": "R-6 Deadeye",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-6_Deadeye",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-6_Deadeye",
+      "icon_file": "R-6 Deadeye Primary Render.png",
+      "icon_sha1": "85d99d48c223d0273c84dd8ecffee1a2852172f9",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-6_Deadeye_Primary_Render.png"
+    },
+    {
+      "id": "primary.r-2-amendment",
+      "slot": "primary",
+      "name": "R-2 修正",
+      "name_zh": "R-2 修正",
+      "name_en": "R-2 Amendment",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-2_Amendment",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-2_Amendment",
+      "icon_file": "R-2 Amendment Primary Render.png",
+      "icon_sha1": "804c0c481109bee47d4ecb210b2522f72f28875c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-2_Amendment_Primary_Render.png"
+    },
+    {
+      "id": "primary.r-72-censor",
+      "slot": "primary",
       "name": "R-72 审查官",
-      "slot": "primary"
+      "name_zh": "R-72 审查官",
+      "name_en": "R-72 Censor",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-72_Censor",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-72_Censor",
+      "icon_file": "R-72 Censor Primary Render.png",
+      "icon_sha1": "27d6713eeb96053df9810761988a9277057fd569",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-72_Censor_Primary_Render.png"
     },
     {
+      "id": "primary.r-4-hyena",
+      "slot": "primary",
       "name": "R-4 鬣狗",
-      "slot": "primary"
+      "name_zh": "R-4 鬣狗",
+      "name_en": "R-4 Hyena",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-4_Hyena",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-4_Hyena",
+      "icon_file": "R-4 Hyena Primary Render.png",
+      "icon_sha1": "f84f0d8ee72216174856e722e9b49167aeafe5fb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-4_Hyena_Primary_Render.png"
     },
     {
+      "id": "primary.mp-98-knight",
+      "slot": "primary",
       "name": "MP-98 骑士",
-      "slot": "primary"
+      "name_zh": "MP-98 骑士",
+      "name_en": "MP-98 Knight",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MP-98_Knight",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MP-98_Knight",
+      "icon_file": "MP-98 Knight Primary Render.png",
+      "icon_sha1": "4573f07ddfedb3ccc45f66c9b9ce6a89dff0e12a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:MP-98_Knight_Primary_Render.png"
     },
     {
-      "name": "StA-11 冲锋枪",
-      "slot": "primary"
-    },
-    {
-      "name": "M7S 冲锋枪",
-      "slot": "primary"
-    },
-    {
-      "name": "SMG-32 训斥",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.smg-37-defender",
+      "slot": "primary",
       "name": "SMG-37 防卫者",
-      "slot": "primary"
+      "name_zh": "SMG-37 防卫者",
+      "name_en": "SMG-37 Defender",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SMG-37_Defender",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SMG-37_Defender",
+      "icon_file": "SMG-37 Defender Primary Render.png",
+      "icon_sha1": "b3da923cc8d7c4d23c538d228dbb3b59d1e9cb87",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SMG-37_Defender_Primary_Render.png"
     },
     {
+      "id": "primary.smg-72-pummeler",
+      "slot": "primary",
       "name": "SMG-72 暴击斗士",
-      "slot": "primary"
+      "name_zh": "SMG-72 暴击斗士",
+      "name_en": "SMG-72 Pummeler",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SMG-72_Pummeler",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SMG-72_Pummeler",
+      "icon_file": "SMG-72 Pummeler Primary Render.png",
+      "icon_sha1": "2acd0ee8922810f6c86468ddaaefdc9d2c1ed0f2",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SMG-72_Pummeler_Primary_Render.png"
     },
     {
+      "id": "primary.smg-32-reprimand",
+      "slot": "primary",
+      "name": "SMG-32 训斥",
+      "name_zh": "SMG-32 训斥",
+      "name_en": "SMG-32 Reprimand",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SMG-32_Reprimand",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SMG-32_Reprimand",
+      "icon_file": "SMG-32 Reprimand Primary Render.png",
+      "icon_sha1": "19d16db28e1bec27bb55e4c537a4cbd62198219a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SMG-32_Reprimand_Primary_Render.png"
+    },
+    {
+      "id": "primary.sta-11-smg",
+      "slot": "primary",
+      "name": "StA-11 冲锋枪",
+      "name_zh": "StA-11 冲锋枪",
+      "name_en": "StA-11 SMG",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/StA-11_SMG",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/StA-11_SMG",
+      "icon_file": "StA-11 SMG Primary Render.png",
+      "icon_sha1": "0bd19ee1a56106576df2b3cd0f2805ce6a0f4ece",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:StA-11_SMG_Primary_Render.png"
+    },
+    {
+      "id": "primary.m7s-smg",
+      "slot": "primary",
+      "name": "M7S 冲锋枪",
+      "name_zh": "M7S 冲锋枪",
+      "name_en": "M7S SMG",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M7S_SMG",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M7S_SMG",
+      "icon_file": "M7S SMG Primary Render.png",
+      "icon_sha1": "80963e2eaf82704f9e3d04ecf4e094b28ec2262b",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:M7S_SMG_Primary_Render.png"
+    },
+    {
+      "id": "primary.smg-flam-34-stoker",
+      "slot": "primary",
       "name": "SMG/FLAM-34 司炉者",
-      "slot": "primary"
+      "name_zh": "SMG/FLAM-34 司炉者",
+      "name_en": "SMG/FLAM-34 Stoker",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SMG/FLAM-34_Stoker",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SMG/FLAM-34_Stoker",
+      "icon_file": "SMGFLAM-34 Stoker Primary Render.png",
+      "icon_sha1": "4d9973f2e93464ffa2bc4a09ab811d9490b0b9e3",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SMGFLAM-34_Stoker_Primary_Render.png"
     },
     {
+      "id": "primary.smg-203-gallant",
+      "slot": "primary",
       "name": "SMG-203 英勇无畏",
-      "slot": "primary"
+      "name_zh": "SMG-203 英勇无畏",
+      "name_en": "SMG-203 Gallant",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SMG-203_Gallant",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SMG-203_Gallant",
+      "icon_file": "SMG-203 Gallant Primary Render.png",
+      "icon_sha1": "2fac8612ae4597c152dbf220a088c897ead083ed",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SMG-203_Gallant_Primary_Render.png"
     },
     {
+      "id": "primary.sg-8-punisher",
+      "slot": "primary",
       "name": "SG-8 制裁者",
-      "slot": "primary"
+      "name_zh": "SG-8 制裁者",
+      "name_en": "SG-8 Punisher",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-8_Punisher",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-8_Punisher",
+      "icon_file": "SG-8 Punisher Primary Render.png",
+      "icon_sha1": "c4306767d681a6bf862da81cd65924379472c948",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-8_Punisher_Primary_Render.png"
     },
     {
-      "name": "SG-8S 重炮手",
-      "slot": "primary"
-    },
-    {
-      "name": "SG-20 止息",
-      "slot": "primary"
-    },
-    {
-      "name": "SG-451 野炊",
-      "slot": "primary"
-    },
-    {
-      "name": "DBS-2 双重自由",
-      "slot": "primary"
-    },
-    {
-      "name": "M90A 霰弹枪",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.sg-225-breaker",
+      "slot": "primary",
       "name": "SG-225 破裂者",
-      "slot": "primary"
+      "name_zh": "SG-225 破裂者",
+      "name_en": "SG-225 Breaker",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-225_Breaker",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-225_Breaker",
+      "icon_file": "SG-225 Breaker Primary Render.png",
+      "icon_sha1": "2c7fc4d737a708532e65352e50bfdee900b93e16",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-225_Breaker_Primary_Render.png"
     },
     {
+      "id": "primary.sg-8s-slugger",
+      "slot": "primary",
+      "name": "SG-8S 重炮手",
+      "name_zh": "SG-8S 重炮手",
+      "name_en": "SG-8S Slugger",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-8S_Slugger",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-8S_Slugger",
+      "icon_file": "SG-8S Slugger Primary Render.png",
+      "icon_sha1": "6296bacaffe9bdcb4f7442637dc70651c0bd1420",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-8S_Slugger_Primary_Render.png"
+    },
+    {
+      "id": "primary.sg-225sp-breaker-spray-and-pray",
+      "slot": "primary",
       "name": "SG-225SP 千发百中“破裂者”",
-      "slot": "primary"
+      "name_zh": "SG-225SP 千发百中“破裂者”",
+      "name_en": "SG-225SP Breaker Spray&Pray",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-225SP_Breaker_Spray%26Pray",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-225SP_Breaker_Spray%26Pray",
+      "icon_file": "SG-225SP Breaker Spray&Pray Primary Render.png",
+      "icon_sha1": "e050a47daf646ae2e4a40bef79f8937345651407",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-225SP_Breaker_Spray%26Pray_Primary_Render.png"
     },
     {
+      "id": "primary.sg-225ie-breaker-incendiary",
+      "slot": "primary",
       "name": "SG-225IE 高燃“破裂者”",
-      "slot": "primary"
+      "name_zh": "SG-225IE 高燃“破裂者”",
+      "name_en": "SG-225IE Breaker Incendiary",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-225IE_Breaker_Incendiary",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-225IE_Breaker_Incendiary",
+      "icon_file": "SG-225IE Breaker Incendiary Primary Render.png",
+      "icon_sha1": "29206cf6cbeaf292703309ff09536b0976f5fc66",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-225IE_Breaker_Incendiary_Primary_Render.png"
     },
     {
+      "id": "primary.sg-451-cookout",
+      "slot": "primary",
+      "name": "SG-451 野炊",
+      "name_zh": "SG-451 野炊",
+      "name_en": "SG-451 Cookout",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-451_Cookout",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-451_Cookout",
+      "icon_file": "SG-451 Cookout Primary Render.png",
+      "icon_sha1": "a1febd9804c816186b38ed28562d793a303925a0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-451_Cookout_Primary_Render.png"
+    },
+    {
+      "id": "primary.sg-20-halt",
+      "slot": "primary",
+      "name": "SG-20 止息",
+      "name_zh": "SG-20 止息",
+      "name_en": "SG-20 Halt",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-20_Halt",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-20_Halt",
+      "icon_file": "SG-20 Halt Primary Render.png",
+      "icon_sha1": "baf7754d8c88a2a672cf8a76571d725d83402f48",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-20_Halt_Primary_Render.png"
+    },
+    {
+      "id": "primary.dbs-2-double-freedom",
+      "slot": "primary",
+      "name": "DBS-2 双重自由",
+      "name_zh": "DBS-2 双重自由",
+      "name_en": "DBS-2 Double Freedom",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/DBS-2_Double_Freedom",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/DBS-2_Double_Freedom",
+      "icon_file": "DBS-2 Shotgun Primary Render.png",
+      "icon_sha1": "fd2b05167e164f8bca95616cddffd242023430a4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:DBS-2_Shotgun_Primary_Render.png"
+    },
+    {
+      "id": "primary.m90a-shotgun",
+      "slot": "primary",
+      "name": "M90A 霰弹枪",
+      "name_zh": "M90A 霰弹枪",
+      "name_en": "M90A Shotgun",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M90A_Shotgun",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M90A_Shotgun",
+      "icon_file": "M90A Shotgun Primary Render.png",
+      "icon_sha1": "d8aadb4d7d3548af4fa7ffa4621594ff9b53d0b4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:M90A_Shotgun_Primary_Render.png"
+    },
+    {
+      "id": "primary.sg-97-sweeper",
+      "slot": "primary",
       "name": "SG-97 扫荡者",
-      "slot": "primary"
+      "name_zh": "SG-97 扫荡者",
+      "name_en": "SG-97 Sweeper",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-97_Sweeper",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-97_Sweeper",
+      "icon_file": "SG-97 Shotgun Primary Render.png",
+      "icon_sha1": "255318354e890480b87eb5929a25feb68b3cd715",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-97_Shotgun_Primary_Render.png"
     },
     {
-      "name": "CB-9 爆燃弩",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.r-36-eruptor",
+      "slot": "primary",
       "name": "R-36 爆裂铳",
-      "slot": "primary"
+      "name_zh": "R-36 爆裂铳",
+      "name_en": "R-36 Eruptor",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R-36_Eruptor",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R-36_Eruptor",
+      "icon_file": "R-36 Eruptor Primary Render.png",
+      "icon_sha1": "2c6f6636edca4209ee6ec79424f3a7adf0121883",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-36_Eruptor_Primary_Render.png"
     },
     {
-      "name": "SG-8P 等离子“制裁者”",
-      "slot": "primary"
+      "id": "primary.cb-9-exploding-crossbow",
+      "slot": "primary",
+      "name": "CB-9 爆燃弩",
+      "name_zh": "CB-9 爆燃弩",
+      "name_en": "CB-9 Exploding Crossbow",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CB-9_Exploding_Crossbow",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CB-9_Exploding_Crossbow",
+      "icon_file": "CB-9 Exploding Crossbow Primary Render.png",
+      "icon_sha1": "01aa01fe987953196a4dd007431ba757ff7def2c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:CB-9_Exploding_Crossbow_Primary_Render.png"
     },
     {
-      "name": "PLAS-39 加速步枪",
-      "slot": "primary"
+      "id": "primary.gl-15-evictor",
+      "slot": "primary",
+      "name": "GL-15 驱逐者",
+      "name_zh": "GL-15 驱逐者",
+      "name_en": "GL-15 Evictor",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/GL-15_Evictor",
+      "icon_file": "GL-15 Evictor Primary Render.png",
+      "icon_sha1": "e6b57306103c6db8360a9fd4849805eb7079b17f",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:GL-15_Evictor_Primary_Render.png"
     },
     {
-      "name": "ARC-12 雷霆",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.las-5-scythe",
+      "slot": "primary",
       "name": "LAS-5 长柄镰",
-      "slot": "primary"
+      "name_zh": "LAS-5 长柄镰",
+      "name_en": "LAS-5 Scythe",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-5_Scythe",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-5_Scythe",
+      "icon_file": "LAS-5 Scythe Primary Render.png",
+      "icon_sha1": "fd3c7d289ec47c85299aa80b8c2fa2fbbca84f8a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:LAS-5_Scythe_Primary_Render.png"
     },
     {
-      "name": "LAS-16 镰刀",
-      "slot": "primary"
-    },
-    {
-      "name": "LAS-17 双刃镰刀",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.plas-1-scorcher",
+      "slot": "primary",
       "name": "PLAS-1 焦土",
-      "slot": "primary"
+      "name_zh": "PLAS-1 焦土",
+      "name_en": "PLAS-1 Scorcher",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/PLAS-1_Scorcher",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/PLAS-1_Scorcher",
+      "icon_file": "PLAS-1 Scorcher Primary Render.png",
+      "icon_sha1": "7327083e7322d8fc3d8685e1243ce7e60e8c1984",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:PLAS-1_Scorcher_Primary_Render.png"
     },
     {
+      "id": "primary.las-16-sickle",
+      "slot": "primary",
+      "name": "LAS-16 镰刀",
+      "name_zh": "LAS-16 镰刀",
+      "name_en": "LAS-16 Sickle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-16_Sickle",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-16_Sickle",
+      "icon_file": "LAS-16 Sickle Primary Render.png",
+      "icon_sha1": "43d245220de6fce35216e7a8eabca4d7fb7d9bb5",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:LAS-16_Sickle_Primary_Render.png"
+    },
+    {
+      "id": "primary.sg-8p-punisher-plasma",
+      "slot": "primary",
+      "name": "SG-8P 等离子“制裁者”",
+      "name_zh": "SG-8P 等离子“制裁者”",
+      "name_en": "SG-8P Punisher Plasma",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-8P_Punisher_Plasma",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-8P_Punisher_Plasma",
+      "icon_file": "SG-8P Punisher Plasma Primary Render.png",
+      "icon_sha1": "1c38be9599363d5c49ad295a4e236c66e0454f06",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-8P_Punisher_Plasma_Primary_Render.png"
+    },
+    {
+      "id": "primary.arc-12-blitzer",
+      "slot": "primary",
+      "name": "ARC-12 雷霆",
+      "name_zh": "ARC-12 雷霆",
+      "name_en": "ARC-12 Blitzer",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/ARC-12_Blitzer",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/ARC-12_Blitzer",
+      "icon_file": "ARC-12 Blitzer Primary Render.png",
+      "icon_sha1": "acfea415423560bf600d65182b706e715d4992d8",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:ARC-12_Blitzer_Primary_Render.png"
+    },
+    {
+      "id": "primary.plas-101-purifier",
+      "slot": "primary",
       "name": "PLAS-101 净化者",
-      "slot": "primary"
+      "name_zh": "PLAS-101 净化者",
+      "name_en": "PLAS-101 Purifier",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/PLAS-101_Purifier",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/PLAS-101_Purifier",
+      "icon_file": "PLAS-101 Purifier Primary Render.png",
+      "icon_sha1": "c0889604217994f474181bed36ee9a0b25c574d0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:PLAS-101_Purifier_Primary_Render.png"
     },
     {
+      "id": "primary.plas-39-accelerator-rifle",
+      "slot": "primary",
+      "name": "PLAS-39 加速步枪",
+      "name_zh": "PLAS-39 加速步枪",
+      "name_en": "PLAS-39 Accelerator Rifle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/PLAS-39_Accelerator_Rifle",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/PLAS-39_Accelerator_Rifle",
+      "icon_file": "PLAS-39 Accelerator Rifle Primary Render.png",
+      "icon_sha1": "a8ff98632a1d511193aa49123021d18c548fcc98",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:PLAS-39_Accelerator_Rifle_Primary_Render.png"
+    },
+    {
+      "id": "primary.las-17-double-edge-sickle",
+      "slot": "primary",
+      "name": "LAS-17 双刃镰刀",
+      "name_zh": "LAS-17 双刃镰刀",
+      "name_en": "LAS-17 Double-Edge Sickle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-17_Double-Edge_Sickle",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-17_Double-Edge_Sickle",
+      "icon_file": "LAS-17 Double-Edge Sickle Primary Render.png",
+      "icon_sha1": "c64fae9be1f71e81348ac986803da4b3b130ccc4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:LAS-17_Double-Edge_Sickle_Primary_Render.png"
+    },
+    {
+      "id": "primary.las-13-trident",
+      "slot": "primary",
       "name": "LAS-13 三叉戟",
-      "slot": "primary"
+      "name_zh": "LAS-13 三叉戟",
+      "name_en": "LAS-13 Trident",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-13_Trident",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-13_Trident",
+      "icon_file": "LAS-13 Trident Primary Render.png",
+      "icon_sha1": "615ace12b45e00d7349cba5aac73886d3c277330",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:LAS-13_Trident_Primary_Render.png"
     },
     {
+      "id": "primary.r-40-k-hot-shot-marksman-rifle",
+      "slot": "primary",
       "name": "R/40-K 高能精确射手步枪",
-      "slot": "primary"
+      "name_zh": "R/40-K 高能精确射手步枪",
+      "name_en": "R/40-K Hot-Shot Marksman Rifle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/R/40-K_Hot-Shot_Marksman_Rifle",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/R/40-K_Hot-Shot_Marksman_Rifle",
+      "icon_file": "R-40-K Hot-Shot Primary Render.png",
+      "icon_sha1": "b312a555f15999c46a8a23640ff34f0231d7e3df",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:R-40-K_Hot-Shot_Primary_Render.png"
     },
     {
-      "name": "VG-70 变数",
-      "slot": "primary"
+      "id": "primary.las-12-sai",
+      "slot": "primary",
+      "name": "LAS-12 铁尺",
+      "name_zh": "LAS-12 铁尺",
+      "name_en": "LAS-12 Sai",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-12_Sai",
+      "icon_file": "LAS-12 Sai Primary Render.png",
+      "icon_sha1": "c4a072338e9a52aee413f9e8a40670d537f70fd4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:LAS-12_Sai_Primary_Render.png"
     },
     {
-      "name": "FLAM-66 火炬手",
-      "slot": "primary"
-    },
-    {
+      "id": "primary.jar-5-dominator",
+      "slot": "primary",
       "name": "JAR-5 主宰",
-      "slot": "primary"
+      "name_zh": "JAR-5 主宰",
+      "name_en": "JAR-5 Dominator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/JAR-5_Dominator",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/JAR-5_Dominator",
+      "icon_file": "JAR-5 Dominator Primary Render.png",
+      "icon_sha1": "81a672c8cf78c6f78a2767e2eed86db11ff794b8",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:JAR-5_Dominator_Primary_Render.png"
     },
     {
-      "name": "AR-11 Arbitrator",
-      "slot": "primary"
+      "id": "primary.flam-66-torcher",
+      "slot": "primary",
+      "name": "FLAM-66 火炬手",
+      "name_zh": "FLAM-66 火炬手",
+      "name_en": "FLAM-66 Torcher",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/FLAM-66_Torcher",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/FLAM-66_Torcher",
+      "icon_file": "FLAM-66 Torcher Primary Render.png",
+      "icon_sha1": "e719cd56707c2fdf1af28b548bedd8adb7d7ff5c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:FLAM-66_Torcher_Primary_Render.png"
     },
     {
-      "name": "GL-15 Evictor",
-      "slot": "primary"
+      "id": "primary.vg-70-variable",
+      "slot": "primary",
+      "name": "VG-70 变数",
+      "name_zh": "VG-70 变数",
+      "name_en": "VG-70 Variable",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/VG-70_Variable",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/VG-70_Variable",
+      "icon_file": "VG-70 Variable Primary Render.png",
+      "icon_sha1": "8e909cbb9341df7ae0a8855e9b7b3a0071c1eaaf",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:VG-70_Variable_Primary_Render.png"
     },
     {
-      "name": "LAS-12 Sai",
-      "slot": "primary"
-    },
-    {
+      "id": "secondary.p-2-peacemaker",
+      "slot": "secondary",
       "name": "P-2 和平制造者",
-      "slot": "secondary"
+      "name_zh": "P-2 和平制造者",
+      "name_en": "P-2 Peacemaker",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-2_Peacemaker",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-2_Peacemaker",
+      "icon_file": "P-2 Peacemaker Secondary Render.png",
+      "icon_sha1": "946d179d0ef1712514e6872219ca76dcb77464f3",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-2_Peacemaker_Secondary_Render.png"
     },
     {
+      "id": "secondary.p-19-redeemer",
+      "slot": "secondary",
       "name": "P-19 救世主",
-      "slot": "secondary"
+      "name_zh": "P-19 救世主",
+      "name_en": "P-19 Redeemer",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-19_Redeemer",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-19_Redeemer",
+      "icon_file": "P-19 Redeemer Secondary Render.png",
+      "icon_sha1": "cf120533f16e3a62c8d56a4003d279398b13f046",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-19_Redeemer_Secondary_Render.png"
     },
     {
+      "id": "secondary.p-4-senator",
+      "slot": "secondary",
       "name": "P-4 参议员",
-      "slot": "secondary"
+      "name_zh": "P-4 参议员",
+      "name_en": "P-4 Senator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-4_Senator",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-4_Senator",
+      "icon_file": "P-4 Senator Secondary Render.png",
+      "icon_sha1": "34d42a61afa5b9bbc9e4fd54b40cd5784d754e56",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-4_Senator_Secondary_Render.png"
     },
     {
+      "id": "secondary.p-113-verdict",
+      "slot": "secondary",
       "name": "P-113 裁决",
-      "slot": "secondary"
+      "name_zh": "P-113 裁决",
+      "name_en": "P-113 Verdict",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-113_Verdict",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-113_Verdict",
+      "icon_file": "P-113 Verdict Secondary Render.png",
+      "icon_sha1": "2bc2c604bf4ec37ed51fc422005ae3c74efbcdc6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-113_Verdict_Secondary_Render.png"
     },
     {
+      "id": "secondary.p-92-warrant",
+      "slot": "secondary",
       "name": "P-92 法令",
-      "slot": "secondary"
+      "name_zh": "P-92 法令",
+      "name_en": "P-92 Warrant",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-92_Warrant",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-92_Warrant",
+      "icon_file": "P-92 Warrant Secondary Render.png",
+      "icon_sha1": "ac350bd8848fa89c40f5a5179014042000d22aa5",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-92_Warrant_Secondary_Render.png"
     },
     {
+      "id": "secondary.m6c-socom-pistol",
+      "slot": "secondary",
       "name": "M6C/特种作战 手枪",
-      "slot": "secondary"
+      "name_zh": "M6C/特种作战 手枪",
+      "name_en": "M6C/SOCOM Pistol",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M6C/SOCOM_Pistol",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M6C/SOCOM_Pistol",
+      "icon_file": "M6C-SOCOM Pistol Secondary Render.png",
+      "icon_sha1": "82f58b044d0ed93fb6dcf7bc8314cfe393b4a0ad",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:M6C-SOCOM_Pistol_Secondary_Render.png"
     },
     {
+      "id": "secondary.p-69-veto",
+      "slot": "secondary",
       "name": "P-69 否决者",
-      "slot": "secondary"
+      "name_zh": "P-69 否决者",
+      "name_en": "P-69 Veto",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-69_Veto",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-69_Veto",
+      "icon_file": "P-69 Veto Secondary Render.png",
+      "icon_sha1": "3983fe3b875675e136ad73dbf4456fbeafa9a28a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-69_Veto_Secondary_Render.png"
     },
     {
+      "id": "secondary.cqc-19-stun-lance",
+      "slot": "secondary",
       "name": "CQC-19 眩晕长矛",
-      "slot": "secondary"
+      "name_zh": "CQC-19 眩晕长矛",
+      "name_en": "CQC-19 Stun Lance",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-19_Stun_Lance",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-19_Stun_Lance",
+      "icon_file": "CQC-19 Stun Lance Secondary Render.png",
+      "icon_sha1": "9a97090d07a9c39d48af7b20c9646ee2029aa9c4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:CQC-19_Stun_Lance_Secondary_Render.png"
     },
     {
-      "name": "CQC-2 军刀",
-      "slot": "secondary"
-    },
-    {
+      "id": "secondary.cqc-30-stun-baton",
+      "slot": "secondary",
       "name": "CQC-30 眩晕短棍",
-      "slot": "secondary"
+      "name_zh": "CQC-30 眩晕短棍",
+      "name_en": "CQC-30 Stun Baton",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-30_Stun_Baton",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-30_Stun_Baton",
+      "icon_file": "CQC-30 Stun Baton Secondary Render.png",
+      "icon_sha1": "5b701fb3ff1eff6b8e5380d54a7410f0c4a153dd",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:CQC-30_Stun_Baton_Secondary_Render.png"
     },
     {
+      "id": "secondary.cqc-5-combat-hatchet",
+      "slot": "secondary",
       "name": "CQC-5 战斗短柄斧",
-      "slot": "secondary"
+      "name_zh": "CQC-5 战斗短柄斧",
+      "name_en": "CQC-5 Combat Hatchet",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-5_Combat_Hatchet",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-5_Combat_Hatchet",
+      "icon_file": "CQC-5 Combat Hatchet Secondary Render.png",
+      "icon_sha1": "eb83de88b50d345c0f8ec6dfdfc638918f5b9964",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:CQC-5_Combat_Hatchet_Secondary_Render.png"
     },
     {
-      "name": "CQC-73 堑壕工具",
-      "slot": "secondary"
+      "id": "secondary.cqc-2-saber",
+      "slot": "secondary",
+      "name": "CQC-2 军刀",
+      "name_zh": "CQC-2 军刀",
+      "name_en": "CQC-2 Saber",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-2_Saber",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-2_Saber",
+      "icon_file": "CQC-2 Saber Secondary Render.png",
+      "icon_sha1": "459c5b3b1bd2219abf4547e31bcd6ed454cfa58b",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:CQC-2_Saber_Secondary_Render.png"
     },
     {
+      "id": "secondary.cqc-42-machete",
+      "slot": "secondary",
       "name": "CQC-42 砍刀",
-      "slot": "secondary"
+      "name_zh": "CQC-42 砍刀",
+      "name_en": "CQC-42 Machete",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-42_Machete",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-42_Machete",
+      "icon_file": "CQC-42 Machete Secondary Render.png",
+      "icon_sha1": "025973ab92484bae15861e6e1710da554672da6b",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:CQC-42_Machete_Secondary_Render.png"
     },
     {
-      "name": "P-11 治疗剂手枪",
-      "slot": "secondary"
+      "id": "secondary.cqc-73-entrenchment-tool",
+      "slot": "secondary",
+      "name": "CQC-73 堑壕工具",
+      "name_zh": "CQC-73 堑壕工具",
+      "name_en": "CQC-73 Entrenchment Tool",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-73_Entrenchment_Tool",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-73_Entrenchment_Tool",
+      "icon_file": "CQC-73 Entrenchment Tool Secondary Render.png",
+      "icon_sha1": "349204be8689902aa8df8bed9ad8cf0ad6b34ca5",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:CQC-73_Entrenchment_Tool_Secondary_Render.png"
     },
     {
-      "name": "SG-22 游击兵",
-      "slot": "secondary"
-    },
-    {
-      "name": "LAS-58 猛爪",
-      "slot": "secondary"
-    },
-    {
-      "name": "P-72 迅击",
-      "slot": "secondary"
-    },
-    {
-      "name": "GP-31 榴弹手枪",
-      "slot": "secondary"
-    },
-    {
+      "id": "secondary.las-7-dagger",
+      "slot": "secondary",
       "name": "LAS-7 匕首",
-      "slot": "secondary"
+      "name_zh": "LAS-7 匕首",
+      "name_en": "LAS-7 Dagger",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-7_Dagger",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-7_Dagger",
+      "icon_file": "LAS-7 Dagger Secondary Render.png",
+      "icon_sha1": "bcfb598a3b4345141ef0cf2ed96b63e8ba5cd850",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:LAS-7_Dagger_Secondary_Render.png"
     },
     {
-      "name": "GP-20 最后通牒",
-      "slot": "secondary"
+      "id": "secondary.gp-31-grenade-pistol",
+      "slot": "secondary",
+      "name": "GP-31 榴弹手枪",
+      "name_zh": "GP-31 榴弹手枪",
+      "name_en": "GP-31 Grenade Pistol",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/GP-31_Grenade_Pistol",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/GP-31_Grenade_Pistol",
+      "icon_file": "GP-31 Grenade Pistol Secondary Render.png",
+      "icon_sha1": "4f6aba84f5d346fef2c8c27aa859ac128bd5e719",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:GP-31_Grenade_Pistol_Secondary_Render.png"
     },
     {
+      "id": "secondary.sg-22-bushwhacker",
+      "slot": "secondary",
+      "name": "SG-22 游击兵",
+      "name_zh": "SG-22 游击兵",
+      "name_en": "SG-22 Bushwhacker",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SG-22_Bushwhacker",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SG-22_Bushwhacker",
+      "icon_file": "SG-22 Bushwhacker Secondary Render.png",
+      "icon_sha1": "96bab5d6369b829d1ff8ce2e44a757a781361ff6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:SG-22_Bushwhacker_Secondary_Render.png"
+    },
+    {
+      "id": "secondary.p-72-crisper",
+      "slot": "secondary",
+      "name": "P-72 迅击",
+      "name_zh": "P-72 迅击",
+      "name_en": "P-72 Crisper",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-72_Crisper",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-72_Crisper",
+      "icon_file": "P-72 Crisper Secondary Render.png",
+      "icon_sha1": "8490084dd6136cc64a22f685d6603400f6d9e96e",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-72_Crisper_Secondary_Render.png"
+    },
+    {
+      "id": "secondary.p-11-stim-pistol",
+      "slot": "secondary",
+      "name": "P-11 治疗剂手枪",
+      "name_zh": "P-11 治疗剂手枪",
+      "name_en": "P-11 Stim Pistol",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-11_Stim_Pistol",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-11_Stim_Pistol",
+      "icon_file": "P-11 Stim Pistol Secondary Render.png",
+      "icon_sha1": "9d252ecc735e35e984f883b03cb125db1ffc59a9",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-11_Stim_Pistol_Secondary_Render.png"
+    },
+    {
+      "id": "secondary.plas-15-loyalist",
+      "slot": "secondary",
       "name": "PLAS-15 忠诚者",
-      "slot": "secondary"
+      "name_zh": "PLAS-15 忠诚者",
+      "name_en": "PLAS-15 Loyalist",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/PLAS-15_Loyalist",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/PLAS-15_Loyalist",
+      "icon_file": "PLAS-15 Loyalist Secondary Render.png",
+      "icon_sha1": "fd5d4ba45c7fa9a70422c8208cc165c3bdb914e8",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:PLAS-15_Loyalist_Secondary_Render.png"
     },
     {
+      "id": "secondary.gp-20-ultimatum",
+      "slot": "secondary",
+      "name": "GP-20 最后通牒",
+      "name_zh": "GP-20 最后通牒",
+      "name_en": "GP-20 Ultimatum",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/GP-20_Ultimatum",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/GP-20_Ultimatum",
+      "icon_file": "GP-20 Ultimatum Secondary Render.png",
+      "icon_sha1": "3d51dc8d14a64fbea815ebcf52e6bacaf739a8ac",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:GP-20_Ultimatum_Secondary_Render.png"
+    },
+    {
+      "id": "secondary.las-58-talon",
+      "slot": "secondary",
+      "name": "LAS-58 猛爪",
+      "name_zh": "LAS-58 猛爪",
+      "name_en": "LAS-58 Talon",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-58_Talon",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-58_Talon",
+      "icon_file": "LAS-58 Talon Secondary Render.png",
+      "icon_sha1": "8621df14b577f7e6b97b0edc2ae79bdffc4ebc48",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:LAS-58_Talon_Secondary_Render.png"
+    },
+    {
+      "id": "secondary.p-35-re-educator",
+      "slot": "secondary",
       "name": "P-35 思想改造",
-      "slot": "secondary"
+      "name_zh": "P-35 思想改造",
+      "name_en": "P-35 Re-Educator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-35_Re-Educator",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-35_Re-Educator",
+      "icon_file": "P-35 Re-Educator Secondary Render.png",
+      "icon_sha1": "9ac5c7f6420a865aa45645b0c5e3f520df37d63a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-35_Re-Educator_Secondary_Render.png"
     },
     {
+      "id": "secondary.p-33-missile-pistol",
+      "slot": "secondary",
       "name": "P-33 制导手枪",
-      "slot": "secondary"
+      "name_zh": "P-33 制导手枪",
+      "name_en": "P-33 Missile Pistol",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P-33_Missile_Pistol",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-33_Missile_Pistol",
+      "icon_file": "P-33 Missile Pistol Secondary Render.png",
+      "icon_sha1": "a1e58d53f9dba9e7e7d31a7ba18a0dfb267b79f3",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-33_Missile_Pistol_Secondary_Render.png"
     },
     {
+      "id": "secondary.p-40-k-bolt-pistol",
+      "slot": "secondary",
       "name": "P/40-K 爆弹手枪",
-      "slot": "secondary"
+      "name_zh": "P/40-K 爆弹手枪",
+      "name_en": "P/40-K Bolt Pistol",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/P/40-K_Bolt_Pistol",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P/40-K_Bolt_Pistol",
+      "icon_file": "P-40-K Bolt Pistol Secondary Render.png",
+      "icon_sha1": "b09f63521849df8a91c8dc6364a2a2bed5573c7d",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-40-K_Bolt_Pistol_Secondary_Render.png"
     },
     {
-      "name": "P-34 Breacher",
-      "slot": "secondary"
+      "id": "secondary.p-34-breacher",
+      "slot": "secondary",
+      "name": "P-34 破门者",
+      "name_zh": "P-34 破门者",
+      "name_en": "P-34 Breacher",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/P-34_Breacher",
+      "icon_file": "P-34 Breacher Secondary Render.png",
+      "icon_sha1": "882b5b1f7fe0e2eed6bb351aeccd6961a36c16d5",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:P-34_Breacher_Secondary_Render.png"
     },
     {
-      "name": "TED-63 炸药",
-      "slot": "grenade"
-    },
-    {
-      "name": "G-6 破片弹",
-      "slot": "grenade"
-    },
-    {
+      "id": "grenade.g-12-high-explosive",
+      "slot": "grenade",
       "name": "G-12 高爆弹",
-      "slot": "grenade"
+      "name_zh": "G-12 高爆弹",
+      "name_en": "G-12 High Explosive",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-12_High_Explosive",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-12_High_Explosive",
+      "icon_file": "G-12 High Explosive Throwable Render.png",
+      "icon_sha1": "5b30493a684d1430c49a26572c444f0daaa4b3a9",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-12_High_Explosive_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-6-frag",
+      "slot": "grenade",
+      "name": "G-6 破片弹",
+      "name_zh": "G-6 破片弹",
+      "name_en": "G-6 Frag",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-6_Frag",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-6_Frag",
+      "icon_file": "G-6 Frag Throwable Render.png",
+      "icon_sha1": "3a5ba5ed5fc618d245d60fe75e59eb61576577fe",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-6_Frag_Throwable_Render.png"
+    },
+    {
+      "id": "grenade.g-10-incendiary",
+      "slot": "grenade",
       "name": "G-10 燃烧弹",
-      "slot": "grenade"
+      "name_zh": "G-10 燃烧弹",
+      "name_en": "G-10 Incendiary",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-10_Incendiary",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-10_Incendiary",
+      "icon_file": "G-10 Incendiary Throwable Render.png",
+      "icon_sha1": "fa03cb072e69e25cf8922774290a12a93dbe36f0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-10_Incendiary_Throwable_Render.png"
     },
     {
+      "id": "grenade.ted-63-dynamite",
+      "slot": "grenade",
+      "name": "TED-63 炸药",
+      "name_zh": "TED-63 炸药",
+      "name_en": "TED-63 Dynamite",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/TED-63_Dynamite",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/TED-63_Dynamite",
+      "icon_file": "TED-63 Dynamite Throwable Render.png",
+      "icon_sha1": "e607be06b4a1fe417c4a9a8570cafc91e5de8576",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:TED-63_Dynamite_Throwable_Render.png"
+    },
+    {
+      "id": "grenade.g-7-pineapple",
+      "slot": "grenade",
       "name": "G-7 菠萝",
-      "slot": "grenade"
+      "name_zh": "G-7 菠萝",
+      "name_en": "G-7 Pineapple",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-7_Pineapple",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-7_Pineapple",
+      "icon_file": "G-7 Pineapple Throwable Render.png",
+      "icon_sha1": "c70d05688991b621a6579c6de1f09a8a03732774",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-7_Pineapple_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-16-impact",
+      "slot": "grenade",
       "name": "G-16 冲击弹",
-      "slot": "grenade"
+      "name_zh": "G-16 冲击弹",
+      "name_en": "G-16 Impact",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-16_Impact",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-16_Impact",
+      "icon_file": "G-16 Impact Throwable Render.png",
+      "icon_sha1": "6e6bc3febe39fd9d48275e35981e623d19ffe0bb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-16_Impact_Throwable_Render.png"
     },
     {
-      "name": "G-13 燃烧冲击弹",
-      "slot": "grenade"
-    },
-    {
-      "name": "G-23 眩晕弹",
-      "slot": "grenade"
-    },
-    {
-      "name": "G-4 毒气榴弹",
-      "slot": "grenade"
-    },
-    {
-      "name": "G-50 寻踪者",
-      "slot": "grenade"
-    },
-    {
+      "id": "grenade.g-3-smoke",
+      "slot": "grenade",
       "name": "G-3 烟雾弹",
-      "slot": "grenade"
+      "name_zh": "G-3 烟雾弹",
+      "name_en": "G-3 Smoke",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-3_Smoke",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-3_Smoke",
+      "icon_file": "G-3 Smoke Throwable Render.png",
+      "icon_sha1": "4ff7f7b4cb33f9bfdf7766d2f91f7ee92f821bed",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-3_Smoke_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-23-stun",
+      "slot": "grenade",
+      "name": "G-23 眩晕弹",
+      "name_zh": "G-23 眩晕弹",
+      "name_en": "G-23 Stun",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-23_Stun",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-23_Stun",
+      "icon_file": "G-23 Stun Throwable Render.png",
+      "icon_sha1": "674d411f6b6f50384f922d23ccd35932f07f8011",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-23_Stun_Throwable_Render.png"
+    },
+    {
+      "id": "grenade.g-123-thermite",
+      "slot": "grenade",
       "name": "G-123 铝热弹",
-      "slot": "grenade"
+      "name_zh": "G-123 铝热弹",
+      "name_en": "G-123 Thermite",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-123_Thermite",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-123_Thermite",
+      "icon_file": "G-123 Thermite Throwable Render.png",
+      "icon_sha1": "1dc4e182a99875bc3402d955d5098f505db07e5a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-123_Thermite_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-13-incendiary-impact",
+      "slot": "grenade",
+      "name": "G-13 燃烧冲击弹",
+      "name_zh": "G-13 燃烧冲击弹",
+      "name_en": "G-13 Incendiary Impact",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-13_Incendiary_Impact",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-13_Incendiary_Impact",
+      "icon_file": "G-13 Incendiary Impact Throwable Render.png",
+      "icon_sha1": "103c4a4ca556f6ad031dd1ef7a852f9f28c6e718",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-13_Incendiary_Impact_Throwable_Render.png"
+    },
+    {
+      "id": "grenade.k-2-throwing-knife",
+      "slot": "grenade",
       "name": "K-2 飞刀",
-      "slot": "grenade"
+      "name_zh": "K-2 飞刀",
+      "name_en": "K-2 Throwing Knife",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/K-2_Throwing_Knife",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/K-2_Throwing_Knife",
+      "icon_file": "K-2 Throwing Knife Throwable Render.png",
+      "icon_sha1": "4b7c6a7721fa342878571d36170a24b34a8c0bc4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:K-2_Throwing_Knife_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-4-gas",
+      "slot": "grenade",
+      "name": "G-4 毒气榴弹",
+      "name_zh": "G-4 毒气榴弹",
+      "name_en": "G-4 Gas",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-4_Gas",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-4_Gas",
+      "icon_file": "G-4 Gas Throwable Render.png",
+      "icon_sha1": "5edf984269024402f6afa73d4db0948b9611e644",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-4_Gas_Throwable_Render.png"
+    },
+    {
+      "id": "grenade.g-50-seeker",
+      "slot": "grenade",
+      "name": "G-50 寻踪者",
+      "name_zh": "G-50 寻踪者",
+      "name_en": "G-50 Seeker",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-50_Seeker",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-50_Seeker",
+      "icon_file": "G-50 Seeker Throwable Render.png",
+      "icon_sha1": "1eba1768ccaaf9133c2a16c487d1c895a2597628",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-50_Seeker_Throwable_Render.png"
+    },
+    {
+      "id": "grenade.g-142-pyrotech",
+      "slot": "grenade",
       "name": "G-142 烟花术",
-      "slot": "grenade"
+      "name_zh": "G-142 烟花术",
+      "name_en": "G-142 Pyrotech",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-142_Pyrotech",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-142_Pyrotech",
+      "icon_file": "G-142 Pyrotech Throwable Render.png",
+      "icon_sha1": "d77fbb0ec8c063773f06fc2862c23cc2a054c3f4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-142_Pyrotech_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-109-urchin",
+      "slot": "grenade",
       "name": "G-109 海胆",
-      "slot": "grenade"
+      "name_zh": "G-109 海胆",
+      "name_en": "G-109 Urchin",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-109_Urchin",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-109_Urchin",
+      "icon_file": "G-109 Urchin Throwable Render.png",
+      "icon_sha1": "6556aef78474d8e7ae4a0dd56af14bb16e89f233",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-109_Urchin_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-31-arc",
+      "slot": "grenade",
       "name": "G-31 电弧",
-      "slot": "grenade"
+      "name_zh": "G-31 电弧",
+      "name_en": "G-31 Arc",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-31_Arc",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-31_Arc",
+      "icon_file": "G-31 ARC Throwable Render.png",
+      "icon_sha1": "3ad7a29048ec26c775e41882ed601ec1995fe42e",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-31_ARC_Throwable_Render.png"
     },
     {
+      "id": "grenade.tm-1-lure-mine",
+      "slot": "grenade",
       "name": "TM-1 诱饵地雷",
-      "slot": "grenade"
+      "name_zh": "TM-1 诱饵地雷",
+      "name_en": "TM-1 Lure Mine",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/TM-1_Lure_Mine",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/TM-1_Lure_Mine",
+      "icon_file": "TM-1 Lure Mine Throwable Render.png",
+      "icon_sha1": "42e6572ee8665761053bc9350a376b198ca74b9e",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:TM-1_Lure_Mine_Throwable_Render.png"
     },
     {
+      "id": "grenade.smokescreen",
+      "slot": "grenade",
       "name": "G-89 烟幕",
-      "slot": "grenade"
+      "name_zh": "G-89 烟幕",
+      "name_en": "G-89 Smokescreen",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Smokescreen",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Smokescreen",
+      "icon_file": "G-89 Smokescreen Throwable Render.png",
+      "icon_sha1": "bf4187ffa4796e51a71ea4f08f9722825d8dec48",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-89_Smokescreen_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-sh-39-shield",
+      "slot": "grenade",
       "name": "G/SH-39 盾雷",
-      "slot": "grenade"
+      "name_zh": "G/SH-39 盾雷",
+      "name_en": "G/SH-39 Shield",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G/SH-39_Shield",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G/SH-39_Shield",
+      "icon_file": "G-SH-39 Shield Throwable Render.png",
+      "icon_sha1": "1535108e21053ae718c4749aaef97edc64fa4d25",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-SH-39_Shield_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-48-giga-grenade",
+      "slot": "grenade",
       "name": "G-48 千兆",
-      "slot": "grenade"
+      "name_zh": "G-48 千兆",
+      "name_en": "G-48 Giga Grenade",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G-48_Giga_Grenade",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-48_Giga_Grenade",
+      "icon_file": "G-48 Giga Grenade Throwable Render.png",
+      "icon_sha1": "f00d38cb7a82f7240e6375f5f40674cd999513f0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-48_Giga_Grenade_Throwable_Render.png"
     },
     {
+      "id": "grenade.g-40-k-melta-mine",
+      "slot": "grenade",
       "name": "G/40-K 热熔地雷",
-      "slot": "grenade"
+      "name_zh": "G/40-K 热熔地雷",
+      "name_en": "G/40-K Melta Mine",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/G/40-K_Melta_Mine",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G/40-K_Melta_Mine",
+      "icon_file": "G-40-K Melta Mine Throwable Render.png",
+      "icon_sha1": "6bdf5e06200e6a47b079bdb41bc9e65a3939115e",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-40-K_Melta_Mine_Throwable_Render.png"
     },
     {
-      "name": "G-60 Anti-Tank Seeker",
-      "slot": "grenade"
+      "id": "grenade.g-8-immolation",
+      "slot": "grenade",
+      "name": "G-8 焚祭",
+      "name_zh": "G-8 焚祭",
+      "name_en": "G-8 Immolation",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-8_Immolation",
+      "icon_file": "G-8 Immolation Throwable Render.png",
+      "icon_sha1": "c464d5a25f9b55e0d4bbb15a53ebbe741c0f798a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-8_Immolation_Throwable_Render.png"
     },
     {
-      "name": "G-8 Immolation",
-      "slot": "grenade"
+      "id": "grenade.g-60-anti-tank-seeker",
+      "slot": "grenade",
+      "name": "G-60 反坦克寻踪者",
+      "name_zh": "G-60 反坦克寻踪者",
+      "name_en": "G-60 Anti-Tank Seeker",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/G-60_Anti-Tank_Seeker",
+      "icon_file": "G-60 Anti-Tank Seeker Throwable Render.png",
+      "icon_sha1": "9524425b8c44ce0ff871297c7d2c1fc429a7be15",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:G-60_Anti-Tank_Seeker_Throwable_Render.png"
     },
     {
+      "id": "booster.hellpod-space-optimization",
+      "slot": "booster",
       "name": "绝地喷射舱空间优化",
-      "slot": "booster"
+      "name_zh": "绝地喷射舱空间优化",
+      "name_en": "Hellpod Space Optimization",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Hellpod_Space_Optimization",
+      "icon_file": "Hellpod Space Optimization Booster Icon.svg",
+      "icon_sha1": "7aa15a19b534d4da7d4c510a302ccd32be213ade",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Hellpod_Space_Optimization_Booster_Icon.svg"
     },
     {
+      "id": "booster.vitality-enhancement",
+      "slot": "booster",
       "name": "生命强化",
-      "slot": "booster"
+      "name_zh": "生命强化",
+      "name_en": "Vitality Enhancement",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Vitality_Enhancement",
+      "icon_file": "Vitality Enhancement Booster Icon.svg",
+      "icon_sha1": "16b4400c5a3d13440550f3ef5ca449ad0c01fe78",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Vitality_Enhancement_Booster_Icon.svg"
     },
     {
+      "id": "booster.uav-recon-booster",
+      "slot": "booster",
       "name": "UAV侦察强化",
-      "slot": "booster"
+      "name_zh": "UAV侦察强化",
+      "name_en": "UAV Recon Booster",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/UAV_Recon_Booster",
+      "icon_file": "UAV Recon Booster Booster Icon.svg",
+      "icon_sha1": "ce1f67a3e065f4528165afd1e6ee6230a1fc7cf1",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:UAV_Recon_Booster_Booster_Icon.svg"
     },
     {
+      "id": "booster.stamina-enhancement",
+      "slot": "booster",
       "name": "耐力强化",
-      "slot": "booster"
+      "name_zh": "耐力强化",
+      "name_en": "Stamina Enhancement",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Stamina_Enhancement",
+      "icon_file": "Stamina Enhancement Booster Icon.svg",
+      "icon_sha1": "0f12c0f4d87f2da6fbea015ecade6dde6e59b7b6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Stamina_Enhancement_Booster_Icon.svg"
     },
     {
+      "id": "booster.muscle-enhancement",
+      "slot": "booster",
       "name": "肌肉强化",
-      "slot": "booster"
+      "name_zh": "肌肉强化",
+      "name_en": "Muscle Enhancement",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Muscle_Enhancement",
+      "icon_file": "Muscle Enhancement Booster Icon.svg",
+      "icon_sha1": "4a47f5a30356131df20530676c9c93d728fccbfd",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Muscle_Enhancement_Booster_Icon.svg"
     },
     {
+      "id": "booster.increased-reinforcement-budget",
+      "slot": "booster",
       "name": "提高增援预算",
-      "slot": "booster"
+      "name_zh": "提高增援预算",
+      "name_en": "Increased Reinforcement Budget",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Increased_Reinforcement_Budget",
+      "icon_file": "Increased Reinforcement Budget Booster Icon.svg",
+      "icon_sha1": "cb9eafe7d128b33634e6b28f40a919ea71c5eb57",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Increased_Reinforcement_Budget_Booster_Icon.svg"
     },
     {
+      "id": "booster.flexible-reinforcement-budget",
+      "slot": "booster",
       "name": "灵活增援预算",
-      "slot": "booster"
+      "name_zh": "灵活增援预算",
+      "name_en": "Flexible Reinforcement Budget",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Flexible_Reinforcement_Budget",
+      "icon_file": "Flexible Reinforcement Budget Booster Icon.svg",
+      "icon_sha1": "32cacfd7272e3da0b9f8248098330c6c993166bb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Flexible_Reinforcement_Budget_Booster_Icon.svg"
     },
     {
+      "id": "booster.localization-confusion",
+      "slot": "booster",
       "name": "定位混淆",
-      "slot": "booster"
+      "name_zh": "定位混淆",
+      "name_en": "Localization Confusion",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Localization_Confusion",
+      "icon_file": "Localization Confusion Booster Icon.svg",
+      "icon_sha1": "3b4fcb63ae97737858ff4e7aa0aad55f3718879b",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Localization_Confusion_Booster_Icon.svg"
     },
     {
+      "id": "booster.expert-extraction-pilot",
+      "slot": "booster",
       "name": "专业撤离飞行员",
-      "slot": "booster"
+      "name_zh": "专业撤离飞行员",
+      "name_en": "Expert Extraction Pilot",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Expert_Extraction_Pilot",
+      "icon_file": "Expert Extraction Pilot Booster Icon.svg",
+      "icon_sha1": "cd8ab76c42b9a0345b5d04d8098a727fe2722c83",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Expert_Extraction_Pilot_Booster_Icon.svg"
     },
     {
+      "id": "booster.motivational-shocks",
+      "slot": "booster",
       "name": "激励性冲击",
-      "slot": "booster"
+      "name_zh": "激励性冲击",
+      "name_en": "Motivational Shocks",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Motivational_Shocks",
+      "icon_file": "Motivational Shocks Booster Icon.svg",
+      "icon_sha1": "2bde361fb1244e39143eb255bdfcfce6ffc63b24",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Motivational_Shocks_Booster_Icon.svg"
     },
     {
+      "id": "booster.experimental-infusion",
+      "slot": "booster",
       "name": "实验性注射剂",
-      "slot": "booster"
+      "name_zh": "实验性注射剂",
+      "name_en": "Experimental Infusion",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Experimental_Infusion",
+      "icon_file": "Experimental Infusion Booster Icon.svg",
+      "icon_sha1": "0b953d85c9a4d3c6f82652a2269c585998665a96",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Experimental_Infusion_Booster_Icon.svg"
     },
     {
+      "id": "booster.firebomb-hellpods",
+      "slot": "booster",
       "name": "火焰喷射仓",
-      "slot": "booster"
+      "name_zh": "火焰喷射仓",
+      "name_en": "Firebomb Hellpods",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Firebomb_Hellpods",
+      "icon_file": "Firebomb Hellpods Booster Icon.svg",
+      "icon_sha1": "98993c5afea2681562e675cce18b55e232116af6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Firebomb_Hellpods_Booster_Icon.svg"
     },
     {
+      "id": "booster.dead-sprint",
+      "slot": "booster",
       "name": "死亡冲刺",
-      "slot": "booster"
+      "name_zh": "死亡冲刺",
+      "name_en": "Dead Sprint",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Dead_Sprint",
+      "icon_file": "Dead Sprint Booster Icon.svg",
+      "icon_sha1": "7fe9b8d11d2614180c7639101700d2220ffc1338",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Dead_Sprint_Booster_Icon.svg"
     },
     {
+      "id": "booster.armed-resupply-pods",
+      "slot": "booster",
       "name": "武装补给仓",
-      "slot": "booster"
+      "name_zh": "武装补给仓",
+      "name_en": "Armed Resupply Pods",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Armed_Resupply_Pods",
+      "icon_file": "Armed Resupply Pods Booster Icon.svg",
+      "icon_sha1": "34d6c9b236c1454130e7c53bcf234c4d9f500ead",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Armed_Resupply_Pods_Booster_Icon.svg"
     },
     {
+      "id": "booster.sample-extricator",
+      "slot": "booster",
       "name": "样本拯救者",
-      "slot": "booster"
+      "name_zh": "样本拯救者",
+      "name_en": "Sample Extricator",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Sample_Extricator",
+      "icon_file": "Sample Extricator Booster Icon.svg",
+      "icon_sha1": "39ba8b812573315db686047a0ee4fd59105f80da",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Sample_Extricator_Booster_Icon.svg"
     },
     {
+      "id": "booster.sample-scanner",
+      "slot": "booster",
       "name": "样本扫描仪",
-      "slot": "booster"
+      "name_zh": "样本扫描仪",
+      "name_en": "Sample Scanner",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Sample_Scanner",
+      "icon_file": "Sample Scanner Booster Icon.svg",
+      "icon_sha1": "71d8c8ccea91ef02f278ade76d6da9fc8330381c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Sample_Scanner_Booster_Icon.svg"
     },
     {
+      "id": "booster.stun-pods",
+      "slot": "booster",
       "name": "眩晕喷射仓",
-      "slot": "booster"
+      "name_zh": "眩晕喷射仓",
+      "name_en": "Stun Pods",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Stun_Pods",
+      "icon_file": "Stun Pods Booster Icon.svg",
+      "icon_sha1": "60fda52cabffff2d95319df16a7885aee59946bb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Stun_Pods_Booster_Icon.svg"
     },
     {
+      "id": "booster.concealed-insertion",
+      "slot": "booster",
       "name": "隐蔽上阵",
-      "slot": "booster"
-    },
-    {
-      "name": "Surplus EAT Allocation",
-      "slot": "booster"
-    },
-    {
-      "name": "Integrated Extinguishers",
-      "slot": "booster"
-    },
-    {
-      "name": "40-K 热熔枪",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/AC-8 自动哨戒炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/ARC-3 特斯拉塔",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/FLAM-40 火焰喷射哨戒炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/G-16 加特林哨戒炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/GM-17 Gas Mortar Sentry",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/LAS-98 激光哨戒炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/M-12 迫击哨戒炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/M-23 电磁冲击波迫击哨戒炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/MG-43 哨戒机枪",
-      "slot": "stratagem"
-    },
-    {
-      "name": "A/MLS-4X 火箭哨戒炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "AC-8机炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "APW-1 反器材步枪",
-      "slot": "stratagem"
-    },
-    {
-      "name": "ARC-3 电弧发射器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "AX/AR-23 “护卫犬”",
-      "slot": "stratagem"
-    },
-    {
-      "name": "AX/ARC-3 “护卫犬”K-9",
-      "slot": "stratagem"
-    },
-    {
-      "name": "热狗",
-      "slot": "stratagem"
-    },
-    {
-      "name": "AX/LAS-5 “护卫犬”漫游者",
-      "slot": "stratagem"
-    },
-    {
-      "name": "AX/TX-13“护卫犬”腐息",
-      "slot": "stratagem"
-    },
-    {
-      "name": "B-1 补给背包",
-      "slot": "stratagem"
-    },
-    {
-      "name": "B-100 便携式地狱火炸弹",
-      "slot": "stratagem"
-    },
-    {
-      "name": "B/FLAM-80 焚燃者",
-      "slot": "stratagem"
-    },
-    {
-      "name": "B/MD C4背包",
-      "slot": "stratagem"
-    },
-    {
-      "name": "CQC-1 唯一真旗",
-      "slot": "stratagem"
-    },
-    {
-      "name": "CQC-20 破门锤",
-      "slot": "stratagem"
-    },
-    {
-      "name": "CQC-9 除叶工具",
-      "slot": "stratagem"
-    },
-    {
-      "name": "E/AT-12 反坦克炮台",
-      "slot": "stratagem"
-    },
-    {
-      "name": "E/GL-21 掷弹兵防卫墙",
-      "slot": "stratagem"
-    },
-    {
-      "name": "E/MG-101 重机枪部署支架",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”110MM火箭巢",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”500KG炸弹",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”空袭",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”集束炸弹",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”毒气空袭",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”凝固汽油弹空袭",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”烟雾攻击",
-      "slot": "stratagem"
-    },
-    {
-      "name": "“飞鹰”机枪扫射",
-      "slot": "stratagem"
-    },
-    {
-      "name": "EAT-17 消耗性反坦克武器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "EAT-411 荡平者",
-      "slot": "stratagem"
-    },
-    {
-      "name": "EAT-700 消耗性凝固汽油弹",
-      "slot": "stratagem"
-    },
-    {
-      "name": "EXO-45 “爱国者”外骨骼装甲",
-      "slot": "stratagem"
-    },
-    {
-      "name": "EXO-49 “解放者”外骨骼装甲",
-      "slot": "stratagem"
-    },
-    {
-      "name": "EXO-51 “伐木者”外骨骼装甲",
-      "slot": "stratagem"
-    },
-    {
-      "name": "EXO-55 “突破”外骨骼装甲",
-      "slot": "stratagem"
-    },
-    {
-      "name": "FAF-14飞矛",
-      "slot": "stratagem"
-    },
-    {
-      "name": "FLAM-40火焰喷射器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "FX-12 防护罩生成中继器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "GL-21 榴弹发射器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "GL-52 缓和使者",
-      "slot": "stratagem"
-    },
-    {
-      "name": "GR-8 无后坐力炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "LAS-98 激光大炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "LAS-99 类星体加农炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "LIFT-182 传送背包",
-      "slot": "stratagem"
-    },
-    {
-      "name": "LIFT-850 喷射背包",
-      "slot": "stratagem"
-    },
-    {
-      "name": "LIFT-860 悬浮背包",
-      "slot": "stratagem"
-    },
-    {
-      "name": "M-1000 重装机枪",
-      "slot": "stratagem"
-    },
-    {
-      "name": "M-102 炮手快速侦察载具",
-      "slot": "stratagem"
-    },
-    {
-      "name": "M-103 补给型快速侦察载具",
-      "slot": "stratagem"
-    },
-    {
-      "name": "M-104 Incinerator FRV",
-      "slot": "stratagem"
-    },
-    {
-      "name": "M-105 “盟友”",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MD-17 反坦克地雷",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MD-6 反步兵雷区",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MD-8 毒气地雷",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MD-I4 燃烧地雷",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MG-206 重机枪",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MG-43 机枪",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MGX-42 子弹风暴",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MLS-4X 突击兵",
-      "slot": "stratagem"
-    },
-    {
-      "name": "MS-11 单兵导弹发射井",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道380毫米高爆弹火力网",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道电磁冲击波攻击",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道激光炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道凝固汽油弹火力网",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道磁轨炮攻击",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道烟雾攻击",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道游走火力网",
-      "slot": "stratagem"
-    },
-    {
-      "name": "PLAS-45 纪元",
-      "slot": "stratagem"
-    },
-    {
-      "name": "RL-77 空爆火箭弹发射器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "RS-422磁轨炮",
-      "slot": "stratagem"
-    },
-    {
-      "name": "S-11 矛枪",
-      "slot": "stratagem"
-    },
-    {
-      "name": "SH-20 防弹护盾背包",
-      "slot": "stratagem"
-    },
-    {
-      "name": "SH-32 防护罩生成背包",
-      "slot": "stratagem"
-    },
-    {
-      "name": "SH-51 定向护盾",
-      "slot": "stratagem"
-    },
-    {
-      "name": "StA-X3 W.A.S.P.发射器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "TD-220 堡垒MK XVI",
-      "slot": "stratagem"
-    },
-    {
-      "name": "TX-41 灭菌器",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道120MM高爆弹火力网",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道加特林火力网",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道毒气攻击",
-      "slot": "stratagem"
-    },
-    {
-      "name": "轨道空爆攻击",
-      "slot": "stratagem"
-    },
-    {
+      "name_zh": "隐蔽上阵",
+      "name_en": "Concealed Insertion",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Concealed_Insertion",
+      "icon_file": "Concealed Insertion Booster Icon.svg",
+      "icon_sha1": "06274da619f63b52db5b1976293d93a820950423",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Concealed_Insertion_Booster_Icon.svg"
+    },
+    {
+      "id": "booster.surplus-eat-allocation",
+      "slot": "booster",
+      "name": "额外消耗性反坦克武器配额",
+      "name_zh": "额外消耗性反坦克武器配额",
+      "name_en": "Surplus EAT Allocation",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Surplus_EAT_Allocation",
+      "icon_file": "Surplus EAT Allocation Booster Icon.png",
+      "icon_sha1": "9d3b700e61ff3ea943436af020f8aa3f739a451d",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Surplus_EAT_Allocation_Booster_Icon.png"
+    },
+    {
+      "id": "booster.integrated-extinguishers",
+      "slot": "booster",
+      "name": "集成灭火器",
+      "name_zh": "集成灭火器",
+      "name_en": "Integrated Extinguishers",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Integrated_Extinguishers",
+      "icon_file": "Integrated Extinguishers Booster Icon.svg",
+      "icon_sha1": "391451bead6938a7cc9b948f1c6ed0e6f2a0cfe2",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Integrated_Extinguishers_Booster_Icon.svg"
+    },
+    {
+      "id": "stratagem.orbital-precision-strike",
+      "slot": "stratagem",
       "name": "轨道精准攻击",
-      "slot": "stratagem"
+      "name_zh": "轨道精准攻击",
+      "name_en": "Orbital Precision Strike",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E8%BD%A8%E9%81%93%E7%B2%BE%E5%87%86%E6%94%BB%E5%87%BB",
+      "wiki_zh_revision": 7050,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Precision_Strike",
+      "icon_file": "Orbital Precision Strike Stratagem Icon Background.svg",
+      "icon_sha1": "e7855059dc6da36417b52c205e19d7957778b6b2",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Precision_Strike_Stratagem_Icon_Background.svg"
     },
     {
+      "id": "stratagem.orbital-gatling-barrage",
+      "slot": "stratagem",
+      "name": "轨道加特林火力网",
+      "name_zh": "轨道加特林火力网",
+      "name_en": "Orbital Gatling Barrage",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E8%BD%A8%E9%81%93%E5%8A%A0%E7%89%B9%E6%9E%97%E7%81%AB%E5%8A%9B%E7%BD%91",
+      "wiki_zh_revision": 7058,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Gatling_Barrage",
+      "icon_file": "Orbital Gatling Barrage Stratagem Icon Background.svg",
+      "icon_sha1": "f73d5241ea69d8c2443127bd6a43c50e5d169b4c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Gatling_Barrage_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-gas-strike",
+      "slot": "stratagem",
+      "name": "轨道毒气攻击",
+      "name_zh": "轨道毒气攻击",
+      "name_en": "Orbital Gas Strike",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E8%BD%A8%E9%81%93%E6%AF%92%E6%B0%94%E6%94%BB%E5%87%BB",
+      "wiki_zh_revision": 7064,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Gas_Strike",
+      "icon_file": "Orbital Gas Strike Stratagem Icon Background.svg",
+      "icon_sha1": "668a1e5a60750691e2d473a6e1f9844ca8ead10a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Gas_Strike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-120mm-he-barrage",
+      "slot": "stratagem",
+      "name": "轨道120MM高爆弹火力网",
+      "name_zh": "轨道120MM高爆弹火力网",
+      "name_en": "Orbital 120mm HE Barrage",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E8%BD%A8%E9%81%93120MM%E9%AB%98%E7%88%86%E5%BC%B9%E7%81%AB%E5%8A%9B%E7%BD%91",
+      "wiki_zh_revision": 7071,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_120mm_HE_Barrage",
+      "icon_file": "Orbital 120mm HE Barrage Stratagem Icon Background.svg",
+      "icon_sha1": "17de59ed955fa0646548678b850eb682502e54f1",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_120mm_HE_Barrage_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-airburst-strike",
+      "slot": "stratagem",
+      "name": "轨道空爆攻击",
+      "name_zh": "轨道空爆攻击",
+      "name_en": "Orbital Airburst Strike",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E8%BD%A8%E9%81%93%E7%A9%BA%E7%88%86%E6%94%BB%E5%87%BB",
+      "wiki_zh_revision": 7067,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Airburst_Strike",
+      "icon_file": "Orbital Airburst Strike Stratagem Icon Background.svg",
+      "icon_sha1": "c77894acb898465ea2d382db1ae4127aa842a352",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Airburst_Strike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-smoke-strike",
+      "slot": "stratagem",
+      "name": "轨道烟雾攻击",
+      "name_zh": "轨道烟雾攻击",
+      "name_en": "Orbital Smoke Strike",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Orbital_Smoke_Strike",
+      "wiki_zh_revision": 7061,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Smoke_Strike",
+      "icon_file": "Orbital Smoke Strike Stratagem Icon Background.svg",
+      "icon_sha1": "a054630bd2a5a96880cf733018b747283afb3e5d",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Smoke_Strike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-ems-strike",
+      "slot": "stratagem",
+      "name": "轨道电磁冲击波攻击",
+      "name_zh": "轨道电磁冲击波攻击",
+      "name_en": "Orbital EMS Strike",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Orbital_EMS_Strike",
+      "wiki_zh_revision": 6125,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike",
+      "icon_file": "Orbital EMS Strike Stratagem Icon Background.svg",
+      "icon_sha1": "5e3ef929b2676716ef97c072bddd5d1a1fbde5c3",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_EMS_Strike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-380mm-he-barrage",
+      "slot": "stratagem",
+      "name": "轨道380毫米高爆弹火力网",
+      "name_zh": "轨道380毫米高爆弹火力网",
+      "name_en": "Orbital 380mm HE Barrage",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Orbital_380mm_HE_Barrage",
+      "wiki_zh_revision": 6119,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_380mm_HE_Barrage",
+      "icon_file": "Orbital 380mm HE Barrage Stratagem Icon Background.svg",
+      "icon_sha1": "eb3f9544cb661d1ad4b2dfab7177ba84907a114a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_380mm_HE_Barrage_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-walking-barrage",
+      "slot": "stratagem",
+      "name": "轨道游走火力网",
+      "name_zh": "轨道游走火力网",
+      "name_en": "Orbital Walking Barrage",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Orbital_Walking_Barrage",
+      "wiki_zh_revision": 6117,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Walking_Barrage",
+      "icon_file": "Orbital Walking Barrage Stratagem Icon Background.svg",
+      "icon_sha1": "cb3bf0ed92e69b0a2583530e49ee7ff68700f9a6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Walking_Barrage_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-laser",
+      "slot": "stratagem",
+      "name": "轨道激光炮",
+      "name_zh": "轨道激光炮",
+      "name_en": "Orbital Laser",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Orbital_Laser",
+      "wiki_zh_revision": 6123,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Laser",
+      "icon_file": "Orbital Laser Stratagem Icon Background.svg",
+      "icon_sha1": "0ae2ad30482ed6be38372c64d0c7d34e61f9b1dd",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Laser_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-napalm-barrage",
+      "slot": "stratagem",
+      "name": "轨道凝固汽油弹火力网",
+      "name_zh": "轨道凝固汽油弹火力网",
+      "name_en": "Orbital Napalm Barrage",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Orbital_Napalm_Barrage",
+      "wiki_zh_revision": 6113,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Napalm_Barrage",
+      "icon_file": "Orbital Napalm Barrage Stratagem Icon Background.svg",
+      "icon_sha1": "be78c4b2c51e401e6d0b339be5599d92ceefb618",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Napalm_Barrage_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.orbital-railcannon-strike",
+      "slot": "stratagem",
+      "name": "轨道磁轨炮攻击",
+      "name_zh": "轨道磁轨炮攻击",
+      "name_en": "Orbital Railcannon Strike",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/Orbital_Railcannon_Strike",
+      "wiki_zh_revision": 6121,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Orbital_Railcannon_Strike",
+      "icon_file": "Orbital Railcannon Strike Stratagem Icon Background.svg",
+      "icon_sha1": "ee9232c048b0be01075b5be2c08251971b7d8826",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Orbital_Railcannon_Strike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-gas-airstrike",
+      "slot": "stratagem",
+      "name": "“飞鹰”毒气空袭",
+      "name_zh": "“飞鹰”毒气空袭",
+      "name_en": "Eagle Gas Airstrike",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D%E6%AF%92%E6%B0%94%E7%A9%BA%E8%A2%AD",
+      "wiki_zh_revision": 7109,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_Gas_Airstrike",
+      "icon_file": "Eagle Gas Airstrike Stratagem Icon Background.svg",
+      "icon_sha1": "e47dc1a5525beae1cb8d1c06fc795f1cb507d798",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_Gas_Airstrike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-strafing-run",
+      "slot": "stratagem",
+      "name": "“飞鹰”机枪扫射",
+      "name_zh": "“飞鹰”机枪扫射",
+      "name_en": "Eagle Strafing Run",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D%E6%9C%BA%E6%9E%AA%E6%89%AB%E5%B0%84",
+      "wiki_zh_revision": 7112,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_Strafing_Run",
+      "icon_file": "Eagle Strafing Run Stratagem Icon Background.svg",
+      "icon_sha1": "fe286e1ec078371ac066a186716e3522b4bbf029",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_Strafing_Run_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-airstrike",
+      "slot": "stratagem",
+      "name": "“飞鹰”空袭",
+      "name_zh": "“飞鹰”空袭",
+      "name_en": "Eagle Airstrike",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D%E7%A9%BA%E8%A2%AD",
+      "wiki_zh_revision": 7115,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_Airstrike",
+      "icon_file": "Eagle Airstrike Stratagem Icon Background.svg",
+      "icon_sha1": "b497fe4aec93027fcfa1c77c386a6c72eb5288b4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_Airstrike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-cluster-bomb",
+      "slot": "stratagem",
+      "name": "“飞鹰”集束炸弹",
+      "name_zh": "“飞鹰”集束炸弹",
+      "name_en": "Eagle Cluster Bomb",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D%E9%9B%86%E6%9D%9F%E7%82%B8%E5%BC%B9",
+      "wiki_zh_revision": 7118,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_Cluster_Bomb",
+      "icon_file": "Eagle Cluster Bomb Stratagem Icon Background.svg",
+      "icon_sha1": "b730d47faad8c59f9759f400b1166c402cf285a8",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_Cluster_Bomb_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-smoke-strike",
+      "slot": "stratagem",
+      "name": "“飞鹰”烟雾攻击",
+      "name_zh": "“飞鹰”烟雾攻击",
+      "name_en": "Eagle Smoke Strike",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D%E7%83%9F%E9%9B%BE%E6%94%BB%E5%87%BB",
+      "wiki_zh_revision": 7121,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_Smoke_Strike",
+      "icon_file": "Eagle Smoke Strike Stratagem Icon Background.svg",
+      "icon_sha1": "159f1fa465e79aadd26a2e2a74dc13bf93edafbe",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_Smoke_Strike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-napalm-airstrike",
+      "slot": "stratagem",
+      "name": "“飞鹰”凝固汽油弹空袭",
+      "name_zh": "“飞鹰”凝固汽油弹空袭",
+      "name_en": "Eagle Napalm Airstrike",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D%E5%87%9D%E5%9B%BA%E6%B1%BD%E6%B2%B9%E5%BC%B9%E7%A9%BA%E8%A2%AD",
+      "wiki_zh_revision": 7124,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_Napalm_Airstrike",
+      "icon_file": "Eagle Napalm Airstrike Stratagem Icon Background.svg",
+      "icon_sha1": "735c8b5c76ce35c1f0f7dfe4aedffa05893209bf",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_Napalm_Airstrike_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-110mm-rocket-pods",
+      "slot": "stratagem",
+      "name": "“飞鹰”110MM火箭巢",
+      "name_zh": "“飞鹰”110MM火箭巢",
+      "name_en": "Eagle 110mm Rocket Pods",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D110MM%E7%81%AB%E7%AE%AD%E5%B7%A2",
+      "wiki_zh_revision": 7127,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_110mm_Rocket_Pods",
+      "icon_file": "Eagle 110mm Rocket Pods Stratagem Icon Background.svg",
+      "icon_sha1": "002e218af5b2522c835f82694187918f8233602f",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_110mm_Rocket_Pods_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eagle-500kg-bomb",
+      "slot": "stratagem",
+      "name": "“飞鹰”500KG炸弹",
+      "name_zh": "“飞鹰”500KG炸弹",
+      "name_en": "Eagle 500kg Bomb",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/%E2%80%9C%E9%A3%9E%E9%B9%B0%E2%80%9D500KG%E7%82%B8%E5%BC%B9",
+      "wiki_zh_revision": 7130,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/Eagle_500kg_Bomb",
+      "icon_file": "Eagle 500kg Bomb Stratagem Icon Background.svg",
+      "icon_sha1": "48a0f3f522e8c1f74269caea93264d5899cd3522",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Eagle_500kg_Bomb_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.mg-43-machine-gun",
+      "slot": "stratagem",
+      "name": "MG-43 机枪",
+      "name_zh": "MG-43 机枪",
+      "name_en": "MG-43 Machine Gun",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MG-43_%E6%9C%BA%E6%9E%AA",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MG-43_Machine_Gun",
+      "icon_file": "Machine Gun Stratagem Icon Background.svg",
+      "icon_sha1": "35fc07a3a1cf8d955de9dc0799592ab89e75e380",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Machine_Gun_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eat-17-expendable-anti-tank",
+      "slot": "stratagem",
+      "name": "EAT-17 消耗性反坦克武器",
+      "name_zh": "EAT-17 消耗性反坦克武器",
+      "name_en": "EAT-17 Expendable Anti-Tank",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/EAT-17_Expendable_Anti-Tank",
+      "wiki_zh_revision": 6191,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/EAT-17_Expendable_Anti-Tank",
+      "icon_file": "Expendable Anti-Tank Stratagem Icon Background.svg",
+      "icon_sha1": "d52ad89ac2c636a0c8b647b21db88f10d9b4a92c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Expendable_Anti-Tank_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.m-105-stalwart",
+      "slot": "stratagem",
+      "name": "M-105 “盟友”",
+      "name_zh": "M-105 “盟友”",
+      "name_en": "M-105 Stalwart",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M-105_Stalwart",
+      "wiki_zh_revision": 6153,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M-105_Stalwart",
+      "icon_file": "Stalwart Stratagem Icon Background.svg",
+      "icon_sha1": "89f988e49ae38051549f280bf5afa966df09c4e0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Stalwart_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.las-98-laser-cannon",
+      "slot": "stratagem",
+      "name": "LAS-98 激光大炮",
+      "name_zh": "LAS-98 激光大炮",
+      "name_en": "LAS-98 Laser Cannon",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-98_Laser_Cannon",
+      "wiki_zh_revision": 6175,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-98_Laser_Cannon",
+      "icon_file": "Laser Cannon Stratagem Icon Background.svg",
+      "icon_sha1": "21b5f695ad9552a1581f765320060ec9f3379c22",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Laser_Cannon_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.apw-1-anti-materiel-rifle",
+      "slot": "stratagem",
+      "name": "APW-1 反器材步枪",
+      "name_zh": "APW-1 反器材步枪",
+      "name_en": "APW-1 Anti-Materiel Rifle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/APW-1_Anti-Materiel_Rifle",
+      "wiki_zh_revision": 6161,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/APW-1_Anti-Materiel_Rifle",
+      "icon_file": "Anti-Materiel Rifle Stratagem Icon Background.svg",
+      "icon_sha1": "37652d5a137eeb692e343ee62178110117f0e211",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Anti-Materiel_Rifle_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.gr-8-recoilless-rifle",
+      "slot": "stratagem",
+      "name": "GR-8 无后坐力炮",
+      "name_zh": "GR-8 无后坐力炮",
+      "name_en": "GR-8 Recoilless Rifle",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/GR-8_Recoilless_Rifle",
+      "wiki_zh_revision": 6203,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle",
+      "icon_file": "Recoilless Rifle Stratagem Icon Background.svg",
+      "icon_sha1": "aaa0b79ab962205faa4d042bce8ba02b08761870",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Recoilless_Rifle_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.gl-21-grenade-launcher",
+      "slot": "stratagem",
+      "name": "GL-21 榴弹发射器",
+      "name_zh": "GL-21 榴弹发射器",
+      "name_en": "GL-21 Grenade Launcher",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/GL-21_Grenade_Launcher",
+      "wiki_zh_revision": 6165,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/GL-21_Grenade_Launcher",
+      "icon_file": "Grenade Launcher Stratagem Icon Background.svg",
+      "icon_sha1": "168a6049eb1137754d4112fc3ad0c6047385dad5",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Grenade_Launcher_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.flam-40-flamethrower",
+      "slot": "stratagem",
+      "name": "FLAM-40火焰喷射器",
+      "name_zh": "FLAM-40火焰喷射器",
+      "name_en": "FLAM-40 Flamethrower",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/FLAM-40_Flamethrower",
+      "wiki_zh_revision": 6173,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/FLAM-40_Flamethrower",
+      "icon_file": "Flamethrower Stratagem Icon Background.svg",
+      "icon_sha1": "648ed8966ce9b68beb8560188217d1584cb1c0d7",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Flamethrower_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.mg-206-heavy-machine-gun",
+      "slot": "stratagem",
+      "name": "MG-206 重机枪",
+      "name_zh": "MG-206 重机枪",
+      "name_en": "MG-206 Heavy Machine Gun",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MG-206_Heavy_Machine_Gun",
+      "wiki_zh_revision": 6155,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MG-206_Heavy_Machine_Gun",
+      "icon_file": "Heavy Machine Gun Stratagem Icon Background.svg",
+      "icon_sha1": "7f60eb69cd8ac6a62783f3e7ddaab082ef6b058b",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Heavy_Machine_Gun_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.ac-8-autocannon",
+      "slot": "stratagem",
+      "name": "AC-8 机炮",
+      "name_zh": "AC-8 机炮",
+      "name_en": "AC-8 Autocannon",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AC-8_%E6%9C%BA%E7%82%AE",
+      "wiki_zh_revision": 5452,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AC-8_Autocannon",
+      "icon_file": "Autocannon Stratagem Icon Background.svg",
+      "icon_sha1": "556cf5f98741db623def761c34801a9d727ea493",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Autocannon_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.arc-3-arc-thrower",
+      "slot": "stratagem",
+      "name": "ARC-3 电弧发射器",
+      "name_zh": "ARC-3 电弧发射器",
+      "name_en": "ARC-3 Arc Thrower",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/ARC-3_Arc_Thrower",
+      "wiki_zh_revision": 6179,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/ARC-3_Arc_Thrower",
+      "icon_file": "Arc Thrower Stratagem Icon Background.svg",
+      "icon_sha1": "5909af2930078db52f9f18b5c53e322856f838ad",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Arc_Thrower_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.las-99-quasar-cannon",
+      "slot": "stratagem",
+      "name": "LAS-99 类星体加农炮",
+      "name_zh": "LAS-99 类星体加农炮",
+      "name_en": "LAS-99 Quasar Cannon",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LAS-99_Quasar_Cannon",
+      "wiki_zh_revision": 6177,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LAS-99_Quasar_Cannon",
+      "icon_file": "Quasar Cannon Stratagem Icon Background.svg",
+      "icon_sha1": "559764fa593bbd74f65d8e3eda16b83ef44b839c",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Quasar_Cannon_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.rl-77-airburst-rocket-launcher",
+      "slot": "stratagem",
+      "name": "RL-77 空爆火箭弹发射器",
+      "name_zh": "RL-77 空爆火箭弹发射器",
+      "name_en": "RL-77 Airburst Rocket Launcher",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/RL-77_Airburst_Rocket_Launcher",
+      "wiki_zh_revision": 6193,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/RL-77_Airburst_Rocket_Launcher",
+      "icon_file": "Airburst Rocket Launcher Stratagem Icon Background.svg",
+      "icon_sha1": "6755a737c16f92a9fdbbc69139f50d8d99b1d2b6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Airburst_Rocket_Launcher_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.mls-4x-commando",
+      "slot": "stratagem",
+      "name": "MLS-4X 突击兵",
+      "name_zh": "MLS-4X 突击兵",
+      "name_en": "MLS-4X Commando",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MLS-4X_Commando",
+      "wiki_zh_revision": 6181,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MLS-4X_Commando",
+      "icon_file": "Commando Stratagem Icon Background.svg",
+      "icon_sha1": "6ea89693883e3e9cc448996260ddf69cb4e6db83",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Commando_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.faf-14-spear",
+      "slot": "stratagem",
+      "name": "FAF-14飞矛",
+      "name_zh": "FAF-14飞矛",
+      "name_en": "FAF-14 Spear",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/FAF-14_Spear",
+      "wiki_zh_revision": 6195,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/FAF-14_Spear",
+      "icon_file": "Spear Stratagem Icon Background.svg",
+      "icon_sha1": "3f762303e3cf18323fd67dd383caaddfa1f5e6ff",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Spear_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.rs-422-railgun",
+      "slot": "stratagem",
+      "name": "RS-422磁轨炮",
+      "name_zh": "RS-422磁轨炮",
+      "name_en": "RS-422 Railgun",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/RS-422_Railgun",
+      "wiki_zh_revision": 6157,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/RS-422_Railgun",
+      "icon_file": "Railgun Stratagem Icon Background.svg",
+      "icon_sha1": "7030a2a9b2a0bfc56b56d40f3e9a851aba5bed23",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Railgun_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.sta-x3-w-a-s-p-launcher",
+      "slot": "stratagem",
+      "name": "StA-X3 W.A.S.P.发射器",
+      "name_zh": "StA-X3 W.A.S.P.发射器",
+      "name_en": "StA-X3 W.A.S.P. Launcher",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/StA-X3_W.A.S.P._Launcher",
+      "wiki_zh_revision": 6199,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/StA-X3_W.A.S.P._Launcher",
+      "icon_file": "W.A.S.P. Launcher Stratagem Icon Background.svg",
+      "icon_sha1": "a33ba85dda61f8e1e900584c97fab830a30268b0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:W.A.S.P._Launcher_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.cqc-20-breaching-hammer",
+      "slot": "stratagem",
+      "name": "CQC-20 破门锤",
+      "name_zh": "CQC-20 破门锤",
+      "name_en": "CQC-20 Breaching Hammer",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-20_Breaching_Hammer",
+      "wiki_zh_revision": 6149,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-20_Breaching_Hammer",
+      "icon_file": "Breaching Hammer Stratagem Icon Background.svg",
+      "icon_sha1": "65dd9b51d118410a1a896311edfe35f0c9816ccc",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Breaching_Hammer_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.plas-45-epoch",
+      "slot": "stratagem",
+      "name": "PLAS-45 纪元",
+      "name_zh": "PLAS-45 纪元",
+      "name_en": "PLAS-45 Epoch",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/PLAS-45_Epoch",
+      "wiki_zh_revision": 6163,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/PLAS-45_Epoch",
+      "icon_file": "Epoch Stratagem Icon Background.svg",
+      "icon_sha1": "bfe6b15ea844b615369c4fd391445fd6f6f2cc34",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Epoch_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.mgx-42-bullet-storm",
+      "slot": "stratagem",
+      "name": "MGX-42 子弹风暴",
+      "name_zh": "MGX-42 子弹风暴",
+      "name_en": "MGX-42 Bullet Storm",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MGX-42_Bullet_Storm",
+      "wiki_zh_revision": 6189,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MGX-42_Bullet_Storm",
+      "icon_file": "Bullet Storm Stratagem Icon Background.svg",
+      "icon_sha1": "097328f0102ba5a6fcf42257133c19dae73c9397",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Bullet_Storm_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.s-11-speargun",
+      "slot": "stratagem",
+      "name": "S-11 矛枪",
+      "name_zh": "S-11 矛枪",
+      "name_en": "S-11 Speargun",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/S-11_Speargun",
+      "wiki_zh_revision": 6159,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/S-11_Speargun",
+      "icon_file": "Speargun Stratagem Icon Background.svg",
+      "icon_sha1": "2f0be9d0e2ec0e4048db7be525ffe29c35dfb34f",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Speargun_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.cqc-9-defoliation-tool",
+      "slot": "stratagem",
+      "name": "CQC-9 除叶工具",
+      "name_zh": "CQC-9 除叶工具",
+      "name_en": "CQC-9 Defoliation Tool",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-9_Defoliation_Tool",
+      "wiki_zh_revision": 6147,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-9_Defoliation_Tool",
+      "icon_file": "Defoliation Tool Stratagem Icon Background.svg",
+      "icon_sha1": "418556695e5b1004f857589cc19e4c99a24835a4",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Defoliation_Tool_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.gl-52-de-escalator",
+      "slot": "stratagem",
+      "name": "GL-52 缓和使者",
+      "name_zh": "GL-52 缓和使者",
+      "name_en": "GL-52 De-Escalator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/GL-52_De-Escalator",
+      "wiki_zh_revision": 6169,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/GL-52_De-Escalator",
+      "icon_file": "De-Escalator Stratagem Icon Background.svg",
+      "icon_sha1": "7a9dca4b60ed6f9e126aeaa3dc391441fec43c30",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:De-Escalator_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eat-700-expendable-napalm",
+      "slot": "stratagem",
+      "name": "EAT-700 消耗性凝固汽油弹",
+      "name_zh": "EAT-700 消耗性凝固汽油弹",
+      "name_en": "EAT-700 Expendable Napalm",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/EAT-700_Expendable_Napalm",
+      "wiki_zh_revision": 6185,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/EAT-700_Expendable_Napalm",
+      "icon_file": "Expendable Napalm Stratagem Icon Background.svg",
+      "icon_sha1": "1177782e88094e486ff0a64d139042b26c3183d7",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Expendable_Napalm_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.tx-41-sterilizer",
+      "slot": "stratagem",
+      "name": "TX-41 灭菌器",
+      "name_zh": "TX-41 灭菌器",
+      "name_en": "TX-41 Sterilizer",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/TX-41_Sterilizer",
+      "wiki_zh_revision": 6171,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/TX-41_Sterilizer",
+      "icon_file": "Sterilizer Stratagem Icon Background.svg",
+      "icon_sha1": "0a42db75c76594bba142abe9e8d438c67bed69ce",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Sterilizer_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.eat-411-leveller",
+      "slot": "stratagem",
+      "name": "EAT-411 荡平者",
+      "name_zh": "EAT-411 荡平者",
+      "name_en": "EAT-411 Leveller",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/EAT-411_Leveller",
+      "wiki_zh_revision": 6183,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/EAT-411_Leveller",
+      "icon_file": "Leveller Stratagem Icon Background.svg",
+      "icon_sha1": "8f0c64504af62e4a602699ac647e07b331e6ffd6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Leveller_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.gl-28-belt-fed-grenade-launcher",
+      "slot": "stratagem",
       "name": "GL-28 弹链式榴弹发射器背包",
-      "slot": "stratagem"
+      "name_zh": "GL-28 弹链式榴弹发射器背包",
+      "name_en": "GL-28 Belt-Fed Grenade Launcher",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/GL-28_Belt-Fed_Grenade_Launcher",
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/GL-28_Belt-Fed_Grenade_Launcher",
+      "icon_file": "Belt-Fed Grenade Launcher Stratagem Icon Background.svg",
+      "icon_sha1": "4c99f199de4ad82163d18b9a7561ad380ad3e2e1",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Belt-Fed_Grenade_Launcher_Stratagem_Icon_Background.svg"
     },
     {
-      "name": "TD-110 Maelstrom",
-      "slot": "stratagem"
+      "id": "stratagem.b-md-c4-pack",
+      "slot": "stratagem",
+      "name": "B/MD C4背包",
+      "name_zh": "B/MD C4背包",
+      "name_en": "B/MD C4 Pack",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/B/MD_C4_Pack",
+      "wiki_zh_revision": 6205,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/B/MD_C4_Pack",
+      "icon_file": "C4 Pack Stratagem Icon Background.svg",
+      "icon_sha1": "bfb8f2d9d71455038168f66ff5b775e9024d57f9",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:C4_Pack_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.ms-11-solo-silo",
+      "slot": "stratagem",
+      "name": "MS-11 单兵导弹发射井",
+      "name_zh": "MS-11 单兵导弹发射井",
+      "name_en": "MS-11 Solo Silo",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MS-11_Solo_Silo",
+      "wiki_zh_revision": 6187,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MS-11_Solo_Silo",
+      "icon_file": "Solo Silo Stratagem Icon Background.svg",
+      "icon_sha1": "69f9612f9ae99c079456a8b3766b72d9b031f2a6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Solo_Silo_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.b-flam-80-cremator",
+      "slot": "stratagem",
+      "name": "B/FLAM-80 焚燃者",
+      "name_zh": "B/FLAM-80 焚燃者",
+      "name_en": "B/FLAM-80 Cremator",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/B/FLAM-80_Cremator",
+      "wiki_zh_revision": 6197,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/B/FLAM-80_Cremator",
+      "icon_file": "Cremator Stratagem Icon Background.svg",
+      "icon_sha1": "ce54a78379be2b6a0760200571122dbfae2975eb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Cremator_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.m-1000-maxigun",
+      "slot": "stratagem",
+      "name": "M-1000 重装机枪",
+      "name_zh": "M-1000 重装机枪",
+      "name_en": "M-1000 Maxigun",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M-1000_Maxigun",
+      "wiki_zh_revision": 6201,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M-1000_Maxigun",
+      "icon_file": "Maxigun Stratagem Icon Background.svg",
+      "icon_sha1": "d08884af73a3dd0b303d3a0e6470ee6ca344cb66",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Maxigun_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.cqc-1-one-true-flag",
+      "slot": "stratagem",
+      "name": "CQC-1 唯一真旗",
+      "name_zh": "CQC-1 唯一真旗",
+      "name_en": "CQC-1 One True Flag",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/CQC-1_One_True_Flag",
+      "wiki_zh_revision": 6151,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/CQC-1_One_True_Flag",
+      "icon_file": "One True Flag Stratagem Icon Background.svg",
+      "icon_sha1": "e919beb969325bcec21df7b9bbc87b11b5bcc747",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:One_True_Flag_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.40-k-meltagun",
+      "slot": "stratagem",
+      "name": "40-K 热熔枪",
+      "name_zh": "40-K 热熔枪",
+      "name_en": "40-K Meltagun",
+      "translation_source": "zh_wiki_weapon_gallery",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/40-K_Meltagun",
+      "wiki_zh_revision": 6167,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/40-K_Meltagun",
+      "icon_file": "Meltagun Stratagem Icon Background.svg",
+      "icon_sha1": "c412fba5beb8176d25387fb8647401688b573ee2",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Meltagun_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.b-1-supply-pack",
+      "slot": "stratagem",
+      "name": "B-1 补给背包",
+      "name_zh": "B-1 补给背包",
+      "name_en": "B-1 Supply Pack",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/B-1_Supply_Pack",
+      "wiki_zh_revision": 6207,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/B-1_Supply_Pack",
+      "icon_file": "Supply Pack Stratagem Icon Background.svg",
+      "icon_sha1": "6f6c53fe731ab7597aa68870693c6c8127116cb3",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Supply_Pack_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.lift-850-jump-pack",
+      "slot": "stratagem",
+      "name": "LIFT-850 喷射背包",
+      "name_zh": "LIFT-850 喷射背包",
+      "name_en": "LIFT-850 Jump Pack",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LIFT-850_Jump_Pack",
+      "wiki_zh_revision": 6215,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LIFT-850_Jump_Pack",
+      "icon_file": "Jump Pack Stratagem Icon Background.svg",
+      "icon_sha1": "464278137e25dbaf418c17bbdc5de5cd81b117f9",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Jump_Pack_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.sh-20-ballistic-shield-backpack",
+      "slot": "stratagem",
+      "name": "SH-20 防弹护盾背包",
+      "name_zh": "SH-20 防弹护盾背包",
+      "name_en": "SH-20 Ballistic Shield Backpack",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SH-20_Ballistic_Shield_Backpack",
+      "wiki_zh_revision": 6221,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SH-20_Ballistic_Shield_Backpack",
+      "icon_file": "Ballistic Shield Backpack Stratagem Icon Background.svg",
+      "icon_sha1": "6697d4aa8470691fbf2ce8485cbbe725dadc3d12",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Ballistic_Shield_Backpack_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.ax-ar-23-guard-dog",
+      "slot": "stratagem",
+      "name": "AX/AR-23 “护卫犬”",
+      "name_zh": "AX/AR-23 “护卫犬”",
+      "name_en": "AX/AR-23 Guard Dog",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AX/AR-23_Guard_Dog",
+      "wiki_zh_revision": 6227,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AX/AR-23_Guard_Dog",
+      "icon_file": "Guard Dog Stratagem Icon Background.svg",
+      "icon_sha1": "eb2b15f56c7f5a1479e66d11ba6dfc850e7f23c0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Guard_Dog_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.ax-las-5-rover",
+      "slot": "stratagem",
+      "name": "AX/LAS-5 “护卫犬”漫游者",
+      "name_zh": "AX/LAS-5 “护卫犬”漫游者",
+      "name_en": "AX/LAS-5 Rover",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AX/LAS-5_Rover",
+      "wiki_zh_revision": 6229,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AX/LAS-5_Rover",
+      "icon_file": "Rover Stratagem Icon Background.svg",
+      "icon_sha1": "12ad26598513f79074919aae4c9adb78cda35d8d",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Rover_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.sh-32-shield-generator-pack",
+      "slot": "stratagem",
+      "name": "SH-32 防护罩生成背包",
+      "name_zh": "SH-32 防护罩生成背包",
+      "name_en": "SH-32 Shield Generator Pack",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SH-32_Shield_Generator_Pack",
+      "wiki_zh_revision": 6217,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SH-32_Shield_Generator_Pack",
+      "icon_file": "Shield Generator Pack Stratagem Icon Background.svg",
+      "icon_sha1": "2f4980292556f64a7d68d012e1c5abcc0974a504",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Shield_Generator_Pack_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.sh-51-directional-shield",
+      "slot": "stratagem",
+      "name": "SH-51 定向护盾",
+      "name_zh": "SH-51 定向护盾",
+      "name_en": "SH-51 Directional Shield",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/SH-51_Directional_Shield",
+      "wiki_zh_revision": 6219,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/SH-51_Directional_Shield",
+      "icon_file": "Directional Shield Stratagem Icon Background.svg",
+      "icon_sha1": "a0bd68e0bfdae54f97b923e815383a23c57a2309",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Directional_Shield_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.ax-flam-75-hot-dog",
+      "slot": "stratagem",
+      "name": "AX/FLAM-75 热狗",
+      "name_zh": "AX/FLAM-75 热狗",
+      "name_en": "AX/FLAM-75 Hot Dog",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AX/FLAM-75_Hot_Dog",
+      "wiki_zh_revision": 6225,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AX/FLAM-75_Hot_Dog",
+      "icon_file": "Hot Dog Stratagem Icon Background.svg",
+      "icon_sha1": "c8e42d7fb3412788e7ea3d609d2b6bc4453b18eb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Hot_Dog_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.b-100-portable-hellbomb",
+      "slot": "stratagem",
+      "name": "B-100 便携式地狱火炸弹",
+      "name_zh": "B-100 便携式地狱火炸弹",
+      "name_en": "B-100 Portable Hellbomb",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/B-100_Portable_Hellbomb",
+      "wiki_zh_revision": 6209,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/B-100_Portable_Hellbomb",
+      "icon_file": "Portable Hellbomb Stratagem Icon Background.svg",
+      "icon_sha1": "e8bd763184b8b8e943a5b1c59dfbd2e1fe87e16b",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Portable_Hellbomb_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.ax-arc-3-k-9",
+      "slot": "stratagem",
+      "name": "AX/ARC-3 “护卫犬”K-9",
+      "name_zh": "AX/ARC-3 “护卫犬”K-9",
+      "name_en": "AX/ARC-3 K-9",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AX/ARC-3_K-9",
+      "wiki_zh_revision": 6223,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AX/ARC-3_K-9",
+      "icon_file": "K-9 Stratagem Icon Background.svg",
+      "icon_sha1": "3ed7fe012648c721fc914e80c3f4e8ad2138e3fc",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:K-9_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.lift-860-hover-pack",
+      "slot": "stratagem",
+      "name": "LIFT-860 悬浮背包",
+      "name_zh": "LIFT-860 悬浮背包",
+      "name_en": "LIFT-860 Hover Pack",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LIFT-860_Hover_Pack",
+      "wiki_zh_revision": 6213,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LIFT-860_Hover_Pack",
+      "icon_file": "Hover Pack Stratagem Icon Background.svg",
+      "icon_sha1": "63fe63001ab286866523fa74604a8f72e58e3c56",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Hover_Pack_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.ax-tx-13-dog-breath",
+      "slot": "stratagem",
+      "name": "AX/TX-13“护卫犬”腐息",
+      "name_zh": "AX/TX-13“护卫犬”腐息",
+      "name_en": "AX/TX-13 Dog Breath",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/AX/TX-13_Dog_Breath",
+      "wiki_zh_revision": 6231,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/AX/TX-13_Dog_Breath",
+      "icon_file": "Dog Breath Stratagem Icon Background.svg",
+      "icon_sha1": "0b93a24840688caf37b2ed2049cba377c081d88d",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Dog_Breath_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.lift-182-warp-pack",
+      "slot": "stratagem",
+      "name": "LIFT-182 传送背包",
+      "name_zh": "LIFT-182 传送背包",
+      "name_en": "LIFT-182 Warp Pack",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/LIFT-182_Warp_Pack",
+      "wiki_zh_revision": 6211,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/LIFT-182_Warp_Pack",
+      "icon_file": "Warp Pack Stratagem Icon Background.svg",
+      "icon_sha1": "b27510210a0bb7fcbabfb8e26f360c66050f21bd",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Warp_Pack_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.m-103-supply-frv",
+      "slot": "stratagem",
+      "name": "M-103 补给型快速侦察载具",
+      "name_zh": "M-103 补给型快速侦察载具",
+      "name_en": "M-103 Supply FRV",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M-103_%E8%A1%A5%E7%BB%99%E5%9E%8B%E5%BF%AB%E9%80%9F%E4%BE%A6%E5%AF%9F%E8%BD%BD%E5%85%B7",
+      "wiki_zh_revision": 7070,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M-103_Supply_FRV",
+      "icon_file": "Supply FRV Stratagem Icon Background.svg",
+      "icon_sha1": "4154456cfcd89f591cd66e80970e659404468ec2",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Supply_FRV_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.td-110-maelstrom",
+      "slot": "stratagem",
+      "name": "TD-110 大漩涡",
+      "name_zh": "TD-110 大漩涡",
+      "name_en": "TD-110 Maelstrom",
+      "translation_source": "community_translation",
+      "wiki_zh_page": null,
+      "wiki_zh_revision": null,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/TD-110_Maelstrom",
+      "icon_file": "Maelstrom Stratagem Icon Background.svg",
+      "icon_sha1": "23094c43cdb02374dd5819c88286bf9498bb5099",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Maelstrom_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.m-104-incinerator-frv",
+      "slot": "stratagem",
+      "name": "M-104 炽灼型快速侦查载具",
+      "name_zh": "M-104 炽灼型快速侦查载具",
+      "name_en": "M-104 Incinerator FRV",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M-104_%E7%82%BD%E7%81%BC%E5%9E%8B%E5%BF%AB%E9%80%9F%E4%BE%A6%E6%9F%A5%E8%BD%BD%E5%85%B7",
+      "wiki_zh_revision": 7073,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M-104_Incinerator_FRV",
+      "icon_file": "Incinerator FRV Stratagem Icon Background.svg",
+      "icon_sha1": "f5764f9b8bbd2d69ff37b8ecfcdc75685cab7807",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Incinerator_FRV_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.exo-49-emancipator-exosuit",
+      "slot": "stratagem",
+      "name": "EXO-49 “解放者”外骨骼装甲",
+      "name_zh": "EXO-49 “解放者”外骨骼装甲",
+      "name_en": "EXO-49 Emancipator Exosuit",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/EXO-49_%E2%80%9C%E8%A7%A3%E6%94%BE%E8%80%85%E2%80%9D%E5%A4%96%E9%AA%A8%E9%AA%BC%E8%A3%85%E7%94%B2",
+      "wiki_zh_revision": 7076,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/EXO-49_Emancipator_Exosuit",
+      "icon_file": "Emancipator Exosuit Stratagem Icon Background.svg",
+      "icon_sha1": "33641953d37ff69444d062f1c1b89f02e7b3eaa1",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Emancipator_Exosuit_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.exo-45-patriot-exosuit",
+      "slot": "stratagem",
+      "name": "EXO-45 “爱国者”外骨骼装甲",
+      "name_zh": "EXO-45 “爱国者”外骨骼装甲",
+      "name_en": "EXO-45 Patriot Exosuit",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/EXO-45_%E2%80%9C%E7%88%B1%E5%9B%BD%E8%80%85%E2%80%9D%E5%A4%96%E9%AA%A8%E9%AA%BC%E8%A3%85%E7%94%B2",
+      "wiki_zh_revision": 7084,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/EXO-45_Patriot_Exosuit",
+      "icon_file": "Patriot Exosuit Stratagem Icon Background.svg",
+      "icon_sha1": "3fa7def5493199b818a8997d5f27896bbd61c01e",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Patriot_Exosuit_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.m-102-gunner-frv",
+      "slot": "stratagem",
+      "name": "M-102 炮手快速侦查载具",
+      "name_zh": "M-102 炮手快速侦查载具",
+      "name_en": "M-102 Gunner FRV",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/M-102_%E7%82%AE%E6%89%8B%E5%BF%AB%E9%80%9F%E4%BE%A6%E6%9F%A5%E8%BD%BD%E5%85%B7",
+      "wiki_zh_revision": 7087,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/M-102_Gunner_FRV",
+      "icon_file": "Fast Recon Vehicle Stratagem Icon Background.svg",
+      "icon_sha1": "d9bba162803f70728f8e40d38d4b1879672d95b8",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Fast_Recon_Vehicle_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.td-220-bastion-mk-xvi",
+      "slot": "stratagem",
+      "name": "TD-220 堡垒MK XVI",
+      "name_zh": "TD-220 堡垒MK XVI",
+      "name_en": "TD-220 Bastion MK XVI",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/TD-220_%E5%A0%A1%E5%9E%92MK_XVI",
+      "wiki_zh_revision": 7091,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/TD-220_Bastion_MK_XVI",
+      "icon_file": "Bastion MK XVI Stratagem Icon Background.svg",
+      "icon_sha1": "9de9524faa59cf825aad988b45b65b59516f7fb1",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Bastion_MK_XVI_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.exo-55-breakthrough-exosuit",
+      "slot": "stratagem",
+      "name": "EXO-55 “突破”外骨骼装甲",
+      "name_zh": "EXO-55 “突破”外骨骼装甲",
+      "name_en": "EXO-55 Breakthrough Exosuit",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/EXO-55_%E2%80%9C%E7%AA%81%E7%A0%B4%E2%80%9D%E5%A4%96%E9%AA%A8%E9%AA%BC%E8%A3%85%E7%94%B2",
+      "wiki_zh_revision": 7094,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/EXO-55_Breakthrough_Exosuit",
+      "icon_file": "Breakthrough Exosuit Stratagem Icon Background.svg",
+      "icon_sha1": "d9bc7c2a210e72b1b2e9217dbb01351267c60dc6",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Breakthrough_Exosuit_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.exo-51-lumberer-exosuit",
+      "slot": "stratagem",
+      "name": "EXO-51 “伐木者”外骨骼装甲",
+      "name_zh": "EXO-51 “伐木者”外骨骼装甲",
+      "name_en": "EXO-51 Lumberer Exosuit",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/EXO-51_%E2%80%9C%E4%BC%90%E6%9C%A8%E8%80%85%E2%80%9D%E5%A4%96%E9%AA%A8%E9%AA%BC%E8%A3%85%E7%94%B2",
+      "wiki_zh_revision": 7097,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/EXO-51_Lumberer_Exosuit",
+      "icon_file": "Lumberer Exosuit Stratagem Icon Background.svg",
+      "icon_sha1": "c3895feee9cb0675c9cda242fdd9e1b8cf4384bd",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Lumberer_Exosuit_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-mg-43-machine-gun-sentry",
+      "slot": "stratagem",
+      "name": "A/MG-43 哨戒机枪",
+      "name_zh": "A/MG-43 哨戒机枪",
+      "name_en": "A/MG-43 Machine Gun Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/MG-43_Machine_Gun_Sentry",
+      "wiki_zh_revision": 6251,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/MG-43_Machine_Gun_Sentry",
+      "icon_file": "Machine Gun Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "331c9d645e84b1de4cd158a32c6e535ffce18973",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Machine_Gun_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-g-16-gatling-sentry",
+      "slot": "stratagem",
+      "name": "A/G-16 加特林哨戒炮",
+      "name_zh": "A/G-16 加特林哨戒炮",
+      "name_en": "A/G-16 Gatling Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/G-16_Gatling_Sentry",
+      "wiki_zh_revision": 6249,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/G-16_Gatling_Sentry",
+      "icon_file": "Gatling Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "7ee8f33fb724f3ee33c987dc8fbe9c9c42f71c7f",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Gatling_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-ac-8-autocannon-sentry",
+      "slot": "stratagem",
+      "name": "A/AC-8 自动哨戒炮",
+      "name_zh": "A/AC-8 自动哨戒炮",
+      "name_en": "A/AC-8 Autocannon Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/AC-8_Autocannon_Sentry",
+      "wiki_zh_revision": 6259,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/AC-8_Autocannon_Sentry",
+      "icon_file": "Autocannon Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "428b6979dd647b7a2a52272d46ac48091a36c3eb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Autocannon_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-m-12-mortar-sentry",
+      "slot": "stratagem",
+      "name": "A/M-12 迫击哨戒炮",
+      "name_zh": "A/M-12 迫击哨戒炮",
+      "name_en": "A/M-12 Mortar Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/M-12_Mortar_Sentry",
+      "wiki_zh_revision": 6265,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/M-12_Mortar_Sentry",
+      "icon_file": "Mortar Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "30dea2f4aa9525de1528f4791896a49b87538462",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Mortar_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-mls-4x-rocket-sentry",
+      "slot": "stratagem",
+      "name": "A/MLS-4X 火箭哨戒炮",
+      "name_zh": "A/MLS-4X 火箭哨戒炮",
+      "name_en": "A/MLS-4X Rocket Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/MLS-4X_Rocket_Sentry",
+      "wiki_zh_revision": 6257,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/MLS-4X_Rocket_Sentry",
+      "icon_file": "Rocket Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "1af08ce8afb50b4d9f970f0db9dbd5a1a56dd723",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Rocket_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-arc-3-tesla-tower",
+      "slot": "stratagem",
+      "name": "A/ARC-3 特斯拉塔",
+      "name_zh": "A/ARC-3 特斯拉塔",
+      "name_en": "A/ARC-3 Tesla Tower",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/ARC-3_Tesla_Tower",
+      "wiki_zh_revision": 6267,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/ARC-3_Tesla_Tower",
+      "icon_file": "Tesla Tower Stratagem Icon Background.svg",
+      "icon_sha1": "a40a2e987b00846d7ec41f8ab5b62b44fb951806",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Tesla_Tower_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-m-23-ems-mortar-sentry",
+      "slot": "stratagem",
+      "name": "A/M-23 电磁冲击波迫击哨戒炮",
+      "name_zh": "A/M-23 电磁冲击波迫击哨戒炮",
+      "name_en": "A/M-23 EMS Mortar Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/M-23_EMS_Mortar_Sentry",
+      "wiki_zh_revision": 6261,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/M-23_EMS_Mortar_Sentry",
+      "icon_file": "EMS Mortar Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "202fdc628cf1a4eb60b069b479fadf2958e12feb",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:EMS_Mortar_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-las-98-laser-sentry",
+      "slot": "stratagem",
+      "name": "A/LAS-98 激光哨戒炮",
+      "name_zh": "A/LAS-98 激光哨戒炮",
+      "name_en": "A/LAS-98 Laser Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/LAS-98_Laser_Sentry",
+      "wiki_zh_revision": 6255,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/LAS-98_Laser_Sentry",
+      "icon_file": "Laser Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "090ea4adca874d86bae5db0f2ba2c25de7fea707",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Laser_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-flam-40-flame-sentry",
+      "slot": "stratagem",
+      "name": "A/FLAM-40 火焰喷射哨戒炮",
+      "name_zh": "A/FLAM-40 火焰喷射哨戒炮",
+      "name_en": "A/FLAM-40 Flame Sentry",
+      "translation_source": "curated_zh_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/FLAM-40_Flame_Sentry",
+      "wiki_zh_revision": 6253,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/FLAM-40_Flame_Sentry",
+      "icon_file": "Flame Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "9214db2e7fdaa288f8cfedaaf427379d775e9ad5",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Flame_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.a-gm-17-gas-mortar-sentry",
+      "slot": "stratagem",
+      "name": "A/GM-17 毒气迫击哨戒炮",
+      "name_zh": "A/GM-17 毒气迫击哨戒炮",
+      "name_en": "A/GM-17 Gas Mortar Sentry",
+      "translation_source": "community_translation",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/A/GM-17_Gas_Mortar_Sentry",
+      "wiki_zh_revision": 6263,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/A/GM-17_Gas_Mortar_Sentry",
+      "icon_file": "Gas Mortar Sentry Stratagem Icon Background.svg",
+      "icon_sha1": "8948b9a6962663d95cb4e4b3e1de9f59fadabc58",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Gas_Mortar_Sentry_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.md-6-anti-personnel-minefield",
+      "slot": "stratagem",
+      "name": "MD-6 反步兵雷区",
+      "name_zh": "MD-6 反步兵雷区",
+      "name_en": "MD-6 Anti-Personnel Minefield",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MD-6_%E5%8F%8D%E6%AD%A5%E5%85%B5%E9%9B%B7%E5%8C%BA",
+      "wiki_zh_revision": 7099,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MD-6_Anti-Personnel_Minefield",
+      "icon_file": "Anti-Personnel Minefield Stratagem Icon Background.svg",
+      "icon_sha1": "ac79b451273c0a02ba737c79123317b4ed276370",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Anti-Personnel_Minefield_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.md-i4-incendiary-mines",
+      "slot": "stratagem",
+      "name": "MD-I4 燃烧地雷",
+      "name_zh": "MD-I4 燃烧地雷",
+      "name_en": "MD-I4 Incendiary Mines",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MD-I4_%E7%87%83%E7%83%A7%E5%9C%B0%E9%9B%B7",
+      "wiki_zh_revision": 7100,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MD-I4_Incendiary_Mines",
+      "icon_file": "Incendiary Mines Stratagem Icon Background.svg",
+      "icon_sha1": "6c612fbc7359344976a0e7ad562a1b1dc96df584",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Incendiary_Mines_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.md-17-anti-tank-mines",
+      "slot": "stratagem",
+      "name": "MD-17 反坦克地雷",
+      "name_zh": "MD-17 反坦克地雷",
+      "name_en": "MD-17 Anti-Tank Mines",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MD-17_%E5%8F%8D%E5%9D%A6%E5%85%8B%E5%9C%B0%E9%9B%B7",
+      "wiki_zh_revision": 7101,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MD-17_Anti-Tank_Mines",
+      "icon_file": "Anti-Tank Mines Stratagem Icon Background.svg",
+      "icon_sha1": "04573f23c7fff48778bd2ec9d141ea7640ee9098",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Anti-Tank_Mines_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.fx-12-shield-generator-relay",
+      "slot": "stratagem",
+      "name": "FX-12 防护罩生成中继器",
+      "name_zh": "FX-12 防护罩生成中继器",
+      "name_en": "FX-12 Shield Generator Relay",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/FX-12_%E9%98%B2%E6%8A%A4%E7%BD%A9%E7%94%9F%E6%88%90%E4%B8%AD%E7%BB%A7%E5%99%A8",
+      "wiki_zh_revision": 7102,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/FX-12_Shield_Generator_Relay",
+      "icon_file": "Shield Generator Relay Stratagem Icon Background.svg",
+      "icon_sha1": "8f5149eeacbaa6d0dd8608544ad68ce0d5ab2759",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Shield_Generator_Relay_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.e-mg-101-hmg-emplacement",
+      "slot": "stratagem",
+      "name": "E/MG-101 重机枪部署支架",
+      "name_zh": "E/MG-101 重机枪部署支架",
+      "name_en": "E/MG-101 HMG Emplacement",
+      "translation_source": "zh_wiki_stratagem_table",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/E/MG-101_%E9%87%8D%E6%9C%BA%E6%9E%AA%E9%83%A8%E7%BD%B2%E6%94%AF%E6%9E%B6",
+      "wiki_zh_revision": 7103,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/E/MG-101_HMG_Emplacement",
+      "icon_file": "HMG Emplacement Stratagem Icon Background.svg",
+      "icon_sha1": "204f0f78125321f4f17d903100a9b78304b85dd1",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:HMG_Emplacement_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.e-gl-21-grenadier-battlement",
+      "slot": "stratagem",
+      "name": "E/GL-21 掷弹兵防卫墙",
+      "name_zh": "E/GL-21 掷弹兵防卫墙",
+      "name_en": "E/GL-21 Grenadier Battlement",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/E/GL-21_%E6%8E%B7%E5%BC%B9%E5%85%B5%E9%98%B2%E5%8D%AB%E5%A2%99",
+      "wiki_zh_revision": 7105,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/E/GL-21_Grenadier_Battlement",
+      "icon_file": "Grenadier Battlement Stratagem Icon Background.svg",
+      "icon_sha1": "80ed1c476f1c3ce697ab4cfc3ce903572a1c7e38",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Grenadier_Battlement_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.md-8-gas-mines",
+      "slot": "stratagem",
+      "name": "MD-8 毒气地雷",
+      "name_zh": "MD-8 毒气地雷",
+      "name_en": "MD-8 Gas Mines",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/MD-8_%E6%AF%92%E6%B0%94%E5%9C%B0%E9%9B%B7",
+      "wiki_zh_revision": 7106,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/MD-8_Gas_Mines",
+      "icon_file": "Gas Mines Stratagem Icon Background.svg",
+      "icon_sha1": "b10ef84f5c38b9a09ffc136dfb5ff9f9fc609ae0",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Gas_Mines_Stratagem_Icon_Background.svg"
+    },
+    {
+      "id": "stratagem.e-at-12-anti-tank-emplacement",
+      "slot": "stratagem",
+      "name": "E/AT-12 反坦克炮台",
+      "name_zh": "E/AT-12 反坦克炮台",
+      "name_en": "E/AT-12 Anti-Tank Emplacement",
+      "translation_source": "zh_wiki_page",
+      "wiki_zh_page": "https://helldivers.wiki.gg/zh/wiki/E/AT-12_%E5%8F%8D%E5%9D%A6%E5%85%8B%E7%82%AE%E5%8F%B0",
+      "wiki_zh_revision": 7107,
+      "wiki_en_page": "https://helldivers.wiki.gg/wiki/E/AT-12_Anti-Tank_Emplacement",
+      "icon_file": "Anti-Tank Emplacement Stratagem Icon Background.svg",
+      "icon_sha1": "d8adfcd23cbcb5d30a4f81d292d274f9d1ecec3a",
+      "icon_source": "https://helldivers.wiki.gg/zh/wiki/File:Anti-Tank_Emplacement_Stratagem_Icon_Background.svg"
     }
   ]
 }

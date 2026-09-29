@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.0 - 2026-09-30
+
+- Rebuilt the random-loadout database as a 216-item, Chinese-only catalog with
+  stable IDs, canonical English names, source pages, translation provenance,
+  and per-file Wiki SHA-1 values.
+- Replaced the legacy partial artwork bundle with current icons for every item,
+  resolved through the Chinese Helldivers Wiki API and embedded for offline
+  card rendering.
+- Added a reproducible maintainer refresh tool and strict catalog, language,
+  icon-coverage, integrity, and attribution tests.
+- Updated third-party notices to identify the Chinese Wiki as the new icon
+  source and to distinguish Wiki titles from the ten community translations.
+
 ## 0.1.1 - 2026-09-29
 
 - Refreshed the random-loadout catalog against the current Helldivers Wiki data.

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import asyncio
+import base64
+import hashlib
 import json
 import random
 import re
@@ -1406,20 +1408,27 @@ def test_loadout_pool_reads_every_slot() -> None:
         "AR-2 野狼",
         "SMG/FLAM-34 司炉者",
         "CQC-73 堑壕工具",
-        "AR-11 Arbitrator",
-        "P-34 Breacher",
-        "G-60 Anti-Tank Seeker",
-        "Surplus EAT Allocation",
-        "Integrated Extinguishers",
+        "AR-11 仲裁者",
+        "P-34 破门者",
+        "G-60 反坦克寻踪者",
+        "额外消耗性反坦克武器配额",
+        "集成灭火器",
         "40-K 热熔枪",
         "GR-8 无后坐力炮",
         "M-1000 重装机枪",
         "MS-11 单兵导弹发射井",
         "S-11 矛枪",
         "GL-28 弹链式榴弹发射器背包",
-        "TD-110 Maelstrom",
+        "TD-110 大漩涡",
     } <= current_names
-    assert {"AR-2 郊狼", "FLAM-34 炉管者", "CQC-72 堑壕工具"}.isdisjoint(current_names)
+    assert {
+        "AR-2 郊狼",
+        "FLAM-34 炉管者",
+        "CQC-72 堑壕工具",
+        "AR-11 Arbitrator",
+        "TD-110 Maelstrom",
+    }.isdisjoint(current_names)
+    assert all(re.search(r"[\u3400-\u4dbf\u4e00-\u9fff]", name) for name in all_names)
     assert load_loadout_pool("does-not-exist.json") == {}
 
 
@@ -1476,42 +1485,86 @@ def test_render_loadout_html_without_icons_omits_images() -> None:
 
 def test_render_loadout_html_survives_an_item_missing_from_the_icon_file() -> None:
     sample = dict(LOADOUT_SAMPLE)
-    sample["primary"] = "AR-11 Arbitrator"
+    sample["primary"] = "AR-11 仲裁者"
     page = render_loadout_html(sample, icons={"MG-43 机枪": "data:image/webp;base64,BBBB"})
     assert page.count("<img") == 1
-    assert "MG-43 机枪" in page and "轨道激光" in page and "AR-11 Arbitrator" in page
+    assert "MG-43 机枪" in page and "轨道激光" in page and "AR-11 仲裁者" in page
     assert (
         '<div class="card noicon"><div class="slot"><b class="idx">1</b>主武器</div>'
-        '<div class="name">AR-11 Arbitrator</div></div>'
+        '<div class="name">AR-11 仲裁者</div></div>'
     ) in page
 
 
-def test_loadout_icons_cover_legacy_items_and_leave_new_items_name_only() -> None:
+def test_loadout_database_is_chinese_traceable_and_complete() -> None:
+    root = Path(__file__).resolve().parent.parent
+    data = json.loads((root / "loadout_data.json").read_text(encoding="utf-8"))
+    assert data["schema_version"] == 2 and data["language"] == "zh-CN"
+    assert data["catalog_updated_at"] == "2026-09-30"
+    assert len(data["items"]) == 216
+    assert data["translation_policy"]["community_translation_count"] == 10
+    assert {source["revision"] for source in data["sources"]} >= {
+        "6540",
+        "6647",
+        "137028",
+        "136929",
+        "133897",
+    }
+
+    ids = {item["id"] for item in data["items"]}
+    names = {item["name"] for item in data["items"]}
+    assert len(ids) == len(names) == len(data["items"])
+    for item in data["items"]:
+        assert item["name"] == item["name_zh"]
+        assert re.search(r"[\u3400-\u4dbf\u4e00-\u9fff]", item["name"])
+        assert item["name_en"] and item["wiki_en_page"].startswith("https://helldivers.wiki.gg/wiki/")
+        assert re.fullmatch(r"[0-9a-f]{40}", item["icon_sha1"])
+        assert item["icon_source"].startswith("https://helldivers.wiki.gg/zh/wiki/File:")
+
+    community = {
+        item["name_en"]: item["name"]
+        for item in data["items"]
+        if item["translation_source"] == "community_translation"
+    }
+    assert community == {
+        "AR-11 Arbitrator": "AR-11 仲裁者",
+        "GL-15 Evictor": "GL-15 驱逐者",
+        "LAS-12 Sai": "LAS-12 铁尺",
+        "P-34 Breacher": "P-34 破门者",
+        "G-60 Anti-Tank Seeker": "G-60 反坦克寻踪者",
+        "G-8 Immolation": "G-8 焚祭",
+        "Surplus EAT Allocation": "额外消耗性反坦克武器配额",
+        "Integrated Extinguishers": "集成灭火器",
+        "A/GM-17 Gas Mortar Sentry": "A/GM-17 毒气迫击哨戒炮",
+        "TD-110 Maelstrom": "TD-110 大漩涡",
+    }
+
+
+def test_loadout_icons_cover_every_item_and_match_recorded_digests() -> None:
+    root = Path(__file__).resolve().parent.parent
+    data = json.loads((root / "loadout_data.json").read_text(encoding="utf-8"))
+    icon_payload = json.loads((root / "loadout_icons.json").read_text(encoding="utf-8"))
     pool = load_loadout_pool()
     icons = load_loadout_icons()
     names = {name for names in pool.values() for name in names}
-    missing = {name for name in names if name not in icons}
-    assert missing == {
-        "R-4 鬣狗",
-        "R/40-K 高能精确射手步枪",
-        "AR-11 Arbitrator",
-        "GL-15 Evictor",
-        "LAS-12 Sai",
-        "P/40-K 爆弹手枪",
-        "P-34 Breacher",
-        "G/40-K 热熔地雷",
-        "G-60 Anti-Tank Seeker",
-        "G-8 Immolation",
-        "Surplus EAT Allocation",
-        "Integrated Extinguishers",
-        "B/FLAM-80 焚燃者",
-        "“飞鹰”毒气空袭",
-        "TD-220 堡垒MK XVI",
-        "GL-28 弹链式榴弹发射器背包",
-        "TD-110 Maelstrom",
-    }
-    assert set(icons) <= names, "图标文件不应保留已从目录移除的旧名称"
-    assert all(uri.startswith("data:image/") for uri in icons.values())
+    assert icon_payload["schema_version"] == 2
+    assert len(names) == len(icons) == len(icon_payload["files"]) == 216
+    assert set(icons) == set(icon_payload["files"]) == names
+    assert {item["name"] for item in data["items"]} == names
+
+    for name, uri in icons.items():
+        header, encoded = uri.split(",", 1)
+        assert header.startswith("data:image/") and header.endswith(";base64")
+        payload = base64.b64decode(encoded, validate=True)
+        metadata = icon_payload["files"][name]
+        assert hashlib.sha256(payload).hexdigest() == metadata["embedded_sha256"]
+        assert re.fullmatch(r"[0-9a-f]{40}", metadata["source_sha1"])
+        assert metadata["query_url"].startswith("https://helldivers.wiki.gg/zh/wiki/File:")
+        if metadata["mime"] == "image/png":
+            assert payload.startswith(b"\x89PNG\r\n\x1a\n")
+        elif metadata["mime"] == "image/svg+xml":
+            assert b"<svg" in payload[:1000]
+        else:
+            raise AssertionError(f"unexpected icon MIME for {name}: {metadata['mime']}")
 
 
 def test_real_icon_card_references_nothing_outside_itself() -> None:
@@ -2097,12 +2150,13 @@ def test_license_and_third_party_notices_are_published() -> None:
     assert "Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN" in notices
     assert "Erlend Dahl" in notices and "Xenfo" in notices
     assert "did not contain a standalone open-source license" in notices
-    for revision in ("6540", "6647", "136693", "136929", "133897"):
+    for revision in ("6540", "6647", "137028", "136929", "133897"):
         assert f"`{revision}`" in notices
     assert "CC BY-SA 4.0" in notices and "CC BY-NC-SA 4.0" in notices
     assert "creativecommons.org/licenses/by-sa/4.0" in notices
     assert "creativecommons.org/licenses/by-nc-sa/4.0" in notices
-    assert "loadout_data.json" in notices and "names only" in notices
+    assert "loadout_data.json" in notices and "all 216 current icons" in notices
+    assert "no equipment record or embedded icon" in notices
     contributors = (root / "CONTRIBUTORS.md").read_text(encoding="utf-8")
     assert "TouristH" in contributors and "OpenAI Codex" in contributors
 

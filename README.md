@@ -169,11 +169,11 @@ push = ["10002"]
 
 在 `loadout_reroll_seconds` 时间内发送 `/helldivers loadout 1-8` 可只重抽对应格；每次成功重抽都会刷新有效期。会话按“聊天流 + 用户”隔离，不会改到同群其他人的配装。
 
-配装卡使用 `loadout_data.json` 与 `loadout_icons.json`，渲染 HTML 完全自包含，不在出图时访问外网。某件装备没有图标时，对应格仍会正常出图并只显示名称，不会插入空白或破损图片；只有整张卡渲染失败或图片发送失败时，才会把整套配装回退为纯文本。
+配装卡使用 `loadout_data.json` 与 `loadout_icons.json`，渲染 HTML 完全自包含，不在出图时访问外网。当前数据库包含 216 项装备（55 件主武器、25 件副武器、23 件投掷物、20 项强化资源和 93 项战略配备），每项都有中文显示名与内嵌图标。渲染器仍保留缺图降级：若以后新增条目尚未刷新图标，对应格会只显示名称；只有整张卡渲染或图片发送失败时才回退为纯文本。
 
-当前装备目录依据 Helldivers Wiki 中文《[武器](https://helldivers.wiki.gg/zh/wiki/武器)》与《[战略配备](https://helldivers.wiki.gg/zh/wiki/战略配备)》页面校准；中文目录尚未收录的新品参考同站英文 [Weapons](https://helldivers.wiki.gg/wiki/Weapons)、[Boosters](https://helldivers.wiki.gg/wiki/Boosters) 与 [Stratagems](https://helldivers.wiki.gg/wiki/Stratagems)，并保留 Wiki 英文规范名。中文 Wiki 衍生内容按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans) 再分发，英文 Wiki 衍生内容按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 再分发。
+当前装备目录依据 Helldivers Wiki 中文《[武器](https://helldivers.wiki.gg/zh/wiki/武器)》、中文《[战略配备](https://helldivers.wiki.gg/zh/wiki/战略配备)》及各中文条目页校准。英文 [Weapons](https://helldivers.wiki.gg/wiki/Weapons)、[Boosters](https://helldivers.wiki.gg/wiki/Boosters) 与 [Stratagems](https://helldivers.wiki.gg/wiki/Stratagems) 只用于发现中文目录尚未列出的最新项目和记录英文规范名，不作为最终显示语言。中文 Wiki 尚无可用标题的 10 项装备采用明确标记的社区直译；每条记录都带有 `translation_source`，不会把社区译名伪装成 Wiki 官方译名。
 
-随机配装的初始结构与现有内嵌图标参考了 [Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN](https://github.com/Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN)。本次从 Wiki 补入、但没有可靠可复用图标的装备仅显示名称。页面修订号、上游作者与完整许可边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+全部 216 个图标均通过中文 Wiki API 查询并内嵌；中文站会把共享媒体文件解析到 Wiki 的公共英文媒体仓库，这是 API 返回的正常来源链。数据库保存每个源文件的 SHA-1，图标包另存内嵌内容的 SHA-256，方便核验与后续增量刷新。随机配装的初始槽位思路与交互仍声明参考 [Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN](https://github.com/Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN)，但当前装备目录与图标包已完全从 Wiki 重建，不再使用该项目的旧图标。中文、英文 Wiki 衍生文本分别遵循 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans) 与 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)；游戏图像素材的权利仍归相应权利人。详细修订号、署名和许可边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 数据、网络与隐私
 
@@ -219,6 +219,14 @@ python -m venv .venv
 python -m pip install -r requirements-dev.txt
 python -m pytest -q
 ```
+
+维护者需要从当前 Wiki 重新生成装备目录与图标包时执行：
+
+```bash
+python tools/refresh_loadout_database.py
+```
+
+刷新器以中文 Wiki 作为中文名称与图标入口，以英文目录检查新品，并在目录数量、中文名、稳定 ID、图标文件或完整覆盖不符合预期时直接失败，要求人工复核后再发布。
 
 测试覆盖公告解析、官方来源过滤、中文增强、Wiki 降级、数据库迁移、幂等投递、权限矩阵、配置模型、命令别名、随机配装和 manifest 约束。合并前仍建议在真实 MaiBot 中至少验证插件加载、订阅、`push`、`diag` 与热更新配置。
 

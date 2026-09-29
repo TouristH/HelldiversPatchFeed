@@ -80,7 +80,7 @@ except ImportError:  # importing the module should work in a test environment
 
 APP_ID = 553850
 PROJECT_URL = "https://github.com/TouristH/HelldiversPatchFeed"
-USER_AGENT = f"HelldiversPatchFeed/0.1.1 (+{PROJECT_URL})"
+USER_AGENT = f"HelldiversPatchFeed/0.2.0 (+{PROJECT_URL})"
 STEAM_NEWS_URL = (
     "https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/"
     f"?appid={APP_ID}&count=50&maxlength=10000"

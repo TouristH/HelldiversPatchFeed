@@ -80,7 +80,7 @@ except ImportError:  # importing the module should work in a test environment
 
 APP_ID = 553850
 PROJECT_URL = "https://github.com/TouristH/HelldiversPatchFeed"
-USER_AGENT = f"HelldiversPatchFeed/0.1.0 (+{PROJECT_URL})"
+USER_AGENT = f"HelldiversPatchFeed/0.1.1 (+{PROJECT_URL})"
 STEAM_NEWS_URL = (
     "https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/"
     f"?appid={APP_ID}&count=50&maxlength=10000"
@@ -110,7 +110,8 @@ CHINESE_RE = re.compile(r"[\u4e00-\u9fff]")
 CATEGORY_LABELS = {"patch": "补丁", "hotfix": "热修复", "update": "更新", "warbond": "战争债券"}
 BEIJING_TZ = timezone(timedelta(hours=8))
 # Heading wording differs per release, hence several keys across both languages.
-WIKI_ATTRIBUTION = "来源：helldivers.wiki.gg（CC BY-SA）"
+WIKI_ZH_ATTRIBUTION = "来源：helldivers.wiki.gg 中文站（CC BY-SA 4.0）"
+WIKI_EN_ATTRIBUTION = "来源：helldivers.wiki.gg 英文站（CC BY-NC-SA 4.0）"
 WIKI_SECTION_KEYWORDS = ("平衡性", "数值", "平衡", "balancing", "balance")
 WIKI_DIGEST_LIMIT = 1200
 WIKI_RECENT_LIMIT = 10
@@ -1437,7 +1438,7 @@ class HelldiversPlugin(MaiBotPlugin):
         lines = [heading, body[:limit].rstrip()]
         if truncated:
             lines.append("（已截断，完整内容见下方页面）")
-        lines.extend([url, WIKI_ATTRIBUTION])
+        lines.extend([url, _wiki_attribution(base_url)])
         return "\n".join(lines)
 
     async def collect_entries(self) -> list[UpdateEntry]:
@@ -2234,6 +2235,11 @@ def _wiki_url(page: str, base_url: str = WIKI_BASE_URL) -> str:
     return base_url + urllib.parse.quote(page.replace(" ", "_"), safe="()/_-")
 
 
+def _wiki_attribution(base_url: str) -> str:
+    """License notice matching the Chinese or English wiki that supplied a page."""
+    return WIKI_ZH_ATTRIBUTION if "/zh/" in base_url else WIKI_EN_ATTRIBUTION
+
+
 def _format_recent_changes(changes: list[Mapping[str, Any]], base_url: str) -> str:
     """Render a MediaWiki ``recentchanges`` batch for chat."""
     lines = [f"【绝地潜兵 2·Wiki 最近更改】共 {len(changes)} 条最新编辑"]
@@ -2251,7 +2257,7 @@ def _format_recent_changes(changes: list[Mapping[str, Any]], base_url: str) -> s
         lines.append(line)
     if related:
         lines.append(f"其中 {related} 条与补丁/更新相关")
-    lines.extend((f"完整列表：{base_url}Special:RecentChanges", WIKI_ATTRIBUTION))
+    lines.extend((f"完整列表：{base_url}Special:RecentChanges", _wiki_attribution(base_url)))
     return "\n".join(lines)
 
 

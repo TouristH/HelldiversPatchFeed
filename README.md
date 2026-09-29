@@ -137,7 +137,7 @@ python -m playwright install chromium
 
 其它官方公告仍会入库，可通过 `push patch`、`push warbond` 或 `push all` 按需查询。两次手动刷新处于冷却期时，普通分类会直接返回本地已存的最新内容；必须实时访问 Wiki 的命令会提示稍后再试。宿主操作员不受手动刷新冷却限制。
 
-中文 Wiki 优先于英文 Wiki；中文页尚未更新时会回退英文页。包含 Wiki 内容的消息会附原页面链接与 `来源：helldivers.wiki.gg（CC BY-SA）`。
+中文 Wiki 优先于英文 Wiki；中文页尚未更新时会回退英文页。包含 Wiki 内容的消息会附原页面链接及与实际来源站点匹配的许可署名：中文站为 CC BY-SA 4.0，英文站为 CC BY-NC-SA 4.0。
 
 ## 权限模型
 
@@ -169,9 +169,11 @@ push = ["10002"]
 
 在 `loadout_reroll_seconds` 时间内发送 `/helldivers loadout 1-8` 可只重抽对应格；每次成功重抽都会刷新有效期。会话按“聊天流 + 用户”隔离，不会改到同群其他人的配装。
 
-配装卡使用 `loadout_data.json` 与 `loadout_icons.json`，渲染 HTML 完全自包含，不在出图时访问外网。文件缺失、单件缺图、浏览器不可用或发送失败时，插件会保留装备名称并回退为纯文本。
+配装卡使用 `loadout_data.json` 与 `loadout_icons.json`，渲染 HTML 完全自包含，不在出图时访问外网。某件装备没有图标时，对应格仍会正常出图并只显示名称，不会插入空白或破损图片；只有整张卡渲染失败或图片发送失败时，才会把整套配装回退为纯文本。
 
-这部分功能参考了 [Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN](https://github.com/Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN)。具体数据、图像、上游作者与许可说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+当前装备目录依据 Helldivers Wiki 中文《[武器](https://helldivers.wiki.gg/zh/wiki/武器)》与《[战略配备](https://helldivers.wiki.gg/zh/wiki/战略配备)》页面校准；中文目录尚未收录的新品参考同站英文 [Weapons](https://helldivers.wiki.gg/wiki/Weapons)、[Boosters](https://helldivers.wiki.gg/wiki/Boosters) 与 [Stratagems](https://helldivers.wiki.gg/wiki/Stratagems)，并保留 Wiki 英文规范名。中文 Wiki 衍生内容按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans) 再分发，英文 Wiki 衍生内容按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 再分发。
+
+随机配装的初始结构与现有内嵌图标参考了 [Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN](https://github.com/Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN)。本次从 Wiki 补入、但没有可靠可复用图标的装备仅显示名称。页面修订号、上游作者与完整许可边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 数据、网络与隐私
 
@@ -222,10 +224,17 @@ python -m pytest -q
 
 发布版本时，`_manifest.json` 的 `version`、Git Tag 和 GitHub Release 版本必须一致；已经发布并被插件中心收录的版本不得移动 Tag。
 
+## 贡献者与 AI 辅助
+
+- [TouristH](https://github.com/TouristH)：项目作者与维护者。
+- OpenAI Codex：AI 辅助贡献者，参与装备数据核对、代码与测试审查及文档整理；所有改动均由项目维护者审阅并发布。
+
+完整说明见 [CONTRIBUTORS.md](CONTRIBUTORS.md)。Codex 不是本仓库所有者、维护者或版权持有人。
+
 ## 许可与署名
 
 - 本项目原创部分：Copyright © 2026 TouristH，使用 [MIT License](LICENSE)。
-- 随机配装参考项目、数据与图像：见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)，不应被误认为自动纳入本项目 MIT 许可。
+- 中文与英文 Wiki 衍生的装备目录分别使用 CC BY-SA 4.0 与 CC BY-NC-SA 4.0；随机配装参考项目与既有图像另有权利边界，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。这些内容不应被误认为自动纳入本项目 MIT 许可。
 - HELLDIVERS 2 的名称、图像及相关媒体归其各自权利人所有。
 
 问题与建议请提交到 [GitHub Issues](https://github.com/TouristH/HelldiversPatchFeed/issues)。

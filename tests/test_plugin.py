@@ -44,6 +44,7 @@ from plugin import (
     SQLiteStore,
     UNSUBSCRIBED_ALLOWED_ACTIONS,
     UpdateEntry,
+    USER_AGENT,
     WIKI_API_URL,
     WIKI_SECTION_KEYWORDS,
     _category,
@@ -1318,7 +1319,7 @@ def test_push_wiki_sends_the_recent_changes_feed() -> None:
         assert "· R-4 Hyena — 09-23 18:00" in text
         assert "其中 1 条与补丁/更新相关" in text
         assert "https://helldivers.wiki.gg/zh/wiki/Special:RecentChanges" in text
-        assert "来源：helldivers.wiki.gg" in text
+        assert "来源：helldivers.wiki.gg 中文站（CC BY-SA 4.0）" in text
         # A site-wide feed needs no stored announcement.
         assert len(replies) == 1
 
@@ -1349,7 +1350,7 @@ def test_push_balance_prefers_the_chinese_wiki_without_any_translation() -> None
         assert "备弹数量从 1 提升至 2" in text and "轨道激光冷却从 240 秒降至 180 秒" in text
         assert "Increased refill from 1 to 2" not in text
         assert "https://helldivers.wiki.gg/zh/wiki/1.006.300" in text
-        assert "来源：helldivers.wiki.gg" in text
+        assert "来源：helldivers.wiki.gg 中文站（CC BY-SA 4.0）" in text
 
     asyncio.run(scenario())
 
@@ -1368,6 +1369,7 @@ def test_push_balance_falls_back_to_the_english_wiki() -> None:
         assert "Increased refill from 1 to 2" in text
         assert "https://helldivers.wiki.gg/wiki/1.006.300" in text
         assert "/zh/wiki/" not in text
+        assert "来源：helldivers.wiki.gg 英文站（CC BY-NC-SA 4.0）" in text
 
     asyncio.run(scenario())
 
@@ -1387,9 +1389,37 @@ def test_push_balance_reports_a_missing_page() -> None:
 
 def test_loadout_pool_reads_every_slot() -> None:
     pool = load_loadout_pool()
-    assert set(pool) >= {"primary", "secondary", "grenade", "booster", "stratagem"}
-    assert len(pool["stratagem"]) >= LOADOUT_STRATAGEM_COUNT
-    assert all(isinstance(name, str) and name.strip() for names in pool.values() for name in names)
+    assert set(pool) == {"primary", "secondary", "grenade", "booster", "stratagem"}
+    assert {slot: len(names) for slot, names in pool.items()} == {
+        "primary": 55,
+        "secondary": 25,
+        "grenade": 23,
+        "booster": 20,
+        "stratagem": 93,
+    }
+    all_names = [name for names in pool.values() for name in names]
+    assert all(isinstance(name, str) and name.strip() for name in all_names)
+    assert len(all_names) == len(set(all_names)), "装备名称必须全局唯一"
+
+    current_names = set(all_names)
+    assert {
+        "AR-2 野狼",
+        "SMG/FLAM-34 司炉者",
+        "CQC-73 堑壕工具",
+        "AR-11 Arbitrator",
+        "P-34 Breacher",
+        "G-60 Anti-Tank Seeker",
+        "Surplus EAT Allocation",
+        "Integrated Extinguishers",
+        "40-K 热熔枪",
+        "GR-8 无后坐力炮",
+        "M-1000 重装机枪",
+        "MS-11 单兵导弹发射井",
+        "S-11 矛枪",
+        "GL-28 弹链式榴弹发射器背包",
+        "TD-110 Maelstrom",
+    } <= current_names
+    assert {"AR-2 郊狼", "FLAM-34 炉管者", "CQC-72 堑壕工具"}.isdisjoint(current_names)
     assert load_loadout_pool("does-not-exist.json") == {}
 
 
@@ -1412,10 +1442,10 @@ def test_generate_loadout_fills_eight_slots_without_duplicates() -> None:
 LOADOUT_SAMPLE = {
     "primary": "AR-23 解放者",
     "secondary": "P-2 和平制造者",
-    "grenade": "G-12 高爆手榴弹",
+    "grenade": "G-12 高爆弹",
     "booster": "UAV侦察强化",
     "stratagem_0": "MG-43 机枪",
-    "stratagem_1": "飞鹰500公斤炸弹",
+    "stratagem_1": "“飞鹰”500KG炸弹",
     "stratagem_2": "轨道激光炮",
     "stratagem_3": "SH-20 防弹护盾背包",
 }
@@ -1445,20 +1475,43 @@ def test_render_loadout_html_without_icons_omits_images() -> None:
 
 
 def test_render_loadout_html_survives_an_item_missing_from_the_icon_file() -> None:
-    page = render_loadout_html(LOADOUT_SAMPLE, icons={"MG-43 机枪": "data:image/webp;base64,BBBB"})
+    sample = dict(LOADOUT_SAMPLE)
+    sample["primary"] = "AR-11 Arbitrator"
+    page = render_loadout_html(sample, icons={"MG-43 机枪": "data:image/webp;base64,BBBB"})
     assert page.count("<img") == 1
-    assert "MG-43 机枪" in page and "轨道激光" in page
+    assert "MG-43 机枪" in page and "轨道激光" in page and "AR-11 Arbitrator" in page
+    assert (
+        '<div class="card noicon"><div class="slot"><b class="idx">1</b>主武器</div>'
+        '<div class="name">AR-11 Arbitrator</div></div>'
+    ) in page
 
 
-def test_loadout_icons_cover_every_pooled_item() -> None:
+def test_loadout_icons_cover_legacy_items_and_leave_new_items_name_only() -> None:
     pool = load_loadout_pool()
     icons = load_loadout_icons()
     names = {name for names in pool.values() for name in names}
-    missing = sorted(name for name in names if name not in icons)
-    assert not missing, f"缺少图标：{missing[:5]}"
+    missing = {name for name in names if name not in icons}
+    assert missing == {
+        "R-4 鬣狗",
+        "R/40-K 高能精确射手步枪",
+        "AR-11 Arbitrator",
+        "GL-15 Evictor",
+        "LAS-12 Sai",
+        "P/40-K 爆弹手枪",
+        "P-34 Breacher",
+        "G/40-K 热熔地雷",
+        "G-60 Anti-Tank Seeker",
+        "G-8 Immolation",
+        "Surplus EAT Allocation",
+        "Integrated Extinguishers",
+        "B/FLAM-80 焚燃者",
+        "“飞鹰”毒气空袭",
+        "TD-220 堡垒MK XVI",
+        "GL-28 弹链式榴弹发射器背包",
+        "TD-110 Maelstrom",
+    }
+    assert set(icons) <= names, "图标文件不应保留已从目录移除的旧名称"
     assert all(uri.startswith("data:image/") for uri in icons.values())
-    # A broken icon file must degrade to "no pictures", never to an exception.
-    assert load_loadout_icons("legacy.sqlite3") == icons  # cached after first read
 
 
 def test_real_icon_card_references_nothing_outside_itself() -> None:
@@ -2019,6 +2072,10 @@ def test_manifest_matches_the_documented_schema() -> None:
     assert i18n["default_locale"] in i18n["supported_locales"]
 
 
+def test_runtime_user_agent_matches_manifest_version() -> None:
+    assert USER_AGENT.startswith(f"HelldiversPatchFeed/{load_manifest()['version']} ")
+
+
 def test_manifest_uses_the_repository_owners_identity() -> None:
     """Publication metadata must not drift back to a previous or project-name signature."""
     manifest = load_manifest()
@@ -2040,6 +2097,14 @@ def test_license_and_third_party_notices_are_published() -> None:
     assert "Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN" in notices
     assert "Erlend Dahl" in notices and "Xenfo" in notices
     assert "did not contain a standalone open-source license" in notices
+    for revision in ("6540", "6647", "136693", "136929", "133897"):
+        assert f"`{revision}`" in notices
+    assert "CC BY-SA 4.0" in notices and "CC BY-NC-SA 4.0" in notices
+    assert "creativecommons.org/licenses/by-sa/4.0" in notices
+    assert "creativecommons.org/licenses/by-nc-sa/4.0" in notices
+    assert "loadout_data.json" in notices and "names only" in notices
+    contributors = (root / "CONTRIBUTORS.md").read_text(encoding="utf-8")
+    assert "TouristH" in contributors and "OpenAI Codex" in contributors
 
 
 def test_manifest_dependencies_are_well_formed() -> None:

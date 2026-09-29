@@ -1,810 +1,939 @@
 {
- "source": "https://github.com/Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN",
- "source_revision": "141ba007b52940903b22067571d87ec0263902d6",
- "notice": "装备名称与槽位数据参考上述社区项目；许可边界、完整署名和游戏权利声明见 THIRD_PARTY_NOTICES.md。",
- "slots": [
-  "primary",
-  "secondary",
-  "grenade",
-  "booster",
-  "stratagem"
- ],
- "items": [
-  {
-   "name": "AR-2 郊狼",
-   "slot": "primary"
-  },
-  {
-   "name": "AR-23 解放者",
-   "slot": "primary"
-  },
-  {
-   "name": "AR-23A 解放者卡宾枪",
-   "slot": "primary"
-  },
-  {
-   "name": "AR-23C 震荡解放者",
-   "slot": "primary"
-  },
-  {
-   "name": "AR-23P 穿甲解放者",
-   "slot": "primary"
-  },
-  {
-   "name": "AR-32 安抚者",
-   "slot": "primary"
-  },
-  {
-   "name": "AR-59 消音器",
-   "slot": "primary"
-  },
-  {
-   "name": "AR-61 肉锤",
-   "slot": "primary"
-  },
-  {
-   "name": "ARC-12 雷霆",
-   "slot": "primary"
-  },
-  {
-   "name": "BR-14 审判者",
-   "slot": "primary"
-  },
-  {
-   "name": "CB-9 爆燃弩",
-   "slot": "primary"
-  },
-  {
-   "name": "FLAM-34 炉管者",
-   "slot": "primary"
-  },
-  {
-   "name": "FLAM-66 火炬手",
-   "slot": "primary"
-  },
-  {
-   "name": "GL-21 幺二",
-   "slot": "primary"
-  },
-  {
-   "name": "JAR-5 主宰",
-   "slot": "primary"
-  },
-  {
-   "name": "LAS-13 三叉戟",
-   "slot": "primary"
-  },
-  {
-   "name": "LAS-16 镰刀",
-   "slot": "primary"
-  },
-  {
-   "name": "LAS-17 双刃镰刀",
-   "slot": "primary"
-  },
-  {
-   "name": "LAS-5 长柄镰",
-   "slot": "primary"
-  },
-  {
-   "name": "M7S 冲锋枪",
-   "slot": "primary"
-  },
-  {
-   "name": "M90A 霰弹枪",
-   "slot": "primary"
-  },
-  {
-   "name": "MA5C 突击步枪",
-   "slot": "primary"
-  },
-  {
-   "name": "MP-98 骑士",
-   "slot": "primary"
-  },
-  {
-   "name": "PLAS-1 焦土",
-   "slot": "primary"
-  },
-  {
-   "name": "PLAS-101 净化者",
-   "slot": "primary"
-  },
-  {
-   "name": "PLAS-39 加速步枪",
-   "slot": "primary"
-  },
-  {
-   "name": "R-2 修正案",
-   "slot": "primary"
-  },
-  {
-   "name": "R-2124 宪法",
-   "slot": "primary"
-  },
-  {
-   "name": "R-36 爆裂铳",
-   "slot": "primary"
-  },
-  {
-   "name": "R-6 鹰眼",
-   "slot": "primary"
-  },
-  {
-   "name": "R-63 勤勉",
-   "slot": "primary"
-  },
-  {
-   "name": "R-63CS 反狙击勤勉",
-   "slot": "primary"
-  },
-  {
-   "name": "R-72 审查官",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-20 止息",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-225 破裂者",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-225IE 高燃“破裂者”",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-225SP 千发百中'破裂者'",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-451 野炊",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-8 制裁者",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-8P 等离子制裁者",
-   "slot": "primary"
-  },
-  {
-   "name": "SG-8S 重炮手",
-   "slot": "primary"
-  },
-  {
-   "name": "SMG-203 英勇无畏",
-   "slot": "primary"
-  },
-  {
-   "name": "SMG-32 训斥",
-   "slot": "primary"
-  },
-  {
-   "name": "SMG-37 防卫者",
-   "slot": "primary"
-  },
-  {
-   "name": "SMG-72 暴击斗士",
-   "slot": "primary"
-  },
-  {
-   "name": "StA-11 冲锋枪",
-   "slot": "primary"
-  },
-  {
-   "name": "StA-52 突击步枪",
-   "slot": "primary"
-  },
-  {
-   "name": "VG-70 变数",
-   "slot": "primary"
-  },
-  {
-   "name": "双重自由",
-   "slot": "primary"
-  },
-  {
-   "name": "扫荡者",
-   "slot": "primary"
-  },
-  {
-   "name": "CQC-19 电击长矛",
-   "slot": "secondary"
-  },
-  {
-   "name": "CQC-2 军刀",
-   "slot": "secondary"
-  },
-  {
-   "name": "CQC-30 电击棍",
-   "slot": "secondary"
-  },
-  {
-   "name": "CQC-42 砍刀",
-   "slot": "secondary"
-  },
-  {
-   "name": "CQC-5 战斗手斧",
-   "slot": "secondary"
-  },
-  {
-   "name": "CQC-72 堑壕工具",
-   "slot": "secondary"
-  },
-  {
-   "name": "GP-20 最后通牒",
-   "slot": "secondary"
-  },
-  {
-   "name": "GP-31 榴弹手枪",
-   "slot": "secondary"
-  },
-  {
-   "name": "LAS-58 利爪",
-   "slot": "secondary"
-  },
-  {
-   "name": "LAS-7 匕首",
-   "slot": "secondary"
-  },
-  {
-   "name": "M6C/SOCOM 手枪",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-11 治疗剂手枪",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-113 裁决",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-19 救世主",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-2 和平制造者",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-33 制导手枪",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-35 思想改造",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-4 参议员",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-69 否决者",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-72 迅击",
-   "slot": "secondary"
-  },
-  {
-   "name": "P-92 法令",
-   "slot": "secondary"
-  },
-  {
-   "name": "PLAS-15 忠诚者",
-   "slot": "secondary"
-  },
-  {
-   "name": "SG-22 游击兵",
-   "slot": "secondary"
-  },
-  {
-   "name": "G-10 燃烧手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-109 海胆",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-12 高爆手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-123 铝热手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-13 燃烧冲击手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-142 烟火手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-16 冲击手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-23 眩晕弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-3 烟雾手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-31 电弧手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-4 毒气手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-48 千兆级榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-50 追踪手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-6 破片手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-7 菠萝手榴弹",
-   "slot": "grenade"
-  },
-  {
-   "name": "G-89 烟幕",
-   "slot": "grenade"
-  },
-  {
-   "name": "K-2 飞刀",
-   "slot": "grenade"
-  },
-  {
-   "name": "SH-39 盾雷",
-   "slot": "grenade"
-  },
-  {
-   "name": "TED-63 炸药",
-   "slot": "grenade"
-  },
-  {
-   "name": "TM-1 诱饵地雷",
-   "slot": "grenade"
-  },
-  {
-   "name": "UAV侦察强化",
-   "slot": "booster"
-  },
-  {
-   "name": "专业撤离飞行员",
-   "slot": "booster"
-  },
-  {
-   "name": "喷射仓空间优化",
-   "slot": "booster"
-  },
-  {
-   "name": "定位混淆",
-   "slot": "booster"
-  },
-  {
-   "name": "实验性注射剂",
-   "slot": "booster"
-  },
-  {
-   "name": "提高增援预算",
-   "slot": "booster"
-  },
-  {
-   "name": "样本扫描仪",
-   "slot": "booster"
-  },
-  {
-   "name": "样本拯救者",
-   "slot": "booster"
-  },
-  {
-   "name": "武装补给仓",
-   "slot": "booster"
-  },
-  {
-   "name": "死亡冲刺",
-   "slot": "booster"
-  },
-  {
-   "name": "激励性冲击",
-   "slot": "booster"
-  },
-  {
-   "name": "火焰喷射仓",
-   "slot": "booster"
-  },
-  {
-   "name": "灵活增援预算",
-   "slot": "booster"
-  },
-  {
-   "name": "生命强化",
-   "slot": "booster"
-  },
-  {
-   "name": "眩晕喷射仓",
-   "slot": "booster"
-  },
-  {
-   "name": "耐力强化",
-   "slot": "booster"
-  },
-  {
-   "name": "肌肉强化",
-   "slot": "booster"
-  },
-  {
-   "name": "隐蔽上阵",
-   "slot": "booster"
-  },
-  {
-   "name": "A/AC-8 自动哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/ARC-3 特斯拉塔",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/FLAM-40 火焰喷射哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/G-16 加特林哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/LAS-98 激光哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/M-12 迫击哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/M-23 电磁冲击波迫击哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/MG-43 哨戒机枪",
-   "slot": "stratagem"
-  },
-  {
-   "name": "A/MLS-4X 火箭哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "AC-8 机炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "APW-1 反器材步枪",
-   "slot": "stratagem"
-  },
-  {
-   "name": "ARC-3 电弧发射器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "AX/AR-23 “护卫犬”",
-   "slot": "stratagem"
-  },
-  {
-   "name": "AX/ARC-3 “护卫犬”K-9",
-   "slot": "stratagem"
-  },
-  {
-   "name": "AX/LAS-5 “护卫犬”漫游者",
-   "slot": "stratagem"
-  },
-  {
-   "name": "AX/TX-13“护卫犬”腐息",
-   "slot": "stratagem"
-  },
-  {
-   "name": "B-1 补给背包",
-   "slot": "stratagem"
-  },
-  {
-   "name": "B-100 便携式地狱火炸弹",
-   "slot": "stratagem"
-  },
-  {
-   "name": "C4背包",
-   "slot": "stratagem"
-  },
-  {
-   "name": "CQC-1 唯一真旗",
-   "slot": "stratagem"
-  },
-  {
-   "name": "E/AT-12 反坦克阵地",
-   "slot": "stratagem"
-  },
-  {
-   "name": "E/GL-21 榴弹兵堡垒",
-   "slot": "stratagem"
-  },
-  {
-   "name": "E/MG-101 重机枪阵地",
-   "slot": "stratagem"
-  },
-  {
-   "name": "EAT-17 消耗性反坦克武器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "EAT-700 消耗性凝固汽油弹",
-   "slot": "stratagem"
-  },
-  {
-   "name": "EXO-45“爱国者”外骨骼装甲",
-   "slot": "stratagem"
-  },
-  {
-   "name": "EXO-49“解放者”外骨骼装甲",
-   "slot": "stratagem"
-  },
-  {
-   "name": "FAF-14 飞矛",
-   "slot": "stratagem"
-  },
-  {
-   "name": "FLAM-40 火焰喷射器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "FX-12 防护罩生成中继器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "GL-21 榴弹发射器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "GL-52 缓和使者",
-   "slot": "stratagem"
-  },
-  {
-   "name": "GR-8 无后坐力步枪",
-   "slot": "stratagem"
-  },
-  {
-   "name": "LAS-98 激光大炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "LAS-99 类星体加农炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "LIFT-182 传送背包",
-   "slot": "stratagem"
-  },
-  {
-   "name": "LIFT-850 喷射背包",
-   "slot": "stratagem"
-  },
-  {
-   "name": "LIFT-860 悬浮背包",
-   "slot": "stratagem"
-  },
-  {
-   "name": "M-102 快速侦察车",
-   "slot": "stratagem"
-  },
-  {
-   "name": "M-105 盟友",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MD-17 反坦克地雷",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MD-6 反步兵雷区",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MD-8 毒气地雷",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MD-I4 燃烧地雷",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MG-206 重机枪",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MG-43 机枪",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MLS-4X 突击兵",
-   "slot": "stratagem"
-  },
-  {
-   "name": "MS-11 单兵发射井",
-   "slot": "stratagem"
-  },
-  {
-   "name": "PLAS-45 纪元",
-   "slot": "stratagem"
-  },
-  {
-   "name": "RL-77 空爆火箭弹发射器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "RS-422 磁轨炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "S-11 鱼叉枪",
-   "slot": "stratagem"
-  },
-  {
-   "name": "SH-20 防弹护盾背包",
-   "slot": "stratagem"
-  },
-  {
-   "name": "SH-32 防护罩生成背包",
-   "slot": "stratagem"
-  },
-  {
-   "name": "SH-51 定向护盾",
-   "slot": "stratagem"
-  },
-  {
-   "name": "StA-X3 黄蜂发射器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "TX-41 灭菌器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "伐木者 外骨骼装甲",
-   "slot": "stratagem"
-  },
-  {
-   "name": "子弹风暴",
-   "slot": "stratagem"
-  },
-  {
-   "name": "弹链式榴弹发射器",
-   "slot": "stratagem"
-  },
-  {
-   "name": "热狗",
-   "slot": "stratagem"
-  },
-  {
-   "name": "焚燃者",
-   "slot": "stratagem"
-  },
-  {
-   "name": "瓦斯迫击哨戒炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "破门锤",
-   "slot": "stratagem"
-  },
-  {
-   "name": "突破 外骨骼装甲",
-   "slot": "stratagem"
-  },
-  {
-   "name": "荡平者",
-   "slot": "stratagem"
-  },
-  {
-   "name": "补给型快速侦察车",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道120毫米高爆弹火力网",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道380毫米高爆弹火力网",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道凝固汽油弹火力网",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道加特林火力网",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道毒气攻击",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道游走火力网",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道激光炮",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道烟雾攻击",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道电磁冲击波攻击",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道磁轨炮攻击",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道空爆攻击",
-   "slot": "stratagem"
-  },
-  {
-   "name": "轨道精准攻击",
-   "slot": "stratagem"
-  },
-  {
-   "name": "重装机枪",
-   "slot": "stratagem"
-  },
-  {
-   "name": "除叶工具",
-   "slot": "stratagem"
-  },
-  {
-   "name": "飞鹰110毫米火箭巢",
-   "slot": "stratagem"
-  },
-  {
-   "name": "飞鹰500公斤炸弹",
-   "slot": "stratagem"
-  },
-  {
-   "name": "飞鹰凝固汽油弹空袭",
-   "slot": "stratagem"
-  },
-  {
-   "name": "飞鹰机枪扫射",
-   "slot": "stratagem"
-  },
-  {
-   "name": "飞鹰烟雾攻击",
-   "slot": "stratagem"
-  },
-  {
-   "name": "飞鹰空袭",
-   "slot": "stratagem"
-  },
-  {
-   "name": "飞鹰集束炸弹",
-   "slot": "stratagem"
-  }
- ]
+  "catalog_updated_at": "2026-09-29",
+  "source": "https://helldivers.wiki.gg/zh/wiki/武器",
+  "source_revision": "6540",
+  "sources": [
+    {
+      "url": "https://helldivers.wiki.gg/zh/wiki/武器",
+      "revision": "6540",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans",
+      "scope": [
+        "primary",
+        "secondary",
+        "grenade",
+        "Chinese names",
+        "support-weapon name fallback"
+      ]
+    },
+    {
+      "url": "https://helldivers.wiki.gg/zh/wiki/战略配备",
+      "revision": "6647",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans",
+      "scope": [
+        "stratagem",
+        "Chinese names"
+      ]
+    },
+    {
+      "url": "https://helldivers.wiki.gg/wiki/Weapons",
+      "revision": "136693",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "scope": [
+        "new equipment not yet localized on the Chinese page"
+      ]
+    },
+    {
+      "url": "https://helldivers.wiki.gg/wiki/Boosters",
+      "revision": "136929",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "scope": [
+        "booster catalog"
+      ]
+    },
+    {
+      "url": "https://helldivers.wiki.gg/wiki/Stratagems",
+      "revision": "133897",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "scope": [
+        "new stratagems not yet present in the Chinese catalog"
+      ]
+    },
+    {
+      "url": "https://github.com/Xenfo-LC/Helldivers-2-Random-Loadout-Generator-CN",
+      "revision": "141ba007b52940903b22067571d87ec0263902d6",
+      "scope": [
+        "initial slot structure",
+        "legacy embedded icons"
+      ]
+    }
+  ],
+  "notice": "装备目录按 Helldivers Wiki 中文页面校准；中文页尚未本地化的新装备保留 Wiki 英文规范名。中文与英文 Wiki 衍生数据分别遵循其 CC BY-SA 4.0 与 CC BY-NC-SA 4.0 许可。随机配装初始结构与现有内嵌图标参考 Xenfo-LC 项目。完整署名和许可边界见 THIRD_PARTY_NOTICES.md。",
+  "slots": [
+    "primary",
+    "secondary",
+    "grenade",
+    "booster",
+    "stratagem"
+  ],
+  "items": [
+    {
+      "name": "AR-23 解放者",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-23P 穿甲“解放者”",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-23C 震荡“解放者”",
+      "slot": "primary"
+    },
+    {
+      "name": "StA-52 突击步枪",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-32 安抚者",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-2 野狼",
+      "slot": "primary"
+    },
+    {
+      "name": "MA5C 突击步枪",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-23A “解放者”卡宾枪",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-61 肉锤",
+      "slot": "primary"
+    },
+    {
+      "name": "BR-14 审判者",
+      "slot": "primary"
+    },
+    {
+      "name": "AR/GL-21 幺二",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-59 消音器",
+      "slot": "primary"
+    },
+    {
+      "name": "R-2 修正",
+      "slot": "primary"
+    },
+    {
+      "name": "R-2124 宪法",
+      "slot": "primary"
+    },
+    {
+      "name": "R-6 鹰眼",
+      "slot": "primary"
+    },
+    {
+      "name": "R-63 勤勉",
+      "slot": "primary"
+    },
+    {
+      "name": "R-63CS 反狙击“勤勉”",
+      "slot": "primary"
+    },
+    {
+      "name": "R-72 审查官",
+      "slot": "primary"
+    },
+    {
+      "name": "R-4 鬣狗",
+      "slot": "primary"
+    },
+    {
+      "name": "MP-98 骑士",
+      "slot": "primary"
+    },
+    {
+      "name": "StA-11 冲锋枪",
+      "slot": "primary"
+    },
+    {
+      "name": "M7S 冲锋枪",
+      "slot": "primary"
+    },
+    {
+      "name": "SMG-32 训斥",
+      "slot": "primary"
+    },
+    {
+      "name": "SMG-37 防卫者",
+      "slot": "primary"
+    },
+    {
+      "name": "SMG-72 暴击斗士",
+      "slot": "primary"
+    },
+    {
+      "name": "SMG/FLAM-34 司炉者",
+      "slot": "primary"
+    },
+    {
+      "name": "SMG-203 英勇无畏",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-8 制裁者",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-8S 重炮手",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-20 止息",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-451 野炊",
+      "slot": "primary"
+    },
+    {
+      "name": "DBS-2 双重自由",
+      "slot": "primary"
+    },
+    {
+      "name": "M90A 霰弹枪",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-225 破裂者",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-225SP 千发百中“破裂者”",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-225IE 高燃“破裂者”",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-97 扫荡者",
+      "slot": "primary"
+    },
+    {
+      "name": "CB-9 爆燃弩",
+      "slot": "primary"
+    },
+    {
+      "name": "R-36 爆裂铳",
+      "slot": "primary"
+    },
+    {
+      "name": "SG-8P 等离子“制裁者”",
+      "slot": "primary"
+    },
+    {
+      "name": "PLAS-39 加速步枪",
+      "slot": "primary"
+    },
+    {
+      "name": "ARC-12 雷霆",
+      "slot": "primary"
+    },
+    {
+      "name": "LAS-5 长柄镰",
+      "slot": "primary"
+    },
+    {
+      "name": "LAS-16 镰刀",
+      "slot": "primary"
+    },
+    {
+      "name": "LAS-17 双刃镰刀",
+      "slot": "primary"
+    },
+    {
+      "name": "PLAS-1 焦土",
+      "slot": "primary"
+    },
+    {
+      "name": "PLAS-101 净化者",
+      "slot": "primary"
+    },
+    {
+      "name": "LAS-13 三叉戟",
+      "slot": "primary"
+    },
+    {
+      "name": "R/40-K 高能精确射手步枪",
+      "slot": "primary"
+    },
+    {
+      "name": "VG-70 变数",
+      "slot": "primary"
+    },
+    {
+      "name": "FLAM-66 火炬手",
+      "slot": "primary"
+    },
+    {
+      "name": "JAR-5 主宰",
+      "slot": "primary"
+    },
+    {
+      "name": "AR-11 Arbitrator",
+      "slot": "primary"
+    },
+    {
+      "name": "GL-15 Evictor",
+      "slot": "primary"
+    },
+    {
+      "name": "LAS-12 Sai",
+      "slot": "primary"
+    },
+    {
+      "name": "P-2 和平制造者",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-19 救世主",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-4 参议员",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-113 裁决",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-92 法令",
+      "slot": "secondary"
+    },
+    {
+      "name": "M6C/特种作战 手枪",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-69 否决者",
+      "slot": "secondary"
+    },
+    {
+      "name": "CQC-19 眩晕长矛",
+      "slot": "secondary"
+    },
+    {
+      "name": "CQC-2 军刀",
+      "slot": "secondary"
+    },
+    {
+      "name": "CQC-30 眩晕短棍",
+      "slot": "secondary"
+    },
+    {
+      "name": "CQC-5 战斗短柄斧",
+      "slot": "secondary"
+    },
+    {
+      "name": "CQC-73 堑壕工具",
+      "slot": "secondary"
+    },
+    {
+      "name": "CQC-42 砍刀",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-11 治疗剂手枪",
+      "slot": "secondary"
+    },
+    {
+      "name": "SG-22 游击兵",
+      "slot": "secondary"
+    },
+    {
+      "name": "LAS-58 猛爪",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-72 迅击",
+      "slot": "secondary"
+    },
+    {
+      "name": "GP-31 榴弹手枪",
+      "slot": "secondary"
+    },
+    {
+      "name": "LAS-7 匕首",
+      "slot": "secondary"
+    },
+    {
+      "name": "GP-20 最后通牒",
+      "slot": "secondary"
+    },
+    {
+      "name": "PLAS-15 忠诚者",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-35 思想改造",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-33 制导手枪",
+      "slot": "secondary"
+    },
+    {
+      "name": "P/40-K 爆弹手枪",
+      "slot": "secondary"
+    },
+    {
+      "name": "P-34 Breacher",
+      "slot": "secondary"
+    },
+    {
+      "name": "TED-63 炸药",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-6 破片弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-12 高爆弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-10 燃烧弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-7 菠萝",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-16 冲击弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-13 燃烧冲击弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-23 眩晕弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-4 毒气榴弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-50 寻踪者",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-3 烟雾弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-123 铝热弹",
+      "slot": "grenade"
+    },
+    {
+      "name": "K-2 飞刀",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-142 烟花术",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-109 海胆",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-31 电弧",
+      "slot": "grenade"
+    },
+    {
+      "name": "TM-1 诱饵地雷",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-89 烟幕",
+      "slot": "grenade"
+    },
+    {
+      "name": "G/SH-39 盾雷",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-48 千兆",
+      "slot": "grenade"
+    },
+    {
+      "name": "G/40-K 热熔地雷",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-60 Anti-Tank Seeker",
+      "slot": "grenade"
+    },
+    {
+      "name": "G-8 Immolation",
+      "slot": "grenade"
+    },
+    {
+      "name": "绝地喷射舱空间优化",
+      "slot": "booster"
+    },
+    {
+      "name": "生命强化",
+      "slot": "booster"
+    },
+    {
+      "name": "UAV侦察强化",
+      "slot": "booster"
+    },
+    {
+      "name": "耐力强化",
+      "slot": "booster"
+    },
+    {
+      "name": "肌肉强化",
+      "slot": "booster"
+    },
+    {
+      "name": "提高增援预算",
+      "slot": "booster"
+    },
+    {
+      "name": "灵活增援预算",
+      "slot": "booster"
+    },
+    {
+      "name": "定位混淆",
+      "slot": "booster"
+    },
+    {
+      "name": "专业撤离飞行员",
+      "slot": "booster"
+    },
+    {
+      "name": "激励性冲击",
+      "slot": "booster"
+    },
+    {
+      "name": "实验性注射剂",
+      "slot": "booster"
+    },
+    {
+      "name": "火焰喷射仓",
+      "slot": "booster"
+    },
+    {
+      "name": "死亡冲刺",
+      "slot": "booster"
+    },
+    {
+      "name": "武装补给仓",
+      "slot": "booster"
+    },
+    {
+      "name": "样本拯救者",
+      "slot": "booster"
+    },
+    {
+      "name": "样本扫描仪",
+      "slot": "booster"
+    },
+    {
+      "name": "眩晕喷射仓",
+      "slot": "booster"
+    },
+    {
+      "name": "隐蔽上阵",
+      "slot": "booster"
+    },
+    {
+      "name": "Surplus EAT Allocation",
+      "slot": "booster"
+    },
+    {
+      "name": "Integrated Extinguishers",
+      "slot": "booster"
+    },
+    {
+      "name": "40-K 热熔枪",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/AC-8 自动哨戒炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/ARC-3 特斯拉塔",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/FLAM-40 火焰喷射哨戒炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/G-16 加特林哨戒炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/GM-17 Gas Mortar Sentry",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/LAS-98 激光哨戒炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/M-12 迫击哨戒炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/M-23 电磁冲击波迫击哨戒炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/MG-43 哨戒机枪",
+      "slot": "stratagem"
+    },
+    {
+      "name": "A/MLS-4X 火箭哨戒炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "AC-8机炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "APW-1 反器材步枪",
+      "slot": "stratagem"
+    },
+    {
+      "name": "ARC-3 电弧发射器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "AX/AR-23 “护卫犬”",
+      "slot": "stratagem"
+    },
+    {
+      "name": "AX/ARC-3 “护卫犬”K-9",
+      "slot": "stratagem"
+    },
+    {
+      "name": "热狗",
+      "slot": "stratagem"
+    },
+    {
+      "name": "AX/LAS-5 “护卫犬”漫游者",
+      "slot": "stratagem"
+    },
+    {
+      "name": "AX/TX-13“护卫犬”腐息",
+      "slot": "stratagem"
+    },
+    {
+      "name": "B-1 补给背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "B-100 便携式地狱火炸弹",
+      "slot": "stratagem"
+    },
+    {
+      "name": "B/FLAM-80 焚燃者",
+      "slot": "stratagem"
+    },
+    {
+      "name": "B/MD C4背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "CQC-1 唯一真旗",
+      "slot": "stratagem"
+    },
+    {
+      "name": "CQC-20 破门锤",
+      "slot": "stratagem"
+    },
+    {
+      "name": "CQC-9 除叶工具",
+      "slot": "stratagem"
+    },
+    {
+      "name": "E/AT-12 反坦克炮台",
+      "slot": "stratagem"
+    },
+    {
+      "name": "E/GL-21 掷弹兵防卫墙",
+      "slot": "stratagem"
+    },
+    {
+      "name": "E/MG-101 重机枪部署支架",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”110MM火箭巢",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”500KG炸弹",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”空袭",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”集束炸弹",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”毒气空袭",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”凝固汽油弹空袭",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”烟雾攻击",
+      "slot": "stratagem"
+    },
+    {
+      "name": "“飞鹰”机枪扫射",
+      "slot": "stratagem"
+    },
+    {
+      "name": "EAT-17 消耗性反坦克武器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "EAT-411 荡平者",
+      "slot": "stratagem"
+    },
+    {
+      "name": "EAT-700 消耗性凝固汽油弹",
+      "slot": "stratagem"
+    },
+    {
+      "name": "EXO-45 “爱国者”外骨骼装甲",
+      "slot": "stratagem"
+    },
+    {
+      "name": "EXO-49 “解放者”外骨骼装甲",
+      "slot": "stratagem"
+    },
+    {
+      "name": "EXO-51 “伐木者”外骨骼装甲",
+      "slot": "stratagem"
+    },
+    {
+      "name": "EXO-55 “突破”外骨骼装甲",
+      "slot": "stratagem"
+    },
+    {
+      "name": "FAF-14飞矛",
+      "slot": "stratagem"
+    },
+    {
+      "name": "FLAM-40火焰喷射器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "FX-12 防护罩生成中继器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "GL-21 榴弹发射器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "GL-52 缓和使者",
+      "slot": "stratagem"
+    },
+    {
+      "name": "GR-8 无后坐力炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "LAS-98 激光大炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "LAS-99 类星体加农炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "LIFT-182 传送背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "LIFT-850 喷射背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "LIFT-860 悬浮背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "M-1000 重装机枪",
+      "slot": "stratagem"
+    },
+    {
+      "name": "M-102 炮手快速侦察载具",
+      "slot": "stratagem"
+    },
+    {
+      "name": "M-103 补给型快速侦察载具",
+      "slot": "stratagem"
+    },
+    {
+      "name": "M-104 Incinerator FRV",
+      "slot": "stratagem"
+    },
+    {
+      "name": "M-105 “盟友”",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MD-17 反坦克地雷",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MD-6 反步兵雷区",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MD-8 毒气地雷",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MD-I4 燃烧地雷",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MG-206 重机枪",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MG-43 机枪",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MGX-42 子弹风暴",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MLS-4X 突击兵",
+      "slot": "stratagem"
+    },
+    {
+      "name": "MS-11 单兵导弹发射井",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道380毫米高爆弹火力网",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道电磁冲击波攻击",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道激光炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道凝固汽油弹火力网",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道磁轨炮攻击",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道烟雾攻击",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道游走火力网",
+      "slot": "stratagem"
+    },
+    {
+      "name": "PLAS-45 纪元",
+      "slot": "stratagem"
+    },
+    {
+      "name": "RL-77 空爆火箭弹发射器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "RS-422磁轨炮",
+      "slot": "stratagem"
+    },
+    {
+      "name": "S-11 矛枪",
+      "slot": "stratagem"
+    },
+    {
+      "name": "SH-20 防弹护盾背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "SH-32 防护罩生成背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "SH-51 定向护盾",
+      "slot": "stratagem"
+    },
+    {
+      "name": "StA-X3 W.A.S.P.发射器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "TD-220 堡垒MK XVI",
+      "slot": "stratagem"
+    },
+    {
+      "name": "TX-41 灭菌器",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道120MM高爆弹火力网",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道加特林火力网",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道毒气攻击",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道空爆攻击",
+      "slot": "stratagem"
+    },
+    {
+      "name": "轨道精准攻击",
+      "slot": "stratagem"
+    },
+    {
+      "name": "GL-28 弹链式榴弹发射器背包",
+      "slot": "stratagem"
+    },
+    {
+      "name": "TD-110 Maelstrom",
+      "slot": "stratagem"
+    }
+  ]
 }

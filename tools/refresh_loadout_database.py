@@ -44,7 +44,7 @@ EN_API = "https://helldivers.wiki.gg/api.php"
 ZH_ROOT = "https://helldivers.wiki.gg/zh/wiki/"
 EN_ROOT = "https://helldivers.wiki.gg/wiki/"
 USER_AGENT = (
-    "HelldiversPatchFeed-loadout-refresh/0.2.0 "
+    "HelldiversPatchFeed-loadout-refresh/0.2.1 "
     "(https://github.com/TouristH/HelldiversPatchFeed)"
 )
 SLOTS = ("primary", "secondary", "grenade", "booster", "stratagem")

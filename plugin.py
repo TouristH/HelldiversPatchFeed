@@ -9,9 +9,12 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import html
+import ipaddress
 import json
+import logging
 import random
 import re
+import socket
 import sqlite3
 import time
 import unicodedata
@@ -32,7 +35,11 @@ try:  # maibot-plugin-sdk 2.x
         PluginConfigBase,
     )
     from pydantic import ConfigDict  # type: ignore
-except ImportError:  # importing the module should work in a test environment
+except ImportError as sdk_import_error:  # importing should still support isolated tests
+    logging.getLogger(__name__).warning(
+        "maibot-plugin-sdk is unavailable; HelldiversPatchFeed is using test-only SDK stubs: %s",
+        sdk_import_error,
+    )
     CONFIG_RELOAD_SCOPE_SELF = "self"
 
     class PluginConfigBase:
@@ -80,7 +87,7 @@ except ImportError:  # importing the module should work in a test environment
 
 APP_ID = 553850
 PROJECT_URL = "https://github.com/TouristH/HelldiversPatchFeed"
-USER_AGENT = f"HelldiversPatchFeed/0.2.0 (+{PROJECT_URL})"
+USER_AGENT = f"HelldiversPatchFeed/0.2.1 (+{PROJECT_URL})"
 STEAM_NEWS_URL = (
     "https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/"
     f"?appid={APP_ID}&count=50&maxlength=10000"
@@ -91,6 +98,13 @@ WIKI_BASE_URL = "https://helldivers.wiki.gg/wiki/"
 WIKI_ZH_API_URL = "https://helldivers.wiki.gg/zh/api.php"
 WIKI_ZH_BASE_URL = "https://helldivers.wiki.gg/zh/wiki/"
 WIKI_SOURCES = ((WIKI_ZH_API_URL, WIKI_ZH_BASE_URL), (WIKI_API_URL, WIKI_BASE_URL))
+# Fixed, non-configurable upstream names may be mapped to proxy sentinel ranges
+# by Clash/Mihomo Fake-IP mode. Custom endpoint names never receive this narrow
+# exemption, and literal loopback/benchmark URLs are still rejected earlier.
+TRUSTED_PROXY_MAPPED_HOSTS = frozenset(
+    {"api.steampowered.com", "store.steampowered.com", "helldivers.wiki.gg"}
+)
+FAKE_IP_NETWORK = ipaddress.ip_network("198.18.0.0/15")
 DEFAULT_INTERVAL_SECONDS = 12 * 60 * 60
 # Minimum gap between two on-demand source checks triggered by ``/helldivers push``.
 # Within the gap the command still answers, but from the newest stored entry only.
@@ -178,9 +192,8 @@ DIAG_HTML = (
     '</style></head><body><div class="big">渲染自检 OK</div>'
     '<div class="small">这条消息是图片，说明渲染链路正常</div></body></html>'
 )
-# The host caps ``cap.call`` at 30 s (``DEFAULT_COMPONENT_RPC_TIMEOUT_MS``), which a
-# cold browser start -- and a possible Chromium download -- blows straight through,
-# so the very first render always timed out. Both budgets are raised explicitly:
+# A cold browser start -- and a possible Chromium download -- can outlive the
+# host's ordinary component budget. Both relevant budgets are raised explicitly:
 # ``call_capability(timeout_ms=...)`` sets the RPC timeout separately from the
 # capability arguments, and ``@Command(..., timeout_ms=...)`` raises the command's
 # own RPC budget above it.
@@ -329,20 +342,138 @@ PUSH_USAGE_HINT = (
     "推送类型：version(版本更新，默认) patch(补丁) hotfix(热修复) warbond(战争债券) "
     "all(最新公告) wiki(Wiki 最近更改) balance(Wiki 数值调整)"
 )
+
+
+def _canonical_hostname(value: str) -> str:
+    """Normalise Unicode host separators and IDNs before policy checks."""
+    host = urllib.parse.unquote(value or "").rstrip(".").casefold()
+    try:
+        return host.encode("idna").decode("ascii").rstrip(".").casefold()
+    except UnicodeError:
+        return ""
+
+
 def _endpoint_or_default(value: Any, default: str) -> tuple[str, str]:
     """Validate a configurable endpoint, returning ``(url, rejected value)``.
 
-    Only ``http``/``https`` are accepted: ``urllib`` would happily open a
-    ``file://`` URL, which turns a configured endpoint into a local file read.
-    A rejected value falls back to the shipped default instead of breaking the
-    feed outright.
+    Besides non-HTTP schemes, reject credentials, loopback/private/link-local
+    literals, common local-only names, and cloud metadata hosts. Config is an
+    operator-only surface, but these checks keep a typo or copied endpoint from
+    turning the fetcher into an SSRF path. A rejected value falls back to the
+    shipped default instead of breaking the feed outright.
     """
     text = str(value or "").strip()
     if not text:
         return default, ""
-    if text.lower().startswith(("http://", "https://")):
-        return text, ""
-    return default, text
+    try:
+        parsed = urllib.parse.urlsplit(text)
+        if parsed.scheme.lower() not in {"http", "https"}:
+            return default, text
+        if parsed.username is not None or parsed.password is not None:
+            return default, text
+        # Accessing ``port`` validates malformed/non-numeric port values.
+        _ = parsed.port
+        host = _canonical_hostname(parsed.hostname or "")
+    except (TypeError, ValueError):
+        return default, text
+    if not host:
+        return default, text
+
+    local_names = {
+        "localhost",
+        "localhost.localdomain",
+        "instance-data",
+        "metadata",
+        "metadata.google.internal",
+    }
+    local_suffixes = (".localhost", ".local", ".lan", ".home", ".internal", ".localdomain")
+    if host in local_names or host.endswith(local_suffixes):
+        return default, text
+
+    address = _host_ip_address(host)
+    if address is not None:
+        if not _is_global_address(address):
+            return default, text
+    return text, ""
+
+
+def _host_ip_address(host: str) -> ipaddress.IPv4Address | ipaddress.IPv6Address | None:
+    """Parse ordinary, IPv6-zone, and legacy numeric IP host spellings."""
+    literal = host.split("%", 1)[0]
+    try:
+        return ipaddress.ip_address(literal)
+    except ValueError:
+        # ``inet_aton`` also understands legacy numeric IPv4 forms such as
+        # 2130706433, 0x7f000001 and 127.1 that URL clients may resolve locally.
+        try:
+            return ipaddress.ip_address(socket.inet_ntoa(socket.inet_aton(literal)))
+        except OSError:
+            return None
+
+
+def _is_global_address(address: ipaddress.IPv4Address | ipaddress.IPv6Address) -> bool:
+    mapped = getattr(address, "ipv4_mapped", None)
+    return bool((mapped or address).is_global)
+
+
+def _is_trusted_proxy_mapping(
+    host: str,
+    address: ipaddress.IPv4Address | ipaddress.IPv6Address,
+) -> bool:
+    mapped = getattr(address, "ipv4_mapped", None)
+    normalized = mapped or address
+    return host in TRUSTED_PROXY_MAPPED_HOSTS and (
+        normalized.is_loopback
+        or (isinstance(normalized, ipaddress.IPv4Address) and normalized in FAKE_IP_NETWORK)
+    )
+
+
+def _assert_public_endpoint(url: str) -> None:
+    """Resolve an endpoint and reject any non-public A/AAAA result.
+
+    Literal checks alone miss public-looking names that resolve to a loopback or
+    private address. This guard runs immediately before the first request and is
+    also applied to every redirect target.
+    """
+    accepted, rejected = _endpoint_or_default(url, "")
+    if rejected or not accepted:
+        raise ValueError("endpoint is not a permitted public HTTP(S) URL")
+    parsed = urllib.parse.urlsplit(accepted)
+    host = _canonical_hostname(parsed.hostname or "")
+    address = _host_ip_address(host)
+    if address is not None:
+        addresses = {address}
+    else:
+        port = parsed.port or (443 if parsed.scheme.lower() == "https" else 80)
+        addresses: set[ipaddress.IPv4Address | ipaddress.IPv6Address] = set()
+        for info in socket.getaddrinfo(host, port, family=socket.AF_UNSPEC, type=socket.SOCK_STREAM):
+            candidate = str(info[4][0]).split("%", 1)[0]
+            try:
+                addresses.add(ipaddress.ip_address(candidate))
+            except ValueError:
+                continue
+    if not addresses or any(
+        not _is_global_address(item) and not _is_trusted_proxy_mapping(host, item)
+        for item in addresses
+    ):
+        raise ValueError("endpoint resolves to a non-public network address")
+
+
+class _PublicOnlyRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Keep urllib's fallback redirect support without opening an SSRF hop."""
+
+    def redirect_request(
+        self,
+        req: urllib.request.Request,
+        fp: Any,
+        code: int,
+        msg: str,
+        headers: Any,
+        newurl: str,
+    ) -> urllib.request.Request | None:
+        target = urllib.parse.urljoin(req.full_url, newurl)
+        _assert_public_endpoint(target)
+        return super().redirect_request(req, fp, code, msg, headers, target)
 
 
 def pad_display(text: str, width: int) -> str:
@@ -1304,13 +1435,16 @@ class HelldiversPlugin(MaiBotPlugin):
         try:
             import httpx  # type: ignore
             async with httpx.AsyncClient(timeout=timeout, headers={"User-Agent": USER_AGENT}) as client:
-                response = await client.get(url)
+                response = await self._httpx_get_public(client, url)
                 response.raise_for_status()
                 data = response.json()
                 return data if isinstance(data, Mapping) else {}
         except ImportError:
             def request() -> Mapping[str, Any]:
-                with urllib.request.urlopen(url, timeout=timeout) as response:
+                _assert_public_endpoint(url)
+                opener = urllib.request.build_opener(_PublicOnlyRedirectHandler())
+                req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+                with opener.open(req, timeout=timeout) as response:
                     return json.loads(response.read().decode("utf-8"))
             return await asyncio.to_thread(request)
 
@@ -1319,14 +1453,33 @@ class HelldiversPlugin(MaiBotPlugin):
         try:
             import httpx  # type: ignore
             async with httpx.AsyncClient(timeout=timeout, headers={"User-Agent": USER_AGENT}) as client:
-                response = await client.get(url)
+                response = await self._httpx_get_public(client, url)
                 response.raise_for_status()
                 return response.text
         except ImportError:
             def request() -> str:
-                with urllib.request.urlopen(url, timeout=timeout) as response:
+                _assert_public_endpoint(url)
+                opener = urllib.request.build_opener(_PublicOnlyRedirectHandler())
+                req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+                with opener.open(req, timeout=timeout) as response:
                     return response.read().decode("utf-8", "replace")
             return await asyncio.to_thread(request)
+
+    async def _httpx_get_public(self, client: Any, url: str) -> Any:
+        """GET a URL while validating every DNS result and redirect target."""
+        current = url
+        for hop in range(6):
+            await asyncio.to_thread(_assert_public_endpoint, current)
+            response = await client.get(current, follow_redirects=False)
+            if response.status_code not in {301, 302, 303, 307, 308}:
+                return response
+            location = response.headers.get("location")
+            if not location:
+                return response
+            if hop == 5:
+                raise RuntimeError("endpoint exceeded the 5-redirect safety limit")
+            current = urllib.parse.urljoin(str(response.url), location)
+        raise RuntimeError("unreachable redirect state")
 
     async def _localized_steam_titles(self) -> dict[str, tuple[str, str]]:
         """Localized title/body per build number; empty when disabled or unavailable."""
@@ -1446,7 +1599,7 @@ class HelldiversPlugin(MaiBotPlugin):
         if self._cfg.get("steam_enabled", True):
             steam_endpoint, rejected = _endpoint_or_default(self._cfg.get("steam_endpoint"), STEAM_NEWS_URL)
             if rejected:
-                self._log("warning", "Helldivers steam_endpoint is not an http(s) URL, using the default: %s", rejected)
+                self._log("warning", "Helldivers steam_endpoint is not a safe public HTTP(S) URL, using the default: %s", rejected)
             if "appid=" not in steam_endpoint:
                 separator = "&" if "?" in steam_endpoint else "?"
                 steam_endpoint += f"{separator}appid={self._steam_app_id()}&count=50&maxlength=10000"
@@ -1454,7 +1607,7 @@ class HelldiversPlugin(MaiBotPlugin):
         if self._cfg.get("wiki_enabled", False):
             wiki_endpoint, rejected = _endpoint_or_default(self._cfg.get("wiki_endpoint"), WIKI_API_URL)
             if rejected:
-                self._log("warning", "Helldivers wiki_endpoint is not an http(s) URL, using the default: %s", rejected)
+                self._log("warning", "Helldivers wiki_endpoint is not a safe public HTTP(S) URL, using the default: %s", rejected)
             jobs.append(
                 self._fetch_json(
                     wiki_endpoint,
@@ -1672,7 +1825,7 @@ class HelldiversPlugin(MaiBotPlugin):
         """Wiki API/base pairs with the configured endpoint as the fallback source."""
         endpoint, rejected = _endpoint_or_default(self._cfg.get("wiki_endpoint"), WIKI_API_URL)
         if rejected:
-            self._log("warning", "Helldivers wiki_endpoint is not an http(s) URL, using the default: %s", rejected)
+            self._log("warning", "Helldivers wiki_endpoint is not a safe public HTTP(S) URL, using the default: %s", rejected)
         if endpoint == WIKI_API_URL:
             return WIKI_SOURCES
         return (WIKI_SOURCES[0], (endpoint, WIKI_BASE_URL))
@@ -1760,12 +1913,15 @@ class HelldiversPlugin(MaiBotPlugin):
         return ok
 
     async def _call_render(self, args: Mapping[str, Any]) -> Any:
-        """Render through the raw capability so the RPC timeout can be raised.
+        """Render through the SDK capability call so the RPC timeout can be raised.
 
-        ``ctx.render.html2png`` cannot set a timeout, and the host caps ``cap.call``
-        at 30 s -- less than a cold browser start, so the first render always failed
-        with ``[E_TIMEOUT]``. ``call_capability(timeout_ms=...)`` passes the timeout
-        as the RPC budget instead of a capability argument.
+        SDK 2.7.1+ exposes the public ``PluginContext.call_capability`` method,
+        whose ``timeout_ms`` controls the RPC budget. The typed render proxy
+        exposes the render parameters but not that transport budget, so a cold
+        browser start can outlive its default. Current MaiBot also reads Command
+        ``timeout_ms`` metadata via
+        ``host/component_timeout.py``; the decorator deliberately forwards extra
+        metadata. The typed fallback keeps exactly the same render arguments.
         """
         call_capability = getattr(self.ctx, "call_capability", None)
         if callable(call_capability):
@@ -1773,9 +1929,12 @@ class HelldiversPlugin(MaiBotPlugin):
         # Older SDK builds only expose the typed proxy: no way to raise the budget.
         return await self.ctx.render.html2png(
             str(args["html"]),
+            selector=str(args["selector"]),
             viewport=dict(args["viewport"]),
             device_scale_factor=float(args["device_scale_factor"]),
             full_page=bool(args["full_page"]),
+            render_timeout_ms=int(args["render_timeout_ms"]),
+            allow_network=bool(args["allow_network"]),
         )
 
     async def _render_card(self, card_html: str, *, label: str = "配装卡片") -> str:
@@ -1793,6 +1952,8 @@ class HelldiversPlugin(MaiBotPlugin):
                     "viewport": {"width": LOADOUT_CARD_WIDTH, "height": LOADOUT_CARD_HEIGHT},
                     "device_scale_factor": 1.0,
                     "full_page": True,
+                    "render_timeout_ms": RENDER_RPC_TIMEOUT_MS,
+                    "allow_network": False,
                 }
             )
         except Exception as exc:

@@ -12,7 +12,7 @@
 playwright>=1.54.0
 
 # --- 插件自身进程依赖 ---
-maibot-plugin-sdk>=2.0,<3.0
+maibot-plugin-sdk>=2.7.1,<3.0
 
 # 说明：
 # - Chromium 浏览器二进制不在 pip 范围内，用 playwright install chromium 安装；

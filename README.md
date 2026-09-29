@@ -23,7 +23,7 @@
 | 项目 | 要求 |
 |---|---|
 | MaiBot Host | `>= 1.0.0` |
-| MaiBot Plugin SDK | `>= 2.0.0, < 3.0.0` |
+| MaiBot Plugin SDK | `>= 2.7.1, < 3.0.0` |
 | Python | 以当前 MaiBot/SDK 支持版本为准 |
 | 可选出图环境 | Playwright + Chromium |
 
@@ -88,7 +88,7 @@ python -m playwright install chromium
 | `wiki_digest_max_chars` | `1200` | Wiki 数值摘要最大字符数 |
 | `loadout_reroll_seconds` | `120` | 单格重抽会话的有效时间 |
 
-只接受 `http://` 或 `https://` 数据源地址；`file:`、本机路径等不会被当作远程接口读取。
+数据源只接受公开网络上的 `http://` 或 `https://` 地址；`file:`、本机路径、带账号密码的 URL、回环/私网/链路本地 IP、常见本地域名与云元数据地址等字面危险值会被拒绝并回退官方默认端点。实际请求还会在首跳及每次重定向前解析全部 DNS 地址，发现任一非公网地址就中止访问。仅三个内置且不可由配置扩展的官方域名兼容系统代理常见的 loopback / `198.18.0.0/15` Fake-IP 映射；自定义域名没有该豁免。配置项仅由宿主操作员管理，这层校验用于降低误配置形成 SSRF 访问路径的风险。
 
 ## 群命令
 
@@ -227,6 +227,8 @@ python tools/refresh_loadout_database.py
 ```
 
 刷新器以中文 Wiki 作为中文名称与图标入口，以英文目录检查新品，并在目录数量、中文名、稳定 ID、图标文件或完整覆盖不符合预期时直接失败，要求人工复核后再发布。
+
+渲染调用使用 MaiBot Plugin SDK 2.7.1+ 的公开 `PluginContext.call_capability(..., timeout_ms=...)` 接口提高冷启动 RPC 预算；2.7.1 是同时保证自定义 `Command` 元数据正确展开的最低版本。命令预算通过 MaiBot Host 支持的组件 `timeout_ms` 元数据配置。原始能力路径与类型化 `ctx.render.html2png` 回退路径传入相同的 `selector`、视口、渲染超时和 `allow_network = false` 参数。
 
 测试覆盖公告解析、官方来源过滤、中文增强、Wiki 降级、数据库迁移、幂等投递、权限矩阵、配置模型、命令别名、随机配装和 manifest 约束。合并前仍建议在真实 MaiBot 中至少验证插件加载、订阅、`push`、`diag` 与热更新配置。
 

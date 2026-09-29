@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.1 - 2026-09-30
+
+- Rejected loopback, private, link-local, local-name, metadata-service, and
+  credential-bearing configurable source URLs; DNS results and every redirect
+  target are rechecked before the corresponding network request.
+- Preserved Clash/Mihomo Fake-IP compatibility through a narrow proxy-sentinel
+  exception for the three fixed official upstream hostnames only.
+- Logged an explicit warning when the MaiBot SDK is unavailable instead of
+  silently entering the test-only compatibility stubs.
+- Kept raw and typed render paths argument-compatible, including `selector`,
+  `render_timeout_ms`, and the no-network policy; documented the SDK/Host basis
+  for the extended RPC and command timeouts.
+- Raised the declared SDK minimum to 2.7.1, which includes both transport
+  timeouts and correctly flattened custom command metadata.
+
 ## 0.2.0 - 2026-09-30
 
 - Rebuilt the random-loadout database as a 216-item, Chinese-only catalog with

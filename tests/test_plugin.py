@@ -7,8 +7,11 @@ import json
 import random
 import re
 import sqlite3
+import socket
 import unicodedata
 import time
+import urllib.request
+from unittest.mock import patch
 from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
@@ -49,6 +52,8 @@ from plugin import (
     USER_AGENT,
     WIKI_API_URL,
     WIKI_SECTION_KEYWORDS,
+    _PublicOnlyRedirectHandler,
+    _assert_public_endpoint,
     _category,
     _endpoint_or_default,
     clean_summary,
@@ -1707,8 +1712,8 @@ def command_metadata() -> dict:
 
 
 def test_command_timeout_covers_the_render_budget() -> None:
-    """A text-only loadout was really the host's 30 s cap on ``cap.call``."""
-    assert RENDER_RPC_TIMEOUT_MS > 30_000  # the host's DEFAULT_COMPONENT_RPC_TIMEOUT_MS
+    """A cold browser launch needs more than the host's default 60 s budget."""
+    assert RENDER_RPC_TIMEOUT_MS > 60_000  # MaiBot's DEFAULT_COMPONENT_RPC_TIMEOUT_MS
     assert COMMAND_RPC_TIMEOUT_MS > RENDER_RPC_TIMEOUT_MS
     metadata = command_metadata()
     if metadata:  # the stub also records it, so this is not vacuous
@@ -1739,6 +1744,8 @@ def test_render_raises_the_rpc_timeout_above_the_host_cap() -> None:
         assert "timeout_ms" not in args
         assert args["selector"] == "body" and args["full_page"] is True
         assert args["viewport"] == {"width": LOADOUT_CARD_WIDTH, "height": LOADOUT_CARD_HEIGHT}
+        assert args["render_timeout_ms"] == RENDER_RPC_TIMEOUT_MS
+        assert args["allow_network"] is False
         assert args["html"].startswith("<!DOCTYPE html>")
 
     asyncio.run(scenario())
@@ -1766,7 +1773,14 @@ def test_render_falls_back_to_the_typed_proxy_without_call_capability() -> None:
         attach_ctx(plugin, Ctx())
         ok, _, _ = await plugin.handle_command(text="/helldivers loadout", stream_id="s")
         assert ok and len(seen) == 1
-        assert seen[0]["full_page"] is True and seen[0]["device_scale_factor"] == 1.0
+        assert seen[0] == {
+            "selector": "body",
+            "viewport": {"width": LOADOUT_CARD_WIDTH, "height": LOADOUT_CARD_HEIGHT},
+            "device_scale_factor": 1.0,
+            "full_page": True,
+            "render_timeout_ms": RENDER_RPC_TIMEOUT_MS,
+            "allow_network": False,
+        }
 
     asyncio.run(scenario())
 
@@ -2129,6 +2143,15 @@ def test_runtime_user_agent_matches_manifest_version() -> None:
     assert USER_AGENT.startswith(f"HelldiversPatchFeed/{load_manifest()['version']} ")
 
 
+def test_sdk_minimum_is_consistent_across_release_files() -> None:
+    minimum = load_manifest()["sdk"]["min_version"]
+    root = MANIFEST_PATH.parent
+    requirements = (root / "requirements.txt").read_text(encoding="utf-8")
+    readme = (root / "README.md").read_text(encoding="utf-8")
+    assert f"maibot-plugin-sdk>={minimum},<3.0" in requirements
+    assert f"`>= {minimum}, < 3.0.0`" in readme
+
+
 def test_manifest_uses_the_repository_owners_identity() -> None:
     """Publication metadata must not drift back to a previous or project-name signature."""
     manifest = load_manifest()
@@ -2484,14 +2507,108 @@ def test_database_backed_push_still_answers_inside_the_cooldown() -> None:
 
 
 def test_endpoint_config_only_accepts_http_and_https() -> None:
-    """``urllib`` would open ``file://``; a configured endpoint must not."""
+    """Configurable sources cannot become local-file or SSRF primitives."""
     assert _endpoint_or_default("https://mirror.test/api", WIKI_API_URL) == ("https://mirror.test/api", "")
     assert _endpoint_or_default("http://mirror.test/api", WIKI_API_URL)[0] == "http://mirror.test/api"
+    assert _endpoint_or_default("https://8.8.8.8/api", WIKI_API_URL)[0] == "https://8.8.8.8/api"
     assert _endpoint_or_default("", WIKI_API_URL) == (WIKI_API_URL, "")
-    for hostile in ("file:///etc/passwd", "ftp://x/y", "data:text/plain,x", "C:/Windows/win.ini"):
+    for hostile in (
+        "file:///etc/passwd",
+        "ftp://x/y",
+        "data:text/plain,x",
+        "C:/Windows/win.ini",
+        "https://localhost/api",
+        "https://localhost。/api",
+        "https://localhost．/api",
+        "http://service.internal/api",
+        "http://127.0.0.1/api",
+        "http://127.1/api",
+        "http://2130706433/api",
+        "http://0x7f000001/api",
+        "http://10.0.0.8/api",
+        "http://172.16.0.1/api",
+        "http://192.168.1.1/api",
+        "http://169.254.169.254/latest/meta-data",
+        "http://[::1]/api",
+        "http://[fe80::1]/api",
+        "https://user:secret@example.com/api",
+        "https:///missing-host",
+    ):
         url, rejected = _endpoint_or_default(hostile, WIKI_API_URL)
         assert url == WIKI_API_URL, f"{hostile} 应被拒绝"
         assert rejected == hostile
+
+
+def test_endpoint_dns_resolution_rejects_private_or_mixed_results() -> None:
+    public = (socket.AF_INET, socket.SOCK_STREAM, 6, "", ("8.8.8.8", 443))
+    private = (socket.AF_INET, socket.SOCK_STREAM, 6, "", ("127.0.0.1", 443))
+    with patch("plugin.socket.getaddrinfo", return_value=[public]):
+        _assert_public_endpoint("https://public.example/api")
+    for answers in ([private], [public, private]):
+        with patch("plugin.socket.getaddrinfo", return_value=answers):
+            try:
+                _assert_public_endpoint("https://rebinding.example/api")
+            except ValueError:
+                pass
+            else:
+                raise AssertionError("private or mixed DNS answers must be rejected")
+
+
+def test_fixed_official_hosts_allow_proxy_fake_ip_mappings_only() -> None:
+    fake_ip = (socket.AF_INET, socket.SOCK_STREAM, 6, "", ("198.18.0.69", 443))
+    loopback = (socket.AF_INET, socket.SOCK_STREAM, 6, "", ("127.0.0.1", 443))
+    for answer in (fake_ip, loopback):
+        with patch("plugin.socket.getaddrinfo", return_value=[answer]):
+            _assert_public_endpoint("https://helldivers.wiki.gg/api.php")
+        with patch("plugin.socket.getaddrinfo", return_value=[answer]):
+            try:
+                _assert_public_endpoint("https://custom.example/api")
+            except ValueError:
+                pass
+            else:
+                raise AssertionError("custom domains must not inherit the official-host proxy exemption")
+
+
+def test_both_http_clients_validate_redirect_targets() -> None:
+    request = urllib.request.Request("https://8.8.8.8/start")
+    try:
+        _PublicOnlyRedirectHandler().redirect_request(
+            request,
+            None,
+            302,
+            "Found",
+            {},
+            "http://127.0.0.1/internal",
+        )
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("urllib redirects to private addresses must be rejected")
+
+    class Redirect:
+        status_code = 302
+        headers = {"location": "http://127.0.0.1/internal"}
+        url = "https://8.8.8.8/start"
+
+    class Client:
+        calls = 0
+
+        async def get(self, url: str, **kwargs: object) -> Redirect:
+            del url, kwargs
+            self.calls += 1
+            return Redirect()
+
+    async def scenario() -> None:
+        client = Client()
+        try:
+            await HelldiversPlugin()._httpx_get_public(client, "https://8.8.8.8/start")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("httpx redirects to private addresses must be rejected")
+        assert client.calls == 1
+
+    asyncio.run(scenario())
 
 
 def test_collection_ignores_a_non_http_endpoint() -> None:

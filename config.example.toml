@@ -58,7 +58,8 @@ steam_enabled = true
 # Steam App ID。默认 553850（HELLDIVERS™ 2），一般不需要改，改错会采到别的游戏。
 steam_app_id = 553850
 
-# Steam News 接口地址。可换成镜像或自建代理。
+# Steam News 接口地址。可换成公开网络上的 HTTPS 镜像或自建代理。
+# 为降低 SSRF 风险，字面危险值会回退默认值；首跳和重定向的 DNS 结果也必须全部为公网地址。
 # 如果地址里已经带了 appid= 参数，插件不会再拼接。
 steam_endpoint = "https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/"
 
@@ -71,7 +72,8 @@ steam_locale = "schinese"
 # Wiki 内容改用 /helldivers push wiki 与 /helldivers push balance 按需获取。
 wiki_enabled = false
 
-# Wiki API 地址。默认英文站；中文站是同一域名下的 /zh/api.php，
+# Wiki API 地址。仅接受公开网络上的 HTTP(S) 地址；本机/私网/元数据地址会被拒绝。
+# 默认英文站；中文站是同一域名下的 /zh/api.php，
 # 插件默认就会「中文站优先、英文站回退」，这里一般不用改。
 wiki_endpoint = "https://helldivers.wiki.gg/api.php"
 
